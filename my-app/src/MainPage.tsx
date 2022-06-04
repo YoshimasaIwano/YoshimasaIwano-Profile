@@ -1,4 +1,5 @@
 import React from 'react';
+import { TopNav } from './TopNav';
 
 /*  
     MainPage Component
@@ -6,20 +7,10 @@ import React from 'react';
 
 export function MainPage(): JSX.Element {
     return (
-        <div className="App">
-            <header className="App-header">
-            <p>
-                Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Learn React
-            </a>
-            </header>
+        <div 
+            className="fixed top-0 left-0 h2 w-100 bg-light-green"
+        >
+            <TopNav />
         </div>
     );
 }
