@@ -7,16 +7,16 @@ import React from 'react';
 
 export function TopNav(): JSX.Element {
     return (
-        <div className='dib-m justify-center items-center'>
-            <div className='justify-center'>
+        <div className='flex-m justify-center'>
+            <a className='ph1 br1-ns bg-transparent'>
                 Project
-            </div>
-            <div className='justify-center'>
+            </a>
+            <a className='ph1 br1-ns bg-transparent'>
                 Resume
-            </div>
-            <div className='justify-center'>
+            </a>
+            <a className='ph1 br1-ns bg-transparent'>
                 Gallery
-            </div>
+            </a>
         </div>
     )
 }
