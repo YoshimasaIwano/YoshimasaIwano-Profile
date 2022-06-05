@@ -878,9 +878,9 @@ code, .code { font-family: Consolas, monaco, monospace; }
 */
 .link { text-decoration: none; transition: color .15s ease-in; }
 .link:link, .link:visited { transition: color .15s ease-in; }
-.link:hover { transition: color .15s ease-in; }
+.link:hover { transition: color .15s ease-in; background-color: #137752; }
 .link:active { transition: color .15s ease-in; }
-.link:focus { transition: color .15s ease-in; outline: 1px dotted currentColor; }
+.link:focus { transition: color .15s ease-in; outline: 1px solid #137752; }
 /*
 
    LISTS
