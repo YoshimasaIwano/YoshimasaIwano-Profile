@@ -18,6 +18,16 @@ code {
   background: linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
 }
 
+#project-container {
+  background: -moz-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: -webkit-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+}
+
+#project-cell-container {
+  
+}
+
 #yoshi-img {
   border-radius: 50%;
 }
