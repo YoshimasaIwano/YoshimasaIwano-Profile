@@ -23,8 +23,7 @@ code {
 }
 
 #sns li a::before {
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
+  -webkit-border-radius: 0.5rem;
   display: inline-block;
   font-family: FontAwesome;
   line-height: 44px; 
@@ -41,3 +40,4 @@ code {
 #sns li a[href*="github.com"]::before         { background-color: #181717; content: "\f09b"; }
 #sns li a[href*="linkedin.com"]::before       { background-color: #0077b5; content: "\f0e1"; }
 #sns li a[href*="twitter.com"]::before        { background-color: #55acee; content: "\f099"; }
+#sns li a[href*="instagram.com"]::before      { background-color: #c800ff; content: "\f16d"; }
