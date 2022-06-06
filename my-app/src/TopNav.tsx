@@ -7,7 +7,7 @@ import React from 'react';
 
 export function TopNav(): JSX.Element {
     return (
-        <div className='flex justify-center items-center aspect-ratio-object h2'>
+        <div className='flex justify-center items-center aspect-ratio-object h2 bg-light-green'>
             <ProjectNav />
             <ResumeNav />
             <GaleryNav />
