@@ -4,7 +4,7 @@ export function Resume() {
     return (
         <div id="resume-container" className='pv2 tc f1'>
             <h5 className='tl ml1 mv1'>Resume</h5>
-            <div className='washed-blue f3'>
+            <div className='light-yellow f3'>
                 Here's my resume. (As of Jun/2022) <br />
                 You can download my resume clicking the button below.
             </div>

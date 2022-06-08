@@ -11,9 +11,7 @@ import { Gallery } from './Gallery';
 
 export function MainPage(): JSX.Element {
     return (
-        <div 
-            className="fixed top-0 left-0 relative vh-100 w-100 overflow-y-scroll"
-        >
+        <div className="fixed top-0 left-0 relative vh-100 w-100 overflow-y-scroll">
             <TopNav />
             <Profile />
             <Project />
