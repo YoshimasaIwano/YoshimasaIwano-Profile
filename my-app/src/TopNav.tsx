@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink } from 'react-router-dom'
 
 /*
     TopNav Component  
@@ -16,34 +16,44 @@ export function TopNav(): JSX.Element {
     )
 }
 
+const classAttribute = 'f3 ph2 mh2 b--solid br1 b--green link color-inherit '
+
 function HomeNav(): JSX.Element {
     return (
-        <a href='./Home' className='f3 ph2 mh2 b--solid br1 b--green bg-green link color-inherit'>
+        <NavLink to='Home' className={({ isActive }) => (
+            isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green'
+        )}>
             Home
-        </a>
+        </NavLink>
     )
 }
 
 function ProjectNav(): JSX.Element {
     return (
-        <a href='./Project' className='f3 ph2 mh2 b--solid br1 b--green bg-green link color-inherit'>
+        <NavLink to='Project' className={({ isActive }) => (
+            isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green'
+        )}>
             Project
-        </a>
+        </NavLink>
     )
 }
 
 function ResumeNav(): JSX.Element {
     return (
-        <a href='./Resume' className='f3 ph2 mh2 b--solid br1 b--green bg-green link color-inherit'>
+        <NavLink to='Resume' className={({ isActive }) => (
+            isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green'
+        )}>
             Resume
-        </a>
+        </NavLink>
     )
 }
 
 function GaleryNav(): JSX.Element {
     return (
-        <a href='./Gallery' className='f3 ph2 mh2 b--solid br1 b--green bg-green link color-inherit'>
+        <NavLink to='Gallery' className={({ isActive }) => (
+            isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green'
+        )}>
             Gallery
-        </a>
+        </NavLink>
     )
 }

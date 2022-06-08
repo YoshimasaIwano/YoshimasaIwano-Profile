@@ -10,8 +10,8 @@ import { Gallery } from './Gallery';
 function App(): JSX.Element {
   return (
     <div className="fixed top-0 left-0 relative vh-100 w-100 overflow-y-scroll">
-      <TopNav />
       <Router>
+        <TopNav />
         <Routes>
           <Route path="/" element={<Profile />}/>
           <Route path="/Home" element={<Profile />}/>
