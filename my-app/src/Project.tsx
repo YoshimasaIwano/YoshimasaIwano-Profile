@@ -2,8 +2,8 @@ import React from 'react';
 
 export function Project() {
     return (
-        <div id="project-container" className='pv2 tc f1'>
-            <h5 className='tl ml1 mv1'>Project</h5>
+        <div id="project-container" className='pv2'>
+            <div className='tl f2 b ml1 mv1'>Project</div>
             <div className='pv2 flex flex-wrap items-top justify-start'>
                 <GraduationResearch />
                 <CSC317 />
@@ -13,88 +13,59 @@ export function Project() {
     )
 }
 
-function GraduationResearch(): JSX.Element {
+type ProjectProps = {
+    name: string;
+    overview: string;
+    tools: Array<string>;
+}
+
+function ProjectContent({ name, overview, tools }: ProjectProps): JSX.Element {
     return (
-        <div className='pv2 tc w-50'>
-            <h6 className='mh1 mv1'>Graduation Research</h6>
+        <div className='pv2 w-50'>
+            <div className='tc f3 b mh1 mv1'>{name}</div>
             <div className='flex-column'>
-                <div className='tl'>
-                    <div className='tl mh1 mv1 f3'>
-                        Overview
-                    </div>
-                    <p className='mh2 mv1 f4'>
-                        The purpose of this research is to identify if a tumor is malignant or benign.
-                    </p>
+                <div className=''>
+                    <div className='mh1 mv1 f3'>Overview</div>
+                    <p className='mh2 mv1 f4'>{overview}</p>
                 </div>
-                <div className='tl'>
-                    <div className='mh1 mv1 f3'>
-                        Tools
-                    </div>
-                    <div className='mh2 mv1 flex flex-wrap items-center justify-start'>
-                        <div className='w-third mh0 f4'>Pytorch</div>
-                        <div className='w-third mh0 f4'>Numpy</div>
-                        <div className='w-third mh0 f4'>Pandas</div>
-                        <div className='w-third mh0 f4'>Scikit-Learn</div>
-                        <div className='w-third mh0 f4'>Matplotlib</div>
-                        <div className='w-third mh0 f4'>Git</div>
+                <div className=''>
+                    <div className='mh1 mv1 f3'>Tools</div>
+                    <div className='f4 mh2 mv1 flex flex-wrap items-center justify-start'>
+                        {tools.map((tool) => {
+                            return (
+                                <div className='w-third mh0'>{tool}</div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
         </div>
+    )
+}
+
+function GraduationResearch(): JSX.Element {
+    const name: string = "Graduation Research" 
+    const overview: string = "The purpose of this research is to identify if a tumor is malignant or benign."
+    const tools: Array<string> = ["Pytorch","Numpy","Pandas","Scikit-Learn","Matplotlib","Git"]
+    return (
+        <ProjectContent name={name} overview={overview} tools={tools} />
     )
 }
 
 function CSC317(): JSX.Element {
+    const name: string = "CSC317" 
+    const overview: string = "The purpose of this course is to create Photo App."
+    const tools: Array<string> = ["HTML/CSS","JavaScript","MySQL"]
     return (
-        <div className='pv2 tc w-50'>
-            <h6 className='mh1 mv1'>CSC317</h6>
-            <div className='flex-column'>
-                <div className='tl'>
-                    <div className='tl mh1 mv1 f3'>
-                        Overview
-                    </div>
-                    <p className='mh2 mv1 f4'>
-                        The purpose of this course is to create Photo App.
-                    </p>
-                </div>
-                <div className='tl'>
-                    <div className='mh1 mv1 f3'>
-                        Tools
-                    </div>
-                    <div className='mh2 mv1 flex flex-wrap items-center justify-start'>
-                        <div className='w-third mh0 f4'>HTML/CSS</div>
-                        <div className='w-third mh0 f4'>JavaScript</div>
-                        <div className='w-third mh0 f4'>MySQL</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ProjectContent name={name} overview={overview} tools={tools} />
     )
 }
 
 function CSC600(): JSX.Element {
+    const name: string = "CSC600" 
+    const overview: string = "The purpose of this course is to create a music instrument and a visualizer."
+    const tools: Array<string> = ["TypeScirpt","React"]
     return (
-        <div className='pv2 tc w-50'>
-            <h6 className='mh1 mv1'>CSC600</h6>
-            <div className='flex-column'>
-                <div className='tl'>
-                    <div className='tl mh1 mv1 f3'>
-                        Overview
-                    </div>
-                    <p className='mh2 mv1 f4'>
-                        The purpose of this course is to create a music instrument and a visualizer.
-                    </p>
-                </div>
-                <div className='tl'>
-                    <div className='mh1 mv1 f3'>
-                        Tools
-                    </div>
-                    <div className='mh2 mv1 flex flex-wrap items-center justify-start'>
-                        <div className='w-third mh0 f4'>TypeScirpt</div>
-                        <div className='w-third mh0 f4'>React</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ProjectContent name={name} overview={overview} tools={tools} />
     )
 }

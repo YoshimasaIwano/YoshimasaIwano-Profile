@@ -4,56 +4,30 @@ import { NavLink } from 'react-router-dom'
 /*
     TopNav Component  
 */
+type NavProps = {
+    name: string;
+}
 
 export function TopNav(): JSX.Element {
+    const navList: Array<string> = ["Home", "Project", "Resume", "Gallery"]
     return (
         <div className='flex justify-center items-center aspect-ratio-object h3 bg-light-green'>
-            <HomeNav />
-            <ProjectNav />
-            <ResumeNav />
-            <GaleryNav />
+            {navList.map((nav) => {
+                return (
+                    <NavContent name={nav} />
+                )
+            })}
         </div>
     )
 }
 
-const classAttribute = 'f3 ph2 mh2 b--solid br1 b--green link color-inherit '
-
-function HomeNav(): JSX.Element {
+function NavContent( { name }: NavProps ): JSX.Element {
+    const classAttribute: string = 'f3 ph2 mh2 b--solid br1 b--green link color-inherit '
     return (
-        <NavLink to='Home' className={({ isActive }) => (
+        <NavLink to={name} className={({ isActive }) => (
             isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green'
         )}>
-            Home
+            {name}
         </NavLink>
     )
-}
-
-function ProjectNav(): JSX.Element {
-    return (
-        <NavLink to='Project' className={({ isActive }) => (
-            isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green'
-        )}>
-            Project
-        </NavLink>
-    )
-}
-
-function ResumeNav(): JSX.Element {
-    return (
-        <NavLink to='Resume' className={({ isActive }) => (
-            isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green'
-        )}>
-            Resume
-        </NavLink>
-    )
-}
-
-function GaleryNav(): JSX.Element {
-    return (
-        <NavLink to='Gallery' className={({ isActive }) => (
-            isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green'
-        )}>
-            Gallery
-        </NavLink>
-    )
-}
+} 

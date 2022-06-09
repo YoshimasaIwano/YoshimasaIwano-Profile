@@ -2,8 +2,8 @@ import React from 'react';
 
 export function Gallery() {
     return (
-        <div id="gallery-container" className='pv2 tc f1'>
-            <h5 className='tl ml1 mv1'>Gallery</h5>
+        <div id="gallery-container" className='pv2 tc'>
+            <div className='tl f2 b ml1 mv1'>Gallery</div>
             <Pictures />
         </div>
     )
