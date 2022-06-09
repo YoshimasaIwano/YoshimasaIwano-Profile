@@ -1,4 +1,8 @@
-import React from 'react';
+import resumePicture from '../../assets/resume[YoshimasaIwano].png';
+
+/*
+    Resume Component  
+*/
 
 export function Resume() {
     return (
@@ -12,7 +16,7 @@ export function Resume() {
                 <a className='no-underline b mv3 mh3 ph2 f3 dark-green bg-navy hover-yellow hover-bg-green br2 ' href="./resume[YoshimasaIwano].pdf" download="./resume[YoshimasaIwano].pdf">
                     Download My Resume
                 </a>
-                <img src='./resume[YoshimasaIwano].png' alt='resume' className='content-center mv3 w-80 h-100'></img>
+                <img src={resumePicture} alt='resume' className='content-center mv3 w-80 h-100'></img>
             </div>
         </div>
     )

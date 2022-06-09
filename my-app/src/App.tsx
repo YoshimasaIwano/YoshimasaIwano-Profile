@@ -2,10 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { TopNav } from './TopNav';
-import { Profile } from './Profile';
-import { Project } from './Project';
-import { Resume } from './Resume';
-import { Gallery } from './Gallery';
+import { Profile } from './component/main-contents/Profile';
+import { Project } from './component/main-contents/Project';
+import { Resume } from './component/main-contents/Resume';
+import { Gallery } from './component/main-contents/Gallery';
+import { DefaultPage } from './component/main-contents/Project';
+import { GraduationResearch } from './component/project-detail/GraduationResearch';
+import { CSC317 } from './component/project-detail/CSC317';
+import { CSC600 } from './component/project-detail/CSC600';
 
 function App(): JSX.Element {
   return (
@@ -15,7 +19,13 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/" element={<Profile />}/>
           <Route path="/Home" element={<Profile />}/>
-          <Route path="/Project" element={<Project />}/>
+          <Route path="/Project" element={<Project />}>
+            <Route index element={<DefaultPage />}/>
+            <Route path="GraduationResearch" element={<GraduationResearch />}/>
+            <Route path="CSC317" element={<CSC317 />}/>
+            <Route path="CSC600" element={<CSC600 />}/>
+            <Route path="*" element={<div>404</div>}/>
+          </Route>
           <Route path="/Resume" element={<Resume />}/>
           <Route path="/Gallery" element={<Gallery />}/>
           <Route path="*" element={<div>404</div>}/>

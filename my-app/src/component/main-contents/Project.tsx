@@ -1,14 +1,14 @@
-import React from 'react';
+import { NavLink, Outlet } from 'react-router-dom';
+
+/*
+    Project Component  
+*/
 
 export function Project() {
     return (
         <div id="project-container" className='pv2'>
             <div className='tl f2 b ml1 mv1'>Project</div>
-            <div className='pv2 flex flex-wrap items-top justify-start'>
-                {ProjectPropsList.map((project) => {
-                    return <ProjectContent name={project.name} overview={project.overview} tools={project.tools} />
-                })}
-            </div>
+            <Outlet />
         </div>
     )
 };
@@ -20,7 +20,7 @@ type ProjectProps = {
 };
 
 const GraduationResearchProps: ProjectProps = {
-    name: "Graduation Research",
+    name: "GraduationResearch",
     overview:  "The purpose of this research is to identify if a tumor is malignant or benign.",
     tools: ["Pytorch","Numpy","Pandas","Scikit-Learn","Matplotlib","Git"],
 }
@@ -43,9 +43,19 @@ const ProjectPropsList: Array<ProjectProps> = [
     CSC600Props,
 ];
     
+export function DefaultPage(): JSX.Element {
+    return (
+        <div className='pv2 flex flex-wrap items-top justify-start'>
+            {ProjectPropsList.map((project) => {
+                return <ProjectContent name={project.name} overview={project.overview} tools={project.tools} />
+            })}
+        </div>
+    ) 
+}
+
 function ProjectContent({ name, overview, tools }: ProjectProps): JSX.Element {
     return (
-        <div className='pv2 w-50 br4 bg-white-40 bg-animate hover-bg-light-blue'>
+        <NavLink to={name} className='pv2 w-50 br4 bg-white-40 bg-animate hover-bg-light-blue link color-inherit'>
             <div className='tc f3 b mh1 mv1'>{name}</div>
             <div className='flex-column'>
                 <div className=''>
@@ -63,6 +73,6 @@ function ProjectContent({ name, overview, tools }: ProjectProps): JSX.Element {
                     </div>
                 </div>
             </div>
-        </div>
+        </NavLink>
     )
 };

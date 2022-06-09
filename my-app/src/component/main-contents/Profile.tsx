@@ -1,4 +1,8 @@
-import React from 'react';
+import yoshi from '../../assets/yoshi30.png';
+
+/*
+    Profile Component  
+*/
 
 export function Profile() {
     return (
@@ -9,7 +13,7 @@ export function Profile() {
                 </div>
                 <div className='dark-blue'>
                     I'm Yoshimasa Iwano 
-                    <img id="yoshi-img" className='ml1' src='./yoshi30.png' alt='yoshi'></img><br />
+                    <img id="yoshi-img" className='ml1' src={yoshi} alt='yoshi'></img><br />
                     Yoshindar
                 </div>
                 <ul id="sns" className='flex justify-center items-center list mv2 overflow-hidden'>

@@ -1,8 +1,11 @@
-import React from 'react';
-import shootingStart from './pictures/shootingStar.png';
-import tsunoshima from './pictures/tsunoshima.png';
-import nemophila from './pictures/nemophila.png';
-import yosemiteFall from './pictures/yosemiteFall.png';
+import shootingStart from '../../assets/main-pictures/shootingStar.png';
+import tsunoshima from '../../assets/main-pictures/tsunoshima.png';
+import nemophila from '../../assets/main-pictures/nemophila.png';
+import yosemiteFall from '../../assets/main-pictures/yosemiteFall.png';
+
+/*
+    Gallery Component  
+*/
 
 export function Gallery() {
     return (
