@@ -45,15 +45,15 @@ const ProjectPropsList: Array<ProjectProps> = [
     
 function ProjectContent({ name, overview, tools }: ProjectProps): JSX.Element {
     return (
-        <div className='pv2 w-50 br4 bg-animate hover-bg-light-blue'>
+        <div className='pv2 w-50 br4 bg-white-40 bg-animate hover-bg-light-blue'>
             <div className='tc f3 b mh1 mv1'>{name}</div>
             <div className='flex-column'>
                 <div className=''>
-                    <div className='mh1 mv1 f3'>Overview</div>
+                    <div className='w-20 tc mh1 mv1 f3 dark-gray br2 bg-light-pink'>Overview</div>
                     <p className='mh2 mv1 f4'>{overview}</p>
                 </div>
                 <div className=''>
-                    <div className='mh1 mv1 f3'>Tools</div>
+                    <div className='w-20 tc mh1 mv1 f3 red br2 bg-yellow'>Tools</div>
                     <div className='f4 mh2 mv1  flex flex-wrap items-center justify-start'>
                         {tools.map((tool) => {
                             return (
