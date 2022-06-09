@@ -8,11 +8,11 @@ export function Resume() {
                 Here's my resume. (As of Jun/2022) <br />
                 You can download my resume clicking the button below.
             </div>
-            <div className='flex-nowrap'>
-                <a className='no-underline b mh3 f3 dark-green hover-light-yellow' href="./resume[YoshimasaIwano].pdf" download="./resume[YoshimasaIwano].pdf">
+            <div className='flex-nowrap mv3'>
+                <a className='no-underline b mv3 mh3 ph2 f3 dark-green bg-navy hover-yellow hover-bg-green br2 ' href="./resume[YoshimasaIwano].pdf" download="./resume[YoshimasaIwano].pdf">
                     Download My Resume
                 </a>
-                <img src='./resume[YoshimasaIwano].png' alt='resume' className='content-center w-80 h-100'></img>
+                <img src='./resume[YoshimasaIwano].png' alt='resume' className='content-center mv3 w-80 h-100'></img>
             </div>
         </div>
     )
