@@ -7,7 +7,6 @@ import { NavLink, Outlet } from 'react-router-dom';
 export function Project() {
     return (
         <div id="project-container" className='pv2'>
-            <div className='tl f2 b ml1 mv1'>Project</div>
             <Outlet />
         </div>
     )
@@ -45,11 +44,14 @@ const ProjectPropsList: Array<ProjectProps> = [
     
 export function DefaultPage(): JSX.Element {
     return (
-        <div className='pv2 flex flex-wrap items-top justify-start'>
-            {ProjectPropsList.map((project) => {
-                return <ProjectContent name={project.name} overview={project.overview} tools={project.tools} />
-            })}
-        </div>
+        <>
+            <div className='tl f2 b ml1 mv1'>Project</div>
+            <div className='pv2 flex flex-wrap items-top justify-start'>
+                {ProjectPropsList.map((project) => {
+                    return <ProjectContent name={project.name} overview={project.overview} tools={project.tools} />
+                })}
+            </div>
+        </>
     ) 
 }
 
