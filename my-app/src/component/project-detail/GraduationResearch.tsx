@@ -1,4 +1,5 @@
 import backgroundPurpose from '../../assets/graduation-research-img/background-purpose.png';
+import ensemble from '../../assets/graduation-research-img/ensemble.png';
 
 /*
     Graduation Research Detail Component  
@@ -29,10 +30,27 @@ export function GraduationResearch() {
             <div className='mh1 mv3 f3 b dark-gray'>Method</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='mh2 mv2 f3'>
-                    We used ensemble model consisting of 3 of SVMs, Resnet50, and Resnet152.
+                    We used ensemble model consisting of 3 of SVMs, Resnet50, and Resnet152.<br />
+                    First of all, we extract 4608 features from Resnets and get 478 featrues after PCA. After that, we pour them into SVMs.
+                    Finally, we ensemble the predictions from 5 models using majority decision. 
                 </p>
+                <img src={ensemble} className="db ma mv3 w-50 h-50"></img>
             </div>
-            
+            <div className='mh1 mv3 f3 b dark-gray'>Tools</div>
+            <div className='dt ma flex-row flex-nowrap justify-items-center tc w-80'>
+                <div className='dt-row mh2 mv2 f3'>
+                    <div className='dtc w-20'> tool </div>
+                    <div className='dtc w-80'> description </div>
+                </div>
+                <div className='dt-row mh2 mv2 f3'>
+                    <div className='dtc w-20'> tool </div>
+                    <div className='dtc w-80'> description </div>
+                </div>
+                <div className='dt-row mh2 mv2 f3'>
+                    <div className='dtc w-20'> tool </div>
+                    <div className='dtc w-80'> description </div>
+                </div>
+            </div>
         </>
     )
 }

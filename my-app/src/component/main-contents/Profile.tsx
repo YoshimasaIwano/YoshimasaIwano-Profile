@@ -32,7 +32,7 @@ export function Profile() {
                 <p className='ml3 mv4'>
                     I am interested in Computer Vision and Software Development.<br/>
                     In my undergraduate, I was in Visual Media Laboratory at University of Tsukuba in Japan. I was doing researh on medical imaging. Here's a 
-                    <a className='no-underline b dark-green hover-light-yellow' href='https://github.com/YoshimasaIwano/graduation-reaserach-on-lymph-tumor/blob/main/graduate_research_final.pdf'> paper.</a><br/>
+                    <a className='no-underline b dark-green hover-light-yellow' href='../graduate_research_final.pdf'> paper.</a><br/>
                     I also have some experience of Software Development at SFSU. The detail is in Project section.<br/>
                     I am familiar with technologies such as Pytorch, Tensorflow, Numpy, Pandas, Scikit-Learn, React, and Node.js
                 </p>
