@@ -9,16 +9,16 @@ export function GraduationResearch() {
     return (
         <>
             <div className='tl f2 b ml1 mv1'>Graduation Research</div>
-            <div className='mh1 mv3 f3 b dark-gray'>Purpose & Background</div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Purpose & Background</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3'>
                     There are two types of a residual tumor; teratoma and necrotic tissue. 
                     Teratoma is malignant and needs to be excised. However, necrotic tissue is benign and a surgery is an overtreatment. 
                     In addition, The conventional biomarker can not identify the teratoma before a surgery.
                     Therefore, we aimed to predict the pathology of postchemotherapy residual tumors using CNN and SVM.
                 </p>
                 <img src={backgroundPurpose} className="db ma mv3 w-50 h-50"></img>
-                <p className='mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3'>
                     I found two previous studies on the exact same topic.
                     <a className='no-underline b black hover-light-yellow' href='https://ascopubs.org/doi/full/10.1200/CCI.18.00004'> The one </a>
                     is published by Jeremy Lewin, etc. They used SVM and got accuracy: 72.0%, sensitivity: 56.2%, specificity: 81.9% <br />
@@ -27,30 +27,79 @@ export function GraduationResearch() {
                     The purpose of my research is to get a similar or better result of them by ensembling CNN and SVM.
                 </p>
             </div>
-            <div className='mh1 mv3 f3 b dark-gray'>Method</div>
-            <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='mh2 mv2 f3'>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Method</div>
+            <div className='db ma flex-row tc w-80'>
+                <p className='tl mh2 mv2 f3'>
                     We used ensemble model consisting of 3 of SVMs, Resnet50, and Resnet152.<br />
                     First of all, we extract 4608 features from Resnets and get 478 featrues after PCA. After that, we pour them into SVMs.
                     Finally, we ensemble the predictions from 5 models using majority decision. 
                 </p>
                 <img src={ensemble} className="db ma mv3 w-50 h-50"></img>
             </div>
-            <div className='mh1 mv3 f3 b dark-gray'>Tools</div>
-            <div className='dt ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <div className='dt-row mh2 mv2 f3'>
-                    <div className='dtc w-20'> tool </div>
-                    <div className='dtc w-80'> description </div>
-                </div>
-                <div className='dt-row mh2 mv2 f3'>
-                    <div className='dtc w-20'> tool </div>
-                    <div className='dtc w-80'> description </div>
-                </div>
-                <div className='dt-row mh2 mv2 f3'>
-                    <div className='dtc w-20'> tool </div>
-                    <div className='dtc w-80'> description </div>
-                </div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Tools</div>
+            <div className='dt ma flex-row tc w-80'>
+                {ToolList.map((tool) => {
+                    return <ToolContent name={tool.name} description={tool.description} />
+                })}
             </div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Results</div>
         </>
     )
 }
+
+type ToolProps = {
+    name: string;
+    description: string;
+}
+
+const PytorchProps: ToolProps = {
+    name: "Pytorch",
+    description: "Pytorch is an open source machine learning framework that accelerates the path from research prototyping to production deployment. It is used for model and dataload.",
+}
+
+const NumpyProps: ToolProps = {
+    name: "Numpy",
+    description: "Numpy is the fundamental package for scientific computing with Python. It is used for handling data.",
+}
+
+const PandasProps: ToolProps = {
+    name: "Pandas",
+    description: "Pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language. It is used for creating a data frame.",
+}
+
+const ScikitLearnProps: ToolProps = {
+    name: "Scikit-Learn",
+    description: "Scikit-Learn is an open source and commercialy usable built on Numpy, Scipy, and Matplotlib, and is simple and efficient tools for predictive data analysis. It is used for mainly SVM ",
+}
+
+const MatplotlibProps: ToolProps = {
+    name: "Matplotlib",
+    description: "Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Is is used for ploting a graph",
+}
+
+const GitProps: ToolProps = {
+    name: "Git",
+    description: "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficient. It is used for tracking changes in code.",
+}
+
+const ToolList: Array<ToolProps> = [
+    PytorchProps,
+    NumpyProps,
+    PandasProps,
+    ScikitLearnProps,
+    MatplotlibProps,
+    GitProps,
+];
+  
+function ToolContent({ name, description }: ToolProps): JSX.Element {
+    return (
+        <div className='dt-row f4'>
+            <div className='dtc pv1 w-30 bb br b--white-50'>
+                {name}
+            </div>
+            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
+                {description}
+            </div>
+        </div>
+    )
+} 
