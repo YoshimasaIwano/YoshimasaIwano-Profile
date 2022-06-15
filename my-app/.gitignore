@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# pictures and vidoes
+*.pdf
+*.ico
+*.svg
+*.png
+*.mp4

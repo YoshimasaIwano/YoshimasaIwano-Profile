@@ -27,7 +27,7 @@ const GraduationResearchProps: ProjectProps = {
 const CSC317Props: ProjectProps = {
     name: "CSC317",
     overview: "The purpose of this course is to create Photo App.",
-    tools: ["HTML/CSS","JavaScript","MySQL"],
+    tools: ["HTML/CSS","JavaScript","MySQL","NodeJS","ExpressJS","Handlebars"],
 }
 
 const CSC600Props: ProjectProps = {
