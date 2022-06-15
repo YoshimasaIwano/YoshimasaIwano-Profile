@@ -43,6 +43,24 @@ export function GraduationResearch() {
                 })}
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Results</div>
+            <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
+                <p className='tl mh2 mv2 f3'>
+                    We got a similar result as previous studies; accuracy is 78.3%, sensitivity is 61.3%, and specificity is 90.6%, 
+                    which improved comparing to a single Resnet model.
+                </p>
+            </div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Difficulties</div>
+            <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
+                <p className='tl mh2 mv2 f3'>
+                    ・Lack of CT images: <br/>
+                    Testicular cancer is so rare cancer that we can not collect enough data to train a huge CNN model, so we utilize the technique called fine-tunig that uses pre-trained parameters from the model trained with ImageNet.<br/>
+                    ・Variety of tumor size: <br/>
+                    There are small tumors and big tumors. It is difficult to make tumor images consistent. To deal with this problem, I clipeed all images with 150×150 to cover almost all tumor images.
+                </p>
+                <p className='tl mh2 mv2 f3'>
+                    There's stiil room for investing these two difficulities, so the next research topic is to find better algorithm for these two problems. 
+                </p>
+            </div>
         </>
     )
 }
