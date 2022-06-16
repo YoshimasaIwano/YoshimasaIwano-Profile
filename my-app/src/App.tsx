@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import { TopNav } from './TopNav';
+import { Footer } from './Footer';
 import { Profile } from './component/main-contents/Profile';
 import { Project } from './component/main-contents/Project';
 import { Resume } from './component/main-contents/Resume';
@@ -30,6 +31,7 @@ function App(): JSX.Element {
           <Route path="/Gallery" element={<Gallery />}/>
           <Route path="*" element={<div>404</div>}/>
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+.footer {
+  background-color: #1eebb1;
+  border-color: #6efbd3;
+}
+
 #profile-container {
   background: -moz-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
   background: -webkit-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
@@ -59,3 +64,5 @@ code {
 #sns li a[href*="linkedin.com"]::before       { background-color: #0077b5; content: "\f0e1"; }
 #sns li a[href*="twitter.com"]::before        { background-color: #55acee; content: "\f099"; }
 #sns li a[href*="instagram.com"]::before      { background-color: #c800ff; content: "\f16d"; }
+#sns li a[href*="note.com"]::before           { background-color: #41c9b4; content: "\f249"; } 
+/* f02d */
