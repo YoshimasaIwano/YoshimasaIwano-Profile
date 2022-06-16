@@ -41,23 +41,10 @@ const ProjectList: Array<ProjectProps> = [
     CSC317Props,
     CSC600Props,
 ];
-    
-export function DefaultPage(): JSX.Element {
-    return (
-        <>
-            <div className='tl f2 b ml1 mv1'>Project</div>
-            <div className='pv2 flex flex-wrap items-top justify-start'>
-                {ProjectList.map((project) => {
-                    return <ProjectContent name={project.name} overview={project.overview} tools={project.tools} />
-                })}
-            </div>
-        </>
-    ) 
-}
 
 function ProjectContent({ name, overview, tools }: ProjectProps): JSX.Element {
     return (
-        <NavLink to={name} className='pv2 w-50 br4 bg-white-40 bg-animate hover-bg-light-blue link color-inherit'>
+        <NavLink to={name} className='pv2 w-50 br4 ba b--washed-green bg-white-40 bg-animate hover-bg-light-blue link color-inherit'>
             <div className='tc f3 b mh1 mv1'>{name}</div>
             <div className='flex-column'>
                 <div className=''>
@@ -78,3 +65,16 @@ function ProjectContent({ name, overview, tools }: ProjectProps): JSX.Element {
         </NavLink>
     )
 };
+
+export function DefaultProjectPage(): JSX.Element {
+    return (
+        <>
+            <div className='tl f2 b ml1 mv1'>Project</div>
+            <div className='pv2 flex flex-wrap items-top justify-start'>
+                {ProjectList.map((project) => {
+                    return <ProjectContent name={project.name} overview={project.overview} tools={project.tools} />
+                })}
+            </div>
+        </>
+    ) 
+}
