@@ -19,10 +19,22 @@ export function Gallery() {
 function Pictures(): JSX.Element {
     return (
         <div className='pv2 flex flex-wrap items-top justify-start'>
-            <img src={shootingStart} alt='shooting star' className='w-50'></img>
-            <img src={tsunoshima} alt='tsunoshima' className='w-50'></img>
-            <img src={nemophila} alt='nemophila' className='w-50'></img>
-            <img src={yosemiteFall} alt='yosemite fall' className='w-50'></img>
+            <div className='w-50 relative hover-bg-white-20'>
+                <img src={shootingStart} alt='shooting star' className='w-100 h-100'></img>
+                <div id='text-in-img'>night sky</div>
+            </div>
+            <div className='w-50 relative hover-bg-white-20'>
+                <img src={tsunoshima} alt='tsunoshima' className='w-100 h-100'></img>
+                <div id='text-in-img'>landscape</div>
+            </div>
+            <div className='w-50 relative hover-bg-white-20'>
+                <img src={nemophila} alt='nemophila' className='w-100 h-100'></img>
+                <div id='text-in-img'>flower</div>
+            </div>
+            <div className='w-50 relative hover-bg-white-20'>
+                <img src={yosemiteFall} alt='yosemite fall' className='w-100 h-100'></img>
+                <div id='text-in-img'>food</div>
+            </div>
         </div>
     )
 }

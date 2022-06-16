@@ -89,7 +89,7 @@ sup { top: -0.5em; }
 /**
  * Remove the border on images inside links in IE 10.
  */
-img { border-style: none; }
+img { border-style: none; object-fit: cover;}
 /* Forms
    ========================================================================== */
 /**

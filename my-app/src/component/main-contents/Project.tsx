@@ -33,7 +33,7 @@ const CSC317Props: ProjectProps = {
 const CSC600Props: ProjectProps = {
     name: "CSC600",
     overview: "The purpose of this course is to create a music instrument and a visualizer.",
-    tools: ["TypeScirpt","React"],
+    tools: ["TypeScirpt","React","ToneJS","SQLite"],
 }
 
 const ProjectList: Array<ProjectProps> = [
