@@ -18,103 +18,103 @@ import Img16 from './img16.png';
 type ImageDataProps = {
     src: string,
     place: string,
-    description: string,
+    keywords: string,
 }
 
 const ImgData1: ImageDataProps = {
     src: Img1,
     place: "fukushima",
-    description: "2020 summer shooting "
+    keywords: "2020 summer shooting "
 } 
 
 const ImgData2: ImageDataProps = {
     src: Img2,
-    place: "fukushima",
-    description: "2019 winter"
+    place: "nikko",
+    keywords: "2021 winter"
 } 
 
 const ImgData3: ImageDataProps = {
     src: Img3,
-    place: "fukushima",
-    description: "2019 winter"
+    place: "nikko",
+    keywords: "2020 summer"
 } 
 
 const ImgData4: ImageDataProps = {
     src: Img4,
-    place: "nikko",
-    description: "2019 winter"
+    place: "fukushima",
+    keywords: "2020 summer"
 } 
 
 const ImgData5: ImageDataProps = {
     src: Img5,
-    place: "fukushima",
-    description: "2019 winter"
+    place: "nikko",
+    keywords: "2020 summer"
 } 
 
 const ImgData6: ImageDataProps = {
     src: Img6,
     place: "nikko",
-    description: "2021 winter"
+    keywords: "2020 summer"
 } 
 
 const ImgData7: ImageDataProps = {
     src: Img7,
-    place: "nikko",
-    description: "2020 summer"
+    place: "fukushima",
+    keywords: "2020 summer"
 } 
 
 const ImgData8: ImageDataProps = {
     src: Img8,
-    place: "fukushima",
-    description: "2020 summer"
+    place: "nikko",
+    keywords: "2020 summer"
 } 
 
 const ImgData9: ImageDataProps = {
     src: Img9,
     place: "nikko",
-    description: "2020 summer"
+    keywords: "2020 summer"
 } 
 
 const ImgData10: ImageDataProps = {
     src: Img10,
     place: "nikko",
-    description: "2020 summer"
+    keywords: "2021 summer"
 } 
 
 const ImgData11: ImageDataProps = {
     src: Img11,
-    place: "fukushima",
-    description: "2020 summer"
+    place: "nikko",
+    keywords: "2021 summer shooting"
 } 
 
 const ImgData12: ImageDataProps = {
     src: Img12,
-    place: "nikko",
-    description: "2020 summer"
+    place: "fukushima",
+    keywords: "2021 spring"
 } 
 
 const ImgData13: ImageDataProps = {
     src: Img13,
-    place: "nikko",
-    description: "2020 summer"
+    place: "fukushima",
+    keywords: "2019 winter"
 } 
 
 const ImgData14: ImageDataProps = {
     src: Img14,
-    place: "nikko",
-    description: "2021 summer"
+    place: "fukushima",
+    keywords: "2019 winter"
 } 
 
 const ImgData15: ImageDataProps = {
     src: Img15,
     place: "nikko",
-    description: "2021 summer shooting"
+    keywords: "2019 winter"
 } 
 
 const ImgData16: ImageDataProps = {
     src: Img16,
     place: "fukushima",
-    description: "2021 spring"
+    keywords: "2019 winter"
 } 
 
 export const ImageData: Array<ImageDataProps> = [
