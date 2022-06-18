@@ -28,3 +28,6 @@ yarn-error.log*
 *.svg
 *.png
 *.mp4
+
+# json file
+*.json

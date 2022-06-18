@@ -1,5 +1,5 @@
-import backgroundPurpose from '../../assets/graduation-research-img/background-purpose.png';
-import ensemble from '../../assets/graduation-research-img/ensemble.png';
+import BackgroundPurpose from '../../assets/graduation-research-img/background-purpose.png';
+import Ensemble from '../../assets/graduation-research-img/ensemble.png';
 
 /*
     Graduation Research Detail Component  
@@ -17,7 +17,7 @@ export function GraduationResearch() {
                     In addition, The conventional biomarker can not identify the teratoma before a surgery.
                     Therefore, we aimed to predict the pathology of postchemotherapy residual tumors using CNN and SVM.
                 </p>
-                <img src={backgroundPurpose} className="db ma mv3 w-50 h-50"></img>
+                <img src={BackgroundPurpose} className="db ma mv3 w-50 h-50"></img>
                 <p className='tl mh2 mv2 f3'>
                     I found two previous studies on the exact same topic.
                     <a className='no-underline b black hover-light-yellow' href='https://ascopubs.org/doi/full/10.1200/CCI.18.00004'> The one </a>
@@ -34,7 +34,7 @@ export function GraduationResearch() {
                     First of all, we extract 4608 features from Resnets and get 478 featrues after PCA. After that, we pour them into SVMs.
                     Finally, we ensemble the predictions from 5 models using majority decision. 
                 </p>
-                <img src={ensemble} className="db ma mv3 w-50 h-50"></img>
+                <img src={Ensemble} className="db ma mv3 w-50 h-50"></img>
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Tools</div>
             <div className='dt ma flex-row tc w-80'>
