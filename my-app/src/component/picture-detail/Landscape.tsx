@@ -10,6 +10,7 @@ export function Landscape() {
     const [category, setCategory] = useState("all"); 
     return (
         <>
+            <div className='tl f2 b ml1 mv1 pb2'>Landscape</div>
             <input 
                 className='input mv2 ph4 f3 br4'
                 placeholder='e.g) japan, usa' 

@@ -11,7 +11,6 @@ import { NavLink, Outlet } from 'react-router-dom';
 export function Gallery() {
     return (
         <div id="gallery-container" className='pv2 tc'>
-            <div className='tl f2 b ml1 mv1 pb2'>Gallery</div>
             <Outlet />
         </div>
     )
@@ -62,6 +61,7 @@ function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
 export function DefaultGalleryPage(): JSX.Element {
     return (
         <>
+            <div className='tl f2 b ml1 mv1 pb2'>Gallery</div>
             <div className='flex flex-wrap items-top justify-start bg-white'>
                 {MainPicturesList.map((main) => {
                     return <MainPicture srcName={main.srcName} text={main.text} />
