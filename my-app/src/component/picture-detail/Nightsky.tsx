@@ -30,7 +30,7 @@ export function Nightsky() {
                 onChange={event => setQuery(event.target.value)}
             />
             <div className='mv2 f3'>
-                <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("all")}>all</button>
+                <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("all")}>All</button>
                 <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("nikko")}>Nikko</button>
                 <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("fukushima")}>Fukushima</button>
             </div>
@@ -61,6 +61,7 @@ export function Nightsky() {
                         {state.isOpen && (
                             <Lightbox
                                 mainSrc={ImageData[state.id-1].src}
+                                imageCaption={img.description}
                                 onCloseRequest={() => setState({
                                     id: state.id,
                                     isOpen:false

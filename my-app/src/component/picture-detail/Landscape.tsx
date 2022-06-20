@@ -17,7 +17,7 @@ export function Landscape() {
                 onChange={event => setQuery(event.target.value)}
             />
             <div className='mv2 f3'>
-                <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setCategory("all")}>all</button>
+                <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setCategory("all")}>All</button>
                 <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setCategory("sea")}>Sea</button>
                 <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setCategory("mountain")}>Mountain</button>
             </div>

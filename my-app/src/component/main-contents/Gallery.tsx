@@ -1,7 +1,7 @@
 import shootingStar from '../../assets/main-pictures/shootingStar.png';
 import tsunoshima from '../../assets/main-pictures/tsunoshima.png';
 import nemophila from '../../assets/main-pictures/nemophila.png';
-import yosemiteFall from '../../assets/main-pictures/yosemiteFall.png';
+import myBestFood from '../../assets/main-pictures/myBestFood.png';
 import { NavLink, Outlet } from 'react-router-dom';
 
 /*
@@ -38,7 +38,7 @@ const flowerPic: MainPicturesProps = {
 }
 
 const foodPic: MainPicturesProps = {
-    srcName: yosemiteFall,
+    srcName: myBestFood,
     text: "Food",
 }
 
