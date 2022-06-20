@@ -61,7 +61,7 @@ export function Nightsky() {
                         {state.isOpen && (
                             <Lightbox
                                 mainSrc={ImageData[state.id-1].src}
-                                imageCaption={img.description}
+                                imageCaption={ImageData[state.id-1].description}
                                 onCloseRequest={() => setState({
                                     id: state.id,
                                     isOpen:false

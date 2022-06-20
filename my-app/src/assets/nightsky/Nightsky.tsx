@@ -28,96 +28,96 @@ const ImgData1: ImageDataProps = {
     id: 1,
     src: Img1,
     place: "fukushima",
-    keywords: "2020 summer shooting ",
-    description: "This is a picture I took."
+    keywords: "2020 summer milkyway shootingstar",
+    description: "This is a picture of Milky Way with a shooting star at Hoshinomura Observatory in Fukushima. (2020 summer)"
 } 
 
 const ImgData2: ImageDataProps = {
     id: 2,
     src: Img2,
     place: "nikko",
-    keywords: "2021 winter",
-    description: "This is a picture I took."
+    keywords: "2021 winter orion",
+    description: "This is a picture of Winter Triangle and Orion at Senjogahara Moor. (2021 winter)"
 } 
 
 const ImgData3: ImageDataProps = {
     id: 3,
     src: Img3,
     place: "nikko",
-    keywords: "2020 summer",
-    description: "This is a picture I took."
+    keywords: "2020 summer milkyway",
+    description: "This is a picture of Milky Way at Senjogahara Moor. (2020 summer)"
 } 
 
 const ImgData4: ImageDataProps = {
     id: 4,
     src: Img4,
     place: "fukushima",
-    keywords: "2020 summer",
-    description: "This is a picture I took."
+    keywords: "2020 summer milkyway",
+    description: "This is a picture of Milky Way at Hoshinomura Observatory in Fukushima. (2020 summer)"
 } 
 
 const ImgData5: ImageDataProps = {
     id: 5,
     src: Img5,
     place: "nikko",
-    keywords: "2020 summer",
-    description: "This is a picture I took."
+    keywords: "2020 summer milkyway",
+    description: "This is a picture of Milky Way at Senjogahara Moor. (2020 summer)"
 } 
 
 const ImgData6: ImageDataProps = {
     id: 6,
     src: Img6,
     place: "nikko",
-    keywords: "2020 summer",
-    description: "This is a picture I took."
+    keywords: "2020 summer milkyway",
+    description: "This is a picture of Milky Way at Senjogahara Moor. (2020 summer)"
 } 
 
 const ImgData7: ImageDataProps = {
     id: 7,
     src: Img7,
     place: "fukushima",
-    keywords: "2020 summer",
-    description: "This is a picture I took."
+    keywords: "2020 summer milkyway",
+    description: "This is a picture of Milky Way at Hoshinomura Observatory in Fukushima. (2020 summer)"
 } 
 
 const ImgData8: ImageDataProps = {
     id: 8,
     src: Img8,
     place: "nikko",
-    keywords: "2020 summer",
-    description: "This is a picture I took."
+    keywords: "2020 summer milkyway",
+    description: "This is a picture of Milky Way at Senjogahara Moor. (2020 summer)"
 } 
 
 const ImgData9: ImageDataProps = {
     id: 9,
     src: Img9,
     place: "nikko",
-    keywords: "2020 summer",
-    description: "This is a picture I took."
+    keywords: "2020 summer milkyway",
+    description: "This is a picture of Milky Way at Senjogahara Moor. (2020 summer)"
 } 
 
 const ImgData10: ImageDataProps = {
     id: 10,
     src: Img10,
     place: "nikko",
-    keywords: "2021 summer",
-    description: "This is a picture I took."
+    keywords: "2021 summer milkyway",
+    description: "This is a picture of Milky Way at Senjogahara Moor. (2021 summer)"
 } 
 
 const ImgData11: ImageDataProps = {
     id: 11,
     src: Img11,
     place: "nikko",
-    keywords: "2021 summer shooting",
-    description: "This is a picture I took."
+    keywords: "2021 summer milkyway shootingstar",
+    description: "This is a picture of Milky Way with a shhoting star at Senjogahara Moor. (2021 summer)"
 } 
 
 const ImgData12: ImageDataProps = {
     id: 12,
     src: Img12,
     place: "fukushima",
-    keywords: "2021 spring",
-    description: "This is a picture I took."
+    keywords: "2021 spring milkyway",
+    description: "This is a picture of Milky Way at Hoshinomura Observatory in Fukushima. (2021 summer)"
 } 
 
 const ImgData13: ImageDataProps = {
@@ -125,7 +125,7 @@ const ImgData13: ImageDataProps = {
     src: Img13,
     place: "fukushima",
     keywords: "2019 winter",
-    description: "This is a picture I took."
+    description: "This is a picture I took on iPhone11. (2019 winter)"
 } 
 
 const ImgData14: ImageDataProps = {
@@ -133,23 +133,23 @@ const ImgData14: ImageDataProps = {
     src: Img14,
     place: "fukushima",
     keywords: "2019 winter",
-    description: "This is a picture I took."
+    description: "This is a picture I took on iPhone11. (2019 winter)"
 } 
 
 const ImgData15: ImageDataProps = {
     id: 15,
     src: Img15,
     place: "nikko",
-    keywords: "2019 winter",
-    description: "This is a picture I took."
+    keywords: "2019 winter orion",
+    description: "This is a picture of Orion I took on iPhone11. (2019 winter)"
 } 
 
 const ImgData16: ImageDataProps = {
     id: 16,
     src: Img16,
     place: "fukushima",
-    keywords: "2019 winter",
-    description: "This is a picture I took."
+    keywords: "2019 winter great dipper",
+    description: "This is a picture of Great Dipper I took on iPhone11. (2019 winter)"
 } 
 
 export const ImageData: Array<ImageDataProps> = [

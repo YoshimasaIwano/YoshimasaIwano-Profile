@@ -20,129 +20,171 @@ import Img19 from './img19.png';
 import Img20 from './img20.png';
 
 type ImageDataProps = {
+    id: number,
     src: string,
     color: string,
     keywords: string,
+    description: string,
 }
 
 const ImgData1: ImageDataProps = {
+    id: 1,
     src: Img1,
     color: "white",
-    keywords: "hibiscus"
+    keywords: "hibiscus",
+    description: "This is a picture of hibiscus.",
 } 
 
 const ImgData2: ImageDataProps = {
+    id: 2,
     src: Img2,
     color: "white",
-    keywords: "hyotan"
+    keywords: "hyotan gourd",
+    description: "This is a picture of hyottan (gourd) flowers.",
 } 
 
 const ImgData3: ImageDataProps = {
+    id: 3,
     src: Img3,
     color: "other",
-    keywords: "hanabi fireworks"
+    keywords: "hanabi fireworks",
+    description: "This is a picture of fireworks.",
 } 
 
 const ImgData4: ImageDataProps = {
+    id: 4,
     src: Img4,
     color: "white",
-    keywords: "plum"
+    keywords: "plum",
+    description: "This is a picture of plum.",
 } 
 
 const ImgData5: ImageDataProps = {
+    id: 5,
     src: Img5,
     color: "blue",
-    keywords: "nemophila "
+    keywords: "nemophila ",
+    description: "This is a picture of nemophila at Hitachinaka Seaside Park.",
 } 
 
 const ImgData6: ImageDataProps = {
+    id: 6,
     src: Img6,
     color: "blue",
-    keywords: "nemophila "
+    keywords: "nemophila",
+    description: "This is a picture of nemophila at Hitachinaka Seaside Park.",
 } 
 
 const ImgData7: ImageDataProps = {
+    id: 7,
     src: Img7,
     color: "yellow",
-    keywords: "tidy tips"
+    keywords: "tidy tips",
+    description: "This is a picture of tidy tips at Hitachinaka Seaside Park.",
 } 
 
 const ImgData8: ImageDataProps = {
+    id: 8,
     src: Img8,
     color: "yellow",
-    keywords: "tidy tips"
+    keywords: "tidy tips",
+    description: "This is a picture of tidy tips at Hitachinaka Seaside Park.",
 } 
 
 const ImgData9: ImageDataProps = {
+    id: 9,
     src: Img9,
     color: "blue",
-    keywords: "nemophila"
+    keywords: "nemophila",
+    description: "This is a picture of nemophila at Hitachinaka Seaside Park.",
 } 
 
 const ImgData10: ImageDataProps = {
+    id: 10,
     src: Img10,
     color: "other",
-    keywords: "plum"
+    keywords: "plum",
+    description: "This is a picture of plum.",
 } 
 
 const ImgData11: ImageDataProps = {
+    id: 11,
     src: Img11,
     color: "yellow",
-    keywords: "rape blossom"
+    keywords: "rape blossom",
+    description: "This is a picture of rape blossoms.",
 } 
 
 const ImgData12: ImageDataProps = {
+    id: 12,
     src: Img12,
     color: "yellow",
-    keywords: "tidy tips"
+    keywords: "tidy tips",
+    description: "This is a picture of tidy tips at Hitachinaka Seaside Park.",
 } 
 
 const ImgData13: ImageDataProps = {
+    id: 13,
     src: Img13,
     color: "white",
-    keywords: ""
+    keywords: "butterfly",
+    description: "This is a picture I took in Mt.Tsukuba.",
 } 
 
 const ImgData14: ImageDataProps = {
+    id: 14,
     src: Img14,
     color: "white",
-    keywords: "plum"
+    keywords: "plum",
+    description: "This is a picture of plum.",
 } 
 
 const ImgData15: ImageDataProps = {
+    id: 15,
     src: Img15,
     color: "white",
-    keywords: "plum"
+    keywords: "plum",
+    description: "This is a picture of plum.",
 } 
 
 const ImgData16: ImageDataProps = {
+    id: 16,
     src: Img16,
     color: "other",
-    keywords: ""
+    keywords: "",
+    description: "This is a picture I took in Mt.Tsukuba.",
 } 
 
 const ImgData17: ImageDataProps = {
+    id: 17,
     src: Img17,
     color: "yellow",
-    keywords: "tidy tips"
+    keywords: "tidy tips",
+    description: "This is a picture of tidy tips at Hitachinaka Seaside Park.",
 } 
 
 const ImgData18: ImageDataProps = {
+    id: 18,
     src: Img18,
     color: "blue",
-    keywords: "nemophila"
+    keywords: "nemophila",
+    description: "This is a picture of nemophila at Hitachinaka Seaside Park.",
 } 
 
 const ImgData19: ImageDataProps = {
+    id: 19,
     src: Img19,
     color: "other",
-    keywords: "sakura"
+    keywords: "sakura cherry blossom",
+    description: "This is a picture of cherry blossom on a tennis ball.",
 } 
 
 const ImgData20: ImageDataProps = {
+    id: 20,
     src: Img20,
     color: "white",
-    keywords: "sakura"
+    keywords: "sakura",
+    description: "This is a picture of a cherry blossom tree.",
 } 
 
 export const ImageData: Array<ImageDataProps> = [

@@ -1,13 +1,26 @@
 import { ImageData } from '../../assets/flower/Flower';
 import { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
+import "react-image-lightbox/style.css";
 
 /*
     Flower Detail Component  
 */
 
+type ImageState = {
+    id: number,
+    isOpen: boolean,
+}
+
 export function Flower() {
+    const initState: ImageState = {
+        id: 0,
+        isOpen: false,
+    }
     const [query, setQuery] = useState("");
     const [color, setColor] = useState("all"); 
+    const [state, setState] = useState(initState);
+
     return (
         <>
             <div className='tl f2 b ml1 mv1 pb2'>Flower</div>
@@ -36,7 +49,28 @@ export function Flower() {
                         return img
                     }
                 }).map((img) => 
-                    <img className='w-250px h-250px' src={img.src} alt={img.color}></img>
+                    <div className='w-250px h-250px'>
+                        <img 
+                            className='w-250px h-250px pointer' 
+                            src={img.src} 
+                            alt={img.color} 
+                            onClick={() => setState({
+                                id: img.id,
+                                isOpen: true
+                                })
+                            }>
+                        </img>
+                        {state.isOpen && (
+                            <Lightbox
+                                mainSrc={ImageData[state.id-1].src}
+                                imageCaption={ImageData[state.id-1].description}
+                                onCloseRequest={() => setState({
+                                    id: state.id,
+                                    isOpen:false
+                                })}
+                            />
+                        )}
+                    </div>
                 )}
             </div>
         </>
