@@ -1,13 +1,26 @@
 import { ImageData } from '../../assets/nightsky/Nightsky';
 import { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
+import "react-image-lightbox/style.css";
 
 /*
     Night sky Detail Component  
 */
 
+type ImageState = {
+    id: number,
+    isOpen: boolean,
+}
+
 export function Nightsky() {
+    const initState: ImageState = {
+        id: 0,
+        isOpen: false,
+    }
     const [query, setQuery] = useState("");
     const [place, setPlace] = useState("all"); 
+    const [state, setState] = useState(initState);
+
     return (
         <>
             <div className='tl f2 b ml1 mv1 pb2'>Night sky</div>
@@ -34,7 +47,27 @@ export function Nightsky() {
                         return img
                     }
                 }).map((img) => 
-                    <img className='w-250px h-250px' src={img.src} alt={img.place}></img>
+                    <div className='w-250px h-250px'>
+                        <img 
+                            className='w-250px h-250px pointer' 
+                            src={img.src} 
+                            alt={img.place} 
+                            onClick={() => setState({
+                                id: img.id,
+                                isOpen: true
+                                })
+                            }>
+                        </img>
+                        {state.isOpen && (
+                            <Lightbox
+                                mainSrc={ImageData[state.id-1].src}
+                                onCloseRequest={() => setState({
+                                    id: state.id,
+                                    isOpen:false
+                                })}
+                            />
+                        )}
+                    </div>
                 )}
             </div>
         </>
