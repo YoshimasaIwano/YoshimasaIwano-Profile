@@ -19,6 +19,12 @@ export function CSC317() {
                     The purpose of this project is to implement a photo management website that allows users to post images, search for images and view and comment on individual image posts.
                 </p>
             </div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Tools</div>
+            <div className='dt ma flex-row tc w-80'>
+                {ToolList.map((tool) => {
+                    return <ToolContent name={tool.name} description={tool.description} />
+                })}
+            </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Create a new user</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3'>
@@ -59,3 +65,60 @@ export function CSC317() {
         </>
     )
 }
+
+type ToolProps = {
+    name: string;
+    description: string;
+}
+
+const HTMLCSSProps: ToolProps = {
+    name: "HTML/CSS",
+    description: "HTML is the standard markup language for creating Web pages, and CSS is used to format the layout of a webpage.",
+}
+
+const JavaScriptProps: ToolProps = {
+    name: "JavaScript",
+    description: "JavaScript is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. It is most well-known as the scripting language for Web pages.",
+}
+
+const MySQLProps: ToolProps = {
+    name: "MySQL",
+    description: "MySQL is the world's most popular open source database.",
+}
+
+const NodeJSProps: ToolProps = {
+    name: "NodeJS",
+    description: "NodeJS is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+}
+
+const ExpressJSProps: ToolProps = {
+    name: "ExpressJS",
+    description: "ExpressJS is a fast, unopinionated, minimalist web framework for Node.js",
+}
+
+const HandlebarsProps: ToolProps = {
+    name: "Handlebars",
+    description: "Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.",
+}
+
+const ToolList: Array<ToolProps> = [
+    HTMLCSSProps,
+    JavaScriptProps,
+    MySQLProps,
+    NodeJSProps,
+    ExpressJSProps,
+    HandlebarsProps,
+];
+  
+function ToolContent({ name, description }: ToolProps): JSX.Element {
+    return (
+        <div className='dt-row f4'>
+            <div className='dtc pv1 w-30 bb br b--white-50'>
+                {name}
+            </div>
+            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
+                {description}
+            </div>
+        </div>
+    )
+} 

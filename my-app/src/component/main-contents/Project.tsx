@@ -48,11 +48,11 @@ function ProjectContent({ name, overview, tools }: ProjectProps): JSX.Element {
             <div className='tc f3 b mh1 mv1'>{name}</div>
             <div className='flex-column'>
                 <div className=''>
-                    <div className='w-third tc mh1 mv1 f3 dark-gray br2 bg-light-pink'>Overview</div>
+                    <div className='w-third tc mh1 mv1 f3 dark-gray br2 bg-white-90'>Overview</div>
                     <p className='mh2 mv1 f4'>{overview}</p>
                 </div>
                 <div className=''>
-                    <div className='w-third tc mh1 mv1 f3 red br2 bg-yellow'>Tools</div>
+                    <div className='w-third tc mh1 mv1 f3 red br2 bg-light-yellow'>Tools</div>
                     <div className='f4 mh2 mv1  flex flex-wrap items-center justify-start'>
                         {tools.map((tool) => {
                             return (
