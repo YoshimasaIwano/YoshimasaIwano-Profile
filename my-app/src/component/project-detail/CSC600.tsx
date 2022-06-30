@@ -1,3 +1,7 @@
+import Metallophone from '../../assets/CSC600-img/metallophone.png';
+import searchSong from '../../assets/CSC600-img/searchSong.png';
+import CSC600emoVideo from '../../assets/CSC600-img/CSC600 Demo.mp4';
+
 /*
     CSC600 Detail Component  
 */
@@ -30,12 +34,18 @@ export function CSC600() {
                     I created a visualizer, which shows 2D waveform. X axis expresses the length of sounds, while gray scale indicates pitch of sound. In other words, high pitch sound is white and low pitch sound is black.    
                 </p>
             </div>
+            <img src={Metallophone} className="db ma mv3 w-50 h-50"></img>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Playlist DataBase</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3'>
                     I worked on creating playlist database, which has a song name and artist name. I added the searching function that uses both song names and artist names.
                 </p>
+                <img src={searchSong} className="db ma mv3 w-50 h-50"></img>
             </div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80'>Demo Video</div>
+            <video controls playsInline className="db ma mv3 w-50 h-50" >
+                <source src={CSC600emoVideo} type="video/mp4"></source>
+            </video>
         </>
         
     )
