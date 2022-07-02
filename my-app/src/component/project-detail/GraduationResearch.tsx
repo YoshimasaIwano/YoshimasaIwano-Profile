@@ -1,45 +1,44 @@
 import BackgroundPurpose from '../../assets/graduation-research-img/background-purpose.png';
 import Ensemble from '../../assets/graduation-research-img/ensemble.png';
-import { Link } from 'react-scroll';
+import { useRef } from 'react';
 
 /*
     Graduation Research Detail Component  
 */
 
 export function GraduationResearch() {
+    const purposeRef = useRef<null | HTMLDivElement>(null);
+    const methodRef = useRef<null | HTMLDivElement>(null);
+    const toolsRef = useRef<null | HTMLDivElement>(null);
+    const resultsRef = useRef<null | HTMLDivElement>(null);
+    const difficulitiesRef = useRef<null | HTMLDivElement>(null);
+    const scrollToPurpose = () => purposeRef.current?.scrollIntoView({
+        behavior: 'smooth',
+    });
+    const scrollToMethod = () => methodRef.current?.scrollIntoView({
+        behavior: 'smooth',
+    });
+    const scrollToTools = () => toolsRef.current?.scrollIntoView({
+        behavior: 'smooth',
+    });
+    const scrollToResults = () => resultsRef.current?.scrollIntoView({
+        behavior: 'smooth',
+    });
+    const scrollToDifficulities = () => difficulitiesRef.current?.scrollIntoView({
+        behavior: 'smooth',
+    });
+
     return (
         <>
             <div className='tl f2 b ml1 mv1'>Graduation Research</div>
-            <ul>
-                <li className='pointer'>
-                    <Link 
-                        activeClass='active'
-                        to="purposeAndBackground" 
-                        spy={true} 
-                        smooth={true}
-                        offset={-10}
-                        duration={2}
-                        >
-                        Purpose & Background
-                    </Link>
-                </li>
-                <li className='pointer'>
-                    <Link 
-                        activeClass='active'
-                        to="method" 
-                        spy={true} 
-                        smooth={true}
-                        offset={-10}
-                        duration={2}
-                        >
-                        Method
-                    </Link>
-                </li>
-                <li><Link to="Tools" spy={true} smooth={true}>Tools</Link></li>
-                <li><Link to="Results" spy={true} smooth={true}>Results</Link></li>
-                <li><Link to="Difficulties" spy={true} smooth={true}>Difficulties</Link></li>
-            </ul>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' id="purposeAndBackground">Purpose & Background</div>
+            <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-50'>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-50 pointer' onClick={scrollToPurpose}>・Purpose & Background</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-50 pointer' onClick={scrollToMethod}>・Method</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-50 pointer' onClick={scrollToTools}>・Tools</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-50 pointer' onClick={scrollToResults}>・Results</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-50 pointer' onClick={scrollToDifficulities}>・Difficulties</button>
+            </div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={purposeRef}>Purpose & Background</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3'>
                     There are two types of a residual tumor; teratoma and necrotic tissue. 
@@ -57,7 +56,7 @@ export function GraduationResearch() {
                     The purpose of my research is to get a similar or better result of them by ensembling CNN and SVM.
                 </p>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' id="method">Method</div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={methodRef}>Method</div>
             <div className='db ma flex-row tc w-80'>
                 <p className='tl mh2 mv2 f3'>
                     We used ensemble model consisting of 3 of SVMs, Resnet50, and Resnet152.<br />
@@ -66,20 +65,20 @@ export function GraduationResearch() {
                 </p>
                 <img src={Ensemble} className="db ma mv3 w-50 h-50"></img>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' id="Tools">Tools</div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
                 {ToolList.map((tool) => {
                     return <ToolContent name={tool.name} description={tool.description} />
                 })}
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' id="Results">Results</div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={resultsRef}>Results</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3'>
                     We got a similar result as previous studies; accuracy is 78.3%, sensitivity is 61.3%, and specificity is 90.6%, 
                     which improved comparing to a single Resnet model.
                 </p>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' id="Difficulties">Difficulties</div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={difficulitiesRef}>Difficulties</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3'>
                     ・Lack of CT images: <br/>

@@ -26,7 +26,7 @@ export function Nightsky() {
             <div className='tl f2 b ml1 mv1 pb2'>Night sky</div>
             <input 
                 className='input mv2 ph4 f3 br4'
-                placeholder='e.g) summer, 2021, etc' 
+                placeholder='e.g.) summer, 2021, etc' 
                 onChange={event => setQuery(event.target.value)}
             />
             <div className='mv2 f3'>

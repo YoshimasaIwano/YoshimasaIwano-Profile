@@ -26,7 +26,7 @@ export function Landscape() {
             <div className='tl f2 b ml1 mv1 pb2'>Landscape</div>
             <input 
                 className='input mv2 ph4 f3 br4'
-                placeholder='e.g) japan, usa' 
+                placeholder='e.g.) japan, usa' 
                 onChange={event => setQuery(event.target.value)}
             />
             <div className='mv2 f3'>

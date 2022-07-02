@@ -26,7 +26,7 @@ export function Food() {
             <div className='tl f2 b ml1 mv1 pb2'>Food</div>
             <input 
                 className='input mv2 ph4 f3 br4'
-                placeholder='e.g) ramen, burger' 
+                placeholder='e.g.) ramen, burger' 
                 onChange={event => setQuery(event.target.value)}
             />
             <div className='mv2 f3'>

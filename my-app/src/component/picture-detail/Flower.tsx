@@ -26,7 +26,7 @@ export function Flower() {
             <div className='tl f2 b ml1 mv1 pb2'>Flower</div>
             <input 
                 className='input mv2 ph4 f3 br4'
-                placeholder='e.g) nemophila, sakura, plum' 
+                placeholder='e.g.) nemophila, sakura, plum' 
                 onChange={event => setQuery(event.target.value)}
             />
             <div className='mv2 f3'>
