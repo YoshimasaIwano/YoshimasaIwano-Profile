@@ -20,19 +20,19 @@ type ProjectProps = {
 
 const GraduationResearchProps: ProjectProps = {
     name: "GraduationResearch",
-    overview:  "The purpose of this research is to identify if a tumor is malignant or benign.",
+    overview:  "The purpose of this research is to identify if a tumor is malignant or benign. (2020.4-2021.7)",
     tools: ["Pytorch","Numpy","Pandas","Scikit-Learn","Matplotlib","Git"],
 }
 
 const CSC317Props: ProjectProps = {
     name: "CSC317",
-    overview: "The purpose of this course is to create Photo App.",
+    overview: "The purpose of this course is to create Photo App. (2021 Fall)",
     tools: ["HTML/CSS","JavaScript","MySQL","NodeJS","ExpressJS","Handlebars"],
 }
 
 const CSC600Props: ProjectProps = {
     name: "CSC600",
-    overview: "The purpose of this course is to create a music instrument and a visualizer.",
+    overview: "The purpose of this course is to create a music instrument and a visualizer. (2022 Spring)",
     tools: ["TypeScirpt","React","ToneJS","SQLite"],
 }
 
