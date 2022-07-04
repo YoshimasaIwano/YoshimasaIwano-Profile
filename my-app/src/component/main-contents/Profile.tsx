@@ -1,50 +1,105 @@
 import yoshi from '../../assets/yoshi30.png';
-import type { Engine } from 'tsparticles-engine';
-import { loadFountainPreset } from 'tsparticles-preset-fountain';
+
 import Particles from 'react-tsparticles';
+import { loadFountainPreset } from 'tsparticles-preset-fountain';
+import { Engine, IOptions, RecursivePartial } from 'tsparticles-engine';
+import { loadFull } from 'tsparticles';
 
 /*
     Profile Component  
 */
 
 export function Profile() {
-    const options = {
-        preset: "fountain",
-        background: {
+    // const options: RecursivePartial<IOptions> = {
+    //     presets: "fountain",
+    //     fullScreen: {
+    //         enable: true,
+    //         zIndex: 0
+    //     },
+    //     zLayers: 0,
+    //     importPreset: "fountain",
+    // }
+
+    // const params: RecursivePartial<IOptions> = {
+    //     detectRetina: true,
+    //     interactivity: {
+    //       detectsOn: "canvas",
+    //       modes: { repulse: { distance: 300 } },
+    //       events: {
+    //         onHover: {
+    //           enable: true,
+    //           mode: "grab",
+    //         },
+    //         onclick: { enable: true, mode: "repulse" },
+    //       },
+    //     },
+    //     responsive: [
+    //       {
+    //         maxWidth: 400,
+    //         options: { particles: { number: { value: 10 } } },
+    //       },
+    //       {
+    //         maxWidth: 600,
+    //         options: { particles: { number: { value: 15 } } },
+    //       },
+    //       {
+    //         maxWidth: 1000,
+    //         options: { particles: { number: { value: 30 } } },
+    //       },
+    //       {
+    //         maxWidth: 1200,
+    //         options: {
+    //           particles: { number: { value: 45 } },
+    //         },
+    //       },
+    //       {
+    //         maxWidth: 5000,
+    //         options: {
+    //           particles: { number: { value: 60 } },
+    //         },
+    //       },
+    //     ],
+    //     particles: {
+    //       color: { value: "#ffffffcc" },
+    //       lineLinked: { color: "#ffffffcc" },
+    //       life: {
+    //         duration: {
+    //           value: 200,
+    //           random: { enable: true, minimumValue: 100 },
+    //         },
+    //       },
+    //     },
+    //   }
+
+    const params: RecursivePartial<IOptions> = {
+        fpsLimit: 120,
+        particles: {
             color: {
-                value: "",
+                value: "#ffffffcc"
+            },
+            links: {
+                enable: true,
+                color: "#ffffffcc",
+                distance: 60
+            },
+            move: {
+                enable: true
             }
-        },
-        fullScreen: {
-            enable: false,
         }
     }
 
-    function customInit(instance: Engine): Promise<void> {
-        return loadFountainPreset(instance);
+    // function customInit( engine: Engine ): Promise<void> {
+    //     return loadFountainPreset(engine)
+    // }
+
+    function customInit(engine: Engine ): Promise<void> {
+        return loadFull(engine);
     }
 
     // options={options} init={customInit}
     return (
         <div id="profile-container" className='pv7 tc f1'>
-            <Particles
-                params={{
-                    fpsLimit: 60,
-                    particles: {
-                      color: {
-                        value: "#000"
-                      },
-                      links: {
-                        enable: true,
-                        color: "#000",
-                        distance: 150
-                      },
-                      move: {
-                        enable: true
-                      }
-                    }
-                }}
-            />
+            <Particles params={params} init={customInit}/>
             <div className='mb7'>
                 <div className='washed-blue'>
                     Hello
@@ -83,3 +138,54 @@ export function Profile() {
         </div>
     )
 }
+
+// params={{
+//     detectRetina: true,
+//     interactivity: {
+//       detectsOn: "canvas",
+//       modes: { repulse: { distance: 300 } },
+//       events: {
+//         onHover: {
+//           enable: true,
+//           mode: "grab",
+//         },
+//         onclick: { enable: true, mode: "repulse" },
+//       },
+//     },
+//     responsive: [
+//       {
+//         maxWidth: 400,
+//         options: { particles: { number: { value: 10 } } },
+//       },
+//       {
+//         maxWidth: 600,
+//         options: { particles: { number: { value: 15 } } },
+//       },
+//       {
+//         maxWidth: 1000,
+//         options: { particles: { number: { value: 30 } } },
+//       },
+//       {
+//         maxWidth: 1200,
+//         options: {
+//           particles: { number: { value: 45 } },
+//         },
+//       },
+//       {
+//         maxWidth: 5000,
+//         options: {
+//           particles: { number: { value: 60 } },
+//         },
+//       },
+//     ],
+//     particles: {
+//       color: { value: currentColor },
+//       lineLinked: { color: currentColor },
+//       life: {
+//         duration: {
+//           value: 200,
+//           random: { enable: true, minimumValue: 100 },
+//         },
+//       },
+//     },
+//   }}
