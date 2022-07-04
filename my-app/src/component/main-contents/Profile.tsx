@@ -1,13 +1,50 @@
 import yoshi from '../../assets/yoshi30.png';
-import note from '../../assets/note_logo.png';
+import type { Engine } from 'tsparticles-engine';
+import { loadFountainPreset } from 'tsparticles-preset-fountain';
+import Particles from 'react-tsparticles';
 
 /*
     Profile Component  
 */
 
 export function Profile() {
+    const options = {
+        preset: "fountain",
+        background: {
+            color: {
+                value: "",
+            }
+        },
+        fullScreen: {
+            enable: false,
+        }
+    }
+
+    function customInit(instance: Engine): Promise<void> {
+        return loadFountainPreset(instance);
+    }
+
+    // options={options} init={customInit}
     return (
         <div id="profile-container" className='pv7 tc f1'>
+            <Particles
+                params={{
+                    fpsLimit: 60,
+                    particles: {
+                      color: {
+                        value: "#000"
+                      },
+                      links: {
+                        enable: true,
+                        color: "#000",
+                        distance: 150
+                      },
+                      move: {
+                        enable: true
+                      }
+                    }
+                }}
+            />
             <div className='mb7'>
                 <div className='washed-blue'>
                     Hello

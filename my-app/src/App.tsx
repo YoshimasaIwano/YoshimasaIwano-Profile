@@ -1,5 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import type { Engine } from 'tsparticles-engine';
+import { loadFountainPreset } from 'tsparticles-preset-fountain';
+import Particles from 'react-tsparticles';
 
 import { TopNav } from './TopNav';
 import { Footer } from './Footer';
@@ -17,9 +20,12 @@ import { Landscape } from './component/picture-detail/Landscape';
 import { Flower } from './component/picture-detail/Flower';
 import { Food } from './component/picture-detail/Food';
 
+
 function App(): JSX.Element {
+  
   return (
     <div className="fixed top-0 left-0 relative vh-100 w-100 overflow-y-scroll">
+      
       <Router>
         <TopNav />
         <Routes>
