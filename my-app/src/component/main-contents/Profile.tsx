@@ -2,7 +2,7 @@ import yoshi from '../../assets/yoshi30.png';
 
 import Particles from 'react-tsparticles';
 import { loadFountainPreset } from 'tsparticles-preset-fountain';
-import { Engine, IOptions, RecursivePartial } from 'tsparticles-engine';
+import { Bounce, Engine, IOptions, RecursivePartial, Split } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
 
 /*
@@ -10,93 +10,99 @@ import { loadFull } from 'tsparticles';
 */
 
 export function Profile() {
-    // const options: RecursivePartial<IOptions> = {
-    //     presets: "fountain",
-    //     fullScreen: {
-    //         enable: true,
-    //         zIndex: 0
-    //     },
-    //     zLayers: 0,
-    //     importPreset: "fountain",
-    // }
-
-    // const params: RecursivePartial<IOptions> = {
-    //     detectRetina: true,
-    //     interactivity: {
-    //       detectsOn: "canvas",
-    //       modes: { repulse: { distance: 300 } },
-    //       events: {
-    //         onHover: {
-    //           enable: true,
-    //           mode: "grab",
-    //         },
-    //         onclick: { enable: true, mode: "repulse" },
-    //       },
-    //     },
-    //     responsive: [
-    //       {
-    //         maxWidth: 400,
-    //         options: { particles: { number: { value: 10 } } },
-    //       },
-    //       {
-    //         maxWidth: 600,
-    //         options: { particles: { number: { value: 15 } } },
-    //       },
-    //       {
-    //         maxWidth: 1000,
-    //         options: { particles: { number: { value: 30 } } },
-    //       },
-    //       {
-    //         maxWidth: 1200,
-    //         options: {
-    //           particles: { number: { value: 45 } },
-    //         },
-    //       },
-    //       {
-    //         maxWidth: 5000,
-    //         options: {
-    //           particles: { number: { value: 60 } },
-    //         },
-    //       },
-    //     ],
-    //     particles: {
-    //       color: { value: "#ffffffcc" },
-    //       lineLinked: { color: "#ffffffcc" },
-    //       life: {
-    //         duration: {
-    //           value: 200,
-    //           random: { enable: true, minimumValue: 100 },
-    //         },
-    //       },
-    //     },
-    //   }
-
     const params: RecursivePartial<IOptions> = {
         fpsLimit: 120,
         particles: {
-            color: {
-                value: "#ffffffcc"
+            bounce: {
+                vertical: {
+                    value: {
+                        min: 0.85,
+                        max: 0.95,
+                    },
+                },
+                horizontal: {
+                    value: {
+                        min: 0.75,
+                        max: 0.95,
+                    }
+                }
             },
-            links: {
-                enable: true,
-                color: "#ffffffcc",
-                distance: 60
+            color: {
+                value: ["#3998D0", "#2EB6AF", "#A9BD33", "#FEC73B", "#F89930", "#F45623", "#D62E32", "#EB586E", "#9952CF"],
+            },
+            number: {
+                value: 0,
+            },
+            destroy: {
+                mode: "split",
+                split: {
+                    count: 1,
+                    factor: {
+                        value: {
+                            min: 1.1,
+                            max: 2,
+                        },
+                    },
+                    rate: {
+                        value: {
+                            min: 1,
+                            max: 4,
+                        },
+                    },
+                },
+            },
+            opacity: {
+                value: 0.3,
+            },
+            size: {
+                value: {
+                    min: 30,
+                    max: 50,
+                },
             },
             move: {
-                enable: true
-            }
-        }
+                enable: true,
+                gravity: {
+                    enable: true,
+                    maxSpeed: 100,
+                },
+                speed: {
+                    min: 20,
+                    max: 50,
+                },
+                direction: "none",
+                random: true,
+                straight: false,
+                outModes: {
+                    bottom: "split",
+                    default: "bounce",
+                    top: "bounce",
+                },
+            },
+        },
+        detectRetina: true,
+        emitters: {
+            direction: "top",
+            life: {
+                count: 0,
+                duration: 2,
+                delay: 0.2,
+            },
+            rate: {
+                delay: 0.1,
+                quantity: 5,
+            },
+            size: {
+                width: 0,
+                height: 0,
+            },
+        },
     }
-
-    // function customInit( engine: Engine ): Promise<void> {
-    //     return loadFountainPreset(engine)
-    // }
 
     function customInit(engine: Engine ): Promise<void> {
         return loadFull(engine);
     }
 
-    // options={options} init={customInit}
     return (
         <div id="profile-container" className='pv7 tc f1'>
             <Particles params={params} init={customInit}/>
@@ -126,7 +132,7 @@ export function Profile() {
                 <p className='ml3 mv4'>
                     I am interested in Computer Vision and Software Development.<br/>
                     In my undergraduate, I was in Visual Media Laboratory at University of Tsukuba in Japan. I was doing researh on medical imaging. Here's a 
-                    <a className='no-underline b dark-green hover-light-yellow' href='../graduate_research_final.pdf'> paper.</a><br/>
+                    <a className='no-underline b white-70 hover-light-yellow' href='../graduate_research_final.pdf'> paper.</a><br/>
                     I also have some experience of Software Development at SFSU. The detail is in Project section.<br/>
                     I am familiar with technologies such as Pytorch, Tensorflow, Numpy, Pandas, Scikit-Learn, React, and Node.js
                 </p>
