@@ -1,8 +1,7 @@
 import yoshi from '../../assets/yoshi30.png';
 
 import Particles from 'react-tsparticles';
-import { loadFountainPreset } from 'tsparticles-preset-fountain';
-import { Bounce, Engine, IOptions, RecursivePartial, Split } from 'tsparticles-engine';
+import { Engine, IOptions, RecursivePartial } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
 
 /*
@@ -11,7 +10,7 @@ import { loadFull } from 'tsparticles';
 
 export function Profile() {
     const params: RecursivePartial<IOptions> = {
-        fpsLimit: 120,
+        fpsLimit: 150,
         particles: {
             bounce: {
                 vertical: {
@@ -144,54 +143,3 @@ export function Profile() {
         </div>
     )
 }
-
-// params={{
-//     detectRetina: true,
-//     interactivity: {
-//       detectsOn: "canvas",
-//       modes: { repulse: { distance: 300 } },
-//       events: {
-//         onHover: {
-//           enable: true,
-//           mode: "grab",
-//         },
-//         onclick: { enable: true, mode: "repulse" },
-//       },
-//     },
-//     responsive: [
-//       {
-//         maxWidth: 400,
-//         options: { particles: { number: { value: 10 } } },
-//       },
-//       {
-//         maxWidth: 600,
-//         options: { particles: { number: { value: 15 } } },
-//       },
-//       {
-//         maxWidth: 1000,
-//         options: { particles: { number: { value: 30 } } },
-//       },
-//       {
-//         maxWidth: 1200,
-//         options: {
-//           particles: { number: { value: 45 } },
-//         },
-//       },
-//       {
-//         maxWidth: 5000,
-//         options: {
-//           particles: { number: { value: 60 } },
-//         },
-//       },
-//     ],
-//     particles: {
-//       color: { value: currentColor },
-//       lineLinked: { color: currentColor },
-//       life: {
-//         duration: {
-//           value: 200,
-//           random: { enable: true, minimumValue: 100 },
-//         },
-//       },
-//     },
-//   }}

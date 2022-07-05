@@ -15,24 +15,28 @@ export function Project() {
 type ProjectProps = {
     name: string;
     overview: string;
+    period: string,
     tools: Array<string>;
 };
 
 const GraduationResearchProps: ProjectProps = {
     name: "GraduationResearch",
-    overview:  "The purpose of this research is to identify if a tumor is malignant or benign. (2020.4-2021.7)",
+    overview: "The purpose of this research is to identify if a tumor is malignant or benign.",
+    period: "(2020.4-2021.7)",
     tools: ["Pytorch","Numpy","Pandas","Scikit-Learn","Matplotlib","Git"],
 }
 
 const CSC317Props: ProjectProps = {
     name: "CSC317",
-    overview: "The purpose of this course is to create Photo App. (2021 Fall)",
+    overview: "The purpose of this course is to create Photo App.",
+    period: "(2021 Fall)",
     tools: ["HTML/CSS","JavaScript","MySQL","NodeJS","ExpressJS","Handlebars"],
 }
 
 const CSC600Props: ProjectProps = {
     name: "CSC600",
-    overview: "The purpose of this course is to create a music instrument and a visualizer. (2022 Spring)",
+    overview: "The purpose of this course is to create a music instrument and a visualizer.",
+    period: "(2022 Spring)",
     tools: ["TypeScirpt","React","ToneJS","SQLite"],
 }
 
@@ -42,14 +46,15 @@ const ProjectList: Array<ProjectProps> = [
     CSC600Props,
 ];
 
-function ProjectContent({ name, overview, tools }: ProjectProps): JSX.Element {
+function ProjectContent({ name, overview, period, tools }: ProjectProps): JSX.Element {
     return (
         <NavLink to={name} className='pv2 w-50 br4 ba b--washed-green bg-white-40 bg-animate hover-bg-light-blue link color-inherit'>
-            <div className='tc f3 b mh1 mv1'>{name}</div>
+            <div className='tc f3 b dark-pink mh1 mv1'>{name}</div>
             <div className='flex-column'>
                 <div className=''>
                     <div className='w-third tc mh1 mv1 f3 purple br2 bg-white-90'>Overview</div>
                     <p className='mh2 mv1 f4'>{overview}</p>
+                    <p className='mh2 mv1 f4'>{period}</p>
                 </div>
                 <div className=''>
                     <div className='w-third tc mh1 mv1 f3 blue br2 bg-light-yellow'>Tools</div>
@@ -72,7 +77,7 @@ export function DefaultProjectPage(): JSX.Element {
             <div className='tl f2 b ml1 mv1'>Project</div>
             <div className='pv2 flex flex-wrap items-top justify-start'>
                 {ProjectList.map((project) => {
-                    return <ProjectContent name={project.name} overview={project.overview} tools={project.tools} />
+                    return <ProjectContent name={project.name} overview={project.overview} period={project.period} tools={project.tools} />
                 })}
             </div>
         </>
