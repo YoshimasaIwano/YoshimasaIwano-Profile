@@ -30,9 +30,9 @@ export function Nightsky() {
                 onChange={event => setQuery(event.target.value)}
             />
             <div className='mv2 f3'>
-                <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("all")}>All</button>
-                <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("nikko")}>Nikko</button>
-                <button className='mh3 pv2 w-20 f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("fukushima")}>Fukushima</button>
+                <button className='mh3 mt2 pv2 ph4 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("all")}>All</button>
+                <button className='mh3 mt2 pv2 ph3 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("nikko")}>Nikko</button>
+                <button className='mh3 mt2 pv2 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("fukushima")}>Fukushima</button>
             </div>
             <div className='mv3 ma w-90 flex flex-wrap items-top justify-center'>
                 {ImageData.filter((img) => {
@@ -56,7 +56,8 @@ export function Nightsky() {
                                 id: img.id,
                                 isOpen: true
                                 })
-                            }>
+                            }
+                        >
                         </img>
                         {state.isOpen && (
                             <Lightbox
@@ -64,7 +65,7 @@ export function Nightsky() {
                                 imageCaption={ImageData[state.id-1].description}
                                 onCloseRequest={() => setState({
                                     id: state.id,
-                                    isOpen:false
+                                    isOpen: false
                                 })}
                             />
                         )}

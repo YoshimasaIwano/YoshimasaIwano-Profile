@@ -4,12 +4,29 @@ import LogIn from '../../assets/CSC317-img/LogIn.png';
 import PostImage from '../../assets/CSC317-img/PostImage.png';
 import Comment from '../../assets/CSC317-img/Comment.png';
 import Search from '../../assets/CSC317-img/Search.png';
+
 import { useRef } from 'react';
+import { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
+import "react-image-lightbox/style.css";
 
 /*
     CSC317 Detail Component  
 */
 
+type ImageState = {
+    id: number,
+    isOpen: boolean,
+}
+
+const ImageArray: Array<string> = [
+    Registration,
+    LogIn,
+    PostImage,
+    Comment,
+    Search,
+]
+    
 export function CSC317() {
     const purposeRef = useRef<null | HTMLDivElement>(null);
     const toolsRef = useRef<null | HTMLDivElement>(null);
@@ -40,17 +57,32 @@ export function CSC317() {
         behavior: 'smooth',
     });
 
+    const initState: ImageState = {
+        id: 0,
+        isOpen: false,
+    }
+    const [state, setState] = useState(initState)
+
     return (
         <>
+            {state.isOpen && (
+                <Lightbox
+                    mainSrc={ImageArray[state.id]}
+                    onCloseRequest={() => setState({
+                        id: state.id,
+                        isOpen:false
+                    })}
+                />
+            )}
             <div className='tl f2 b ml1 mv1'>CSC317</div>
             <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-50'>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-80 pointer' onClick={scrollToPurpose}>・Purpose</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-80 pointer' onClick={scrollToTools}>・Tools</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-80 pointer' onClick={scrollToUser}>・Create a new user</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-80 pointer' onClick={scrollToPost}>・Create a new post</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-80 pointer' onClick={scrollToComment}>・Comment on the post</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-80 pointer' onClick={scrollToSearch}>・Search for the created post</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f3 w-80 pointer' onClick={scrollToDemoVideo}>・Demo Video</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPurpose}>・Purpose</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToTools}>・Tools</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToUser}>・Create a new user</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPost}>・Create a new post</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToComment}>・Comment on the post</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToSearch}>・Search for the created post</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToDemoVideo}>・Demo Video</button>
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={purposeRef}>Purpose</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
@@ -71,8 +103,27 @@ export function CSC317() {
                     When you submit a user information to register, all information are checked if it is valid.
                 </p>
                 <div className='flex'>
-                    <img src={Registration} className="db ma mv3 w-50 h-50"></img>
-                    <img src={LogIn} className="db ma mv3 w-50 h-50"></img>
+                    <img 
+                        className='db ma mv3 w-50 h-50 pointer' 
+                        src={Registration} 
+                        alt="Registration" 
+                        onClick={() => setState({
+                            id: 0,
+                            isOpen: true
+                            })
+                        }
+                    >
+                    </img>
+                    <img 
+                        className='db ma mv3 w-50 h-50 pointer' 
+                        src={LogIn} 
+                        alt="LogIn" 
+                        onClick={() => setState({
+                            id: 1,
+                            isOpen: true
+                            })
+                        }
+                    ></img>
                 </div>
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={postRef}>Create a new post</div>
@@ -80,21 +131,51 @@ export function CSC317() {
                 <p className='tl mh2 mv2 f3'>
                     After logging in, you will see log out navigation bar on the top, and you can post a new image.<br />  
                 </p>
-                <img src={PostImage} className="db ma mv3 w-50 h-50"></img>
+                <img 
+                    className='db ma mv3 w-50 h-50 pointer' 
+                    src={PostImage} 
+                    alt="PostImage" 
+                    onClick={() => setState({
+                        id: 2,
+                        isOpen: true
+                        })
+                    }
+                >
+                </img>
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={commentRef}>Comment on the post</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3'>
                     After creating a new image post, you will see a new post on the main page. when you click an image, you can see the detail of the image and comment on the post.
                 </p>
-                <img src={Comment} className="db ma mv3 w-50 h-50"></img>
+                <img 
+                    className='db ma mv3 w-50 h-50 pointer' 
+                    src={Comment} 
+                    alt="Comment" 
+                    onClick={() => setState({
+                        id: 3,
+                        isOpen: true
+                        })
+                    }
+                >
+                </img>
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={searchRef}>Search for the created post</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3'>
                     You can search an image using the searching bar. You can type in title, description, and comment. After clicking the search button, you will see the result on the main page.  
                 </p>
-                <img src={Search} className="db ma mv3 w-50 h-50"></img>
+                <img 
+                    className='db ma mv3 w-50 h-50 pointer' 
+                    src={Search} 
+                    alt="Search" 
+                    onClick={() => setState({
+                        id: 4,
+                        isOpen: true
+                        })
+                    }
+                >
+                </img>
             </div>
             
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={demoVideoRef}>Demo Video</div>
