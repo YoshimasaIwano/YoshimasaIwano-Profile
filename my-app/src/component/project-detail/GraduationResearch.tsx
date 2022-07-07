@@ -1,4 +1,6 @@
 import BackgroundPurpose from '../../assets/graduation-research-img/background-purpose.png';
+import DataDistribution from '../../assets/graduation-research-img/dataDistribution.png';
+import TumorSizeDistribution from '../../assets/graduation-research-img/tumorSizeDistribution.png';
 import Ensemble from '../../assets/graduation-research-img/ensemble.png';
 import { useRef } from 'react';
 
@@ -8,11 +10,15 @@ import { useRef } from 'react';
 
 export function GraduationResearch() {
     const purposeRef = useRef<null | HTMLDivElement>(null);
+    const dataRef = useRef<null | HTMLDivElement>(null);
     const methodRef = useRef<null | HTMLDivElement>(null);
     const toolsRef = useRef<null | HTMLDivElement>(null);
     const resultsRef = useRef<null | HTMLDivElement>(null);
     const difficulitiesRef = useRef<null | HTMLDivElement>(null);
     const scrollToPurpose = () => purposeRef.current?.scrollIntoView({
+        behavior: 'smooth',
+    });
+    const scrollToData = () => dataRef.current?.scrollIntoView({
         behavior: 'smooth',
     });
     const scrollToMethod = () => methodRef.current?.scrollIntoView({
@@ -33,6 +39,7 @@ export function GraduationResearch() {
             <div className='tl f2 b ml1 mv1'>Graduation Research</div>
             <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-50'>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPurpose}>・Purpose & Background</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToData}>・Data & Preprocessing</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToMethod}>・Method</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToTools}>・Tools</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToResults}>・Results</button>
@@ -46,7 +53,7 @@ export function GraduationResearch() {
                     In addition, The conventional biomarker can not identify the teratoma before a surgery.
                     Therefore, we aimed to predict the pathology of postchemotherapy residual tumors using CNN and SVM.
                 </p>
-                <img src={BackgroundPurpose} className="db ma mv3 w-50 h-50"></img>
+                <img src={BackgroundPurpose} alt="bacground and purpose" className="db ma mv3 w-50 h-50"></img>
                 <p className='tl mh2 mv2 f3'>
                     I found two previous studies on the exact same topic.
                     <a className='no-underline b black hover-light-yellow' href='https://ascopubs.org/doi/full/10.1200/CCI.18.00004'> The one </a>
@@ -56,6 +63,19 @@ export function GraduationResearch() {
                     The purpose of my research is to get a similar or better result of them by ensembling CNN and SVM.
                 </p>
             </div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={dataRef}>Data & Preprocessing</div>
+            <div className='db ma flex-row tc w-80'>
+                <p className='tl mh2 mv2 f3'>
+                    We collected CT images of 66 patients from 2005 to 2019.<br />
+                    The total number of ROI (Region of Interst) is 155 and the proportion of necrosis and teratoma is shown in the following image. 
+                </p>
+                <img src={DataDistribution} alt="data distribution" className="db ma mv3 w-30 h-30"></img>
+                <p className='tl mh2 mv2 f3'>
+                    Firstly, the size of images is not constant, so we need to resize or clip images to apply them to Resnet.
+                    We decided to clip an image with 100 × 100 from the analysis of tunor size.
+                </p>
+                <img src={TumorSizeDistribution} alt="tumor size distribution" className="db ma mv3 w-30 h-30"></img>
+            </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={methodRef}>Method</div>
             <div className='db ma flex-row tc w-80'>
                 <p className='tl mh2 mv2 f3'>
@@ -63,7 +83,7 @@ export function GraduationResearch() {
                     First of all, we extract 4608 features from Resnets and get 478 featrues after PCA. After that, we pour them into SVMs.
                     Finally, we ensemble the predictions from 5 models using majority decision. 
                 </p>
-                <img src={Ensemble} className="db ma mv3 w-50 h-50"></img>
+                <img src={Ensemble} alt="ensemble" className="db ma mv3 w-50 h-50"></img>
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
@@ -151,27 +171,3 @@ function ToolContent({ name, description }: ToolProps): JSX.Element {
     )
 } 
 
-// function PurposeAndBackground(): JSX.Element {
-//     return (
-//         <div id="purpose">
-//             <div className='db ma mh1 mv3 f3 b dark-gray w-80' id="Purpose & Background">Purpose & Background</div>
-//             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-//                 <p className='tl mh2 mv2 f3'>
-//                     There are two types of a residual tumor; teratoma and necrotic tissue. 
-//                     Teratoma is malignant and needs to be excised. However, necrotic tissue is benign and a surgery is an overtreatment. 
-//                     In addition, The conventional biomarker can not identify the teratoma before a surgery.
-//                     Therefore, we aimed to predict the pathology of postchemotherapy residual tumors using CNN and SVM.
-//                 </p>
-//                 <img src={BackgroundPurpose} className="db ma mv3 w-50 h-50"></img>
-//                 <p className='tl mh2 mv2 f3'>
-//                     I found two previous studies on the exact same topic.
-//                     <a className='no-underline b black hover-light-yellow' href='https://ascopubs.org/doi/full/10.1200/CCI.18.00004'> The one </a>
-//                     is published by Jeremy Lewin, etc. They used SVM and got accuracy: 72.0%, sensitivity: 56.2%, specificity: 81.9% <br />
-//                     <a className='no-underline b black hover-light-yellow' href='https://link.springer.com/article/10.1007/s00330-019-06495-z?wt_mc=Internal.Event.1.SEM.ArticleAuthorOnlineFirst&utm_source=ArticleAuthorOnlineFirst&utm_medium=email&utm_content=AA_en_06082018&ArticleAuthorOnlineFirst_20191212'> The another one </a>
-//                     is published by Bettina Baessler, etc. They used Gradient-boosted trees and got accuracy: 81%, sensitivity: 89%, specificity: 72% <br />
-//                     The purpose of my research is to get a similar or better result of them by ensembling CNN and SVM.
-//                 </p>
-//             </div>
-//         </div>
-//     )
-// }
