@@ -1,6 +1,7 @@
 import BackgroundPurpose from '../../assets/graduation-research-img/background-purpose.png';
 import DataDistribution from '../../assets/graduation-research-img/dataDistribution.png';
 import TumorSizeDistribution from '../../assets/graduation-research-img/tumorSizeDistribution.png';
+import HUDistribution from '../../assets/graduation-research-img/HUDistribution.png';
 import Ensemble from '../../assets/graduation-research-img/ensemble.png';
 import { useRef } from 'react';
 
@@ -72,14 +73,19 @@ export function GraduationResearch() {
                 <img src={DataDistribution} alt="data distribution" className="db ma mv3 w-30 h-30"></img>
                 <p className='tl mh2 mv2 f3'>
                     Firstly, the size of images is not constant, so we need to resize or clip images to apply them to Resnet.
-                    We decided to clip an image with 100 × 100 from the analysis of tunor size.
+                    We decided to clip an image with 100 × 100 by the analysis of tunor size.
                 </p>
-                <img src={TumorSizeDistribution} alt="tumor size distribution" className="db ma mv3 w-30 h-30"></img>
+                <img src={TumorSizeDistribution} alt="tumor size distribution" className="db ma mv3 w-50 h-50"></img>
+                <p className='tl mh2 mv2 f3'>
+                    Secondly, the range of intensity in images is so wide that images are unclear.<br />
+                    Therefore, we transformed images in the range of [-150, 150] to cover the impoertant information in images. 
+                </p>
+                <img src={HUDistribution} alt="HU distribution" className="db ma mv3 w-50 h-50"></img>
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={methodRef}>Method</div>
             <div className='db ma flex-row tc w-80'>
                 <p className='tl mh2 mv2 f3'>
-                    We used ensemble model consisting of 3 of SVMs, Resnet50, and Resnet152.<br />
+                    We used ensemble model consisting of 3 of SVMs, finetuned Resnet50, and Resnet152.<br />
                     First of all, we extract 4608 features from Resnets and get 478 featrues after PCA. After that, we pour them into SVMs.
                     Finally, we ensemble the predictions from 5 models using majority decision. 
                 </p>
@@ -96,6 +102,10 @@ export function GraduationResearch() {
                 <p className='tl mh2 mv2 f3'>
                     We got a similar result as previous studies; accuracy is 78.3%, sensitivity is 61.3%, and specificity is 90.6%, 
                     which improved comparing to a single Resnet model.
+                </p>
+                <p className='tl mh2 mv2 f3'>
+                    The paper was published on The Institute of Electronics, Information and Communication Engineers (IEICE) · Jul 9, 2021<br/>
+                    <a className='no-underline b white hover-light-yellow' href='https://www.ieice.org/ken/paper/20210709VCen/eng/'>Here is a link.</a>
                 </p>
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={difficulitiesRef}>Difficulties</div>
