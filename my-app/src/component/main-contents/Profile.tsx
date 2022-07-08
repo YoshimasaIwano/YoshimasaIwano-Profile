@@ -123,7 +123,7 @@ export function Profile() {
                 </ul>
             </div>
             <div className='tl f3'>
-                <h3 className='ml1 mv1'>Yoshimasa Iwano</h3>
+                <h3 className='ml1 mv1'>Yoshimasa Iwano (岩野　善允)</h3>
                 <p className='ml3 mv4'>
                     I was born in Japan and brought up in Fukuoka until high school. I had a lot of difficulities in my life.<br/>
                     Fortunately, I got a scholarship and completed my Bachelor's degree of Engineering from University of Tsukuba in 2021.<br/>

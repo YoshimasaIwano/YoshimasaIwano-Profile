@@ -2,6 +2,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 import graduationResearchImage from '../../assets/project-images/graduationResearch.png';
 import CSC317Image from '../../assets/project-images/CSC317.png';
 import CSC600Image from '../../assets/project-images/CSC600.png';
+import portfolioImage from '../../assets/project-images/portfolio.png';
 
 /*
     Project Component  
@@ -51,10 +52,20 @@ const CSC600Props: ProjectProps = {
     tools: ["TypeScirpt","React","ToneJS","SQLite"],
 }
 
+const PortfolioProps: ProjectProps = {
+    name: "Portfolio",
+    srcName: portfolioImage,
+    title: "My Portfolio Web site",
+    overview: "The purpose is to create my portfolio Web site and for a fun.",
+    period: "(2022 July)",
+    tools: ["TypeScirpt","React"],
+}
+
 const ProjectList: Array<ProjectProps> = [
     GraduationResearchProps,
     CSC317Props,
     CSC600Props,
+    PortfolioProps,
 ];
 
 function ProjectContent({ name, srcName, title, overview, period, tools }: ProjectProps): JSX.Element {

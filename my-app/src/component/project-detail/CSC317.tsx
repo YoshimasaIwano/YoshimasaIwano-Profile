@@ -100,7 +100,9 @@ export function CSC317() {
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3'>
                     To create a new user and log in as a new user, I created Registration page and Log In page.<br />
-                    When you submit a user information to register, all information are checked if it is valid.
+                    When you submit a user information to register, all information are checked if it is valid.<br />
+                    For example, an username should be more than 2 characters, a password should contain a capital character, a number, and a special character and should be more than 8 characters.
+                    An email address should follow the email format. If you enter an invalid information, the error message will pop up.
                 </p>
                 <div className='flex'>
                     <img 

@@ -1,8 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import type { Engine } from 'tsparticles-engine';
-import { loadFountainPreset } from 'tsparticles-preset-fountain';
-import Particles from 'react-tsparticles';
 
 import { TopNav } from './TopNav';
 import { Footer } from './Footer';
@@ -14,6 +11,7 @@ import { DefaultProjectPage } from './component/main-contents/Project';
 import { GraduationResearch } from './component/project-detail/GraduationResearch';
 import { CSC317 } from './component/project-detail/CSC317';
 import { CSC600 } from './component/project-detail/CSC600';
+import { Portfolio } from './component/project-detail/Portfolio';
 import { DefaultGalleryPage } from './component/main-contents/Gallery';
 import { Nightsky } from './component/picture-detail/Nightsky';
 import { Landscape } from './component/picture-detail/Landscape';
@@ -36,6 +34,7 @@ function App(): JSX.Element {
             <Route path="GraduationResearch" element={<GraduationResearch />}/>
             <Route path="CSC317" element={<CSC317 />}/>
             <Route path="CSC600" element={<CSC600 />}/>
+            <Route path="Portfolio" element={<Portfolio />}/>
             <Route path="*" element={<div>404</div>}/>
           </Route>
           <Route path="/Resume" element={<Resume />}/>
