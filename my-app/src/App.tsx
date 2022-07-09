@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useLayoutEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import ScrollToTop from './ScrollTop';
 import { TopNav } from './TopNav';
@@ -19,14 +19,22 @@ import { Landscape } from './component/picture-detail/Landscape';
 import { Flower } from './component/picture-detail/Flower';
 import { Food } from './component/picture-detail/Food';
 
+const Wrapper = (children: any) => {
+  const location = useLocation();
+  useLayoutEffect(() => {
+    document.documentElement.scrollTo(0,0);
+  }, [location.pathname]);
+  return children;
+}
 
 function App(): JSX.Element {
   
   return (
     <div className="fixed top-0 left-0 relative vh-100 w-100 overflow-y-scroll">
+      
       <Router>
         <ScrollToTop/>
-        <TopNav />
+        <TopNav/>
         <Routes>
           <Route path="/" element={<Profile />}/>
           <Route path="/Home" element={<Profile />}/>

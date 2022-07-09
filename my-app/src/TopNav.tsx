@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 /*
     TopNav Component  
@@ -24,9 +24,11 @@ export function TopNav(): JSX.Element {
 function NavContent( { name }: NavProps ): JSX.Element {
     const classAttribute: string = 'f3 ph2 mh2 b--solid br1 b--green link color-inherit '
     return (
-        <NavLink to={name} className={({ isActive }) => (
-            isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green'
-        )}>
+        <NavLink 
+            to={name} 
+            className={({ isActive }) => (
+                isActive ? classAttribute + 'bg-dark-green': classAttribute + 'bg-green')}
+        >
             {name}
         </NavLink>
     )

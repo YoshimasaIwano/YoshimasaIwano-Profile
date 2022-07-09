@@ -2,7 +2,9 @@ import shootingStar from '../../assets/main-pictures/shootingStar.png';
 import tsunoshima from '../../assets/main-pictures/tsunoshima.png';
 import nemophila from '../../assets/main-pictures/nemophila.png';
 import myBestFood from '../../assets/main-pictures/myBestFood.png';
+
 import { NavLink, Outlet } from 'react-router-dom';
+import ScrollToTop from '../../ScrollTop';
 
 /*
     Gallery Component  
