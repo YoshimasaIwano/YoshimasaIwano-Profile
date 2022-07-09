@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import ScrollToTop from './ScrollTop';
 import { TopNav } from './TopNav';
 import { Footer } from './Footer';
 import { Profile } from './component/main-contents/Profile';
@@ -23,8 +24,8 @@ function App(): JSX.Element {
   
   return (
     <div className="fixed top-0 left-0 relative vh-100 w-100 overflow-y-scroll">
-      
       <Router>
+        <ScrollToTop/>
         <TopNav />
         <Routes>
           <Route path="/" element={<Profile />}/>
