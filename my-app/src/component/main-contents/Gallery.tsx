@@ -69,6 +69,7 @@ export function DefaultGalleryPage(): JSX.Element {
                     return <MainPicture srcName={main.srcName} text={main.text} />
                 })}
             </div>
+            <button className='f3 pointer mv2' onClick={ScrollToTop}>Back to Top</button>
         </>
     )
 }

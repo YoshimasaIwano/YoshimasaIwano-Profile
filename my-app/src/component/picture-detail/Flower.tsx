@@ -3,6 +3,8 @@ import { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import "react-image-lightbox/style.css";
 
+import ScrollToTop from '../../ScrollTop';
+
 /*
     Flower Detail Component  
 */
@@ -75,6 +77,5 @@ export function Flower() {
                 )}
             </div>
         </>
-        
     )
 }

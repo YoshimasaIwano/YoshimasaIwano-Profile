@@ -33,7 +33,7 @@ function App(): JSX.Element {
     <div className="fixed top-0 left-0 relative vh-100 w-100 overflow-y-scroll">
       
       <Router>
-        <ScrollToTop/>
+        {/* <ScrollToTop/> */}
         <TopNav/>
         <Routes>
           <Route path="/" element={<Profile />}/>
