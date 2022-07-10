@@ -36,7 +36,7 @@ export function GraduationResearch() {
     });
 
     return (
-        <>
+        <div>
             <div className='tl f2 b ml1 mv1'>Graduation Research</div>
             <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-50'>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPurpose}>・Purpose & Background</button>
@@ -94,7 +94,7 @@ export function GraduationResearch() {
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
                 {ToolList.map((tool) => {
-                    return <ToolContent name={tool.name} description={tool.description} />
+                    return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={resultsRef}>Results</div>
@@ -120,7 +120,7 @@ export function GraduationResearch() {
                     There's stiil room for investing these two difficulities, so the next research topic is to find better algorithm for these two problems. 
                 </p>
             </div>
-        </>
+        </div>
     )
 }
 

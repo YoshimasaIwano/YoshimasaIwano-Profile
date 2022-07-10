@@ -64,7 +64,7 @@ export function CSC317() {
     const [state, setState] = useState(initState)
 
     return (
-        <>
+        <div>
             {state.isOpen && (
                 <Lightbox
                     mainSrc={ImageArray[state.id]}
@@ -93,7 +93,7 @@ export function CSC317() {
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
                 {ToolList.map((tool) => {
-                    return <ToolContent name={tool.name} description={tool.description} />
+                    return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={userRef}>Create a new user</div>
@@ -184,7 +184,7 @@ export function CSC317() {
             <video controls playsInline className="db ma mv3 w-50 h-50" >
                 <source src={CSC317DemoVideo} type="video/mp4"></source>
             </video>
-        </>
+        </div>
     )
 }
 

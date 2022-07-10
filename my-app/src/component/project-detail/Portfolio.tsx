@@ -60,7 +60,7 @@ export function Portfolio() {
     const [state, setState] = useState(initState)
 
     return (
-        <>
+        <div>
             {state.isOpen && (
                 <Lightbox
                     mainSrc={ImageArray[state.id]}
@@ -88,7 +88,7 @@ export function Portfolio() {
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
                 {ToolList.map((tool) => {
-                    return <ToolContent name={tool.name} description={tool.description} />
+                    return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={homeRef}>Home</div>
@@ -181,8 +181,7 @@ export function Portfolio() {
                 >
                 </img>
             </div>
-        </>
-        
+        </div>
     )
 }
 

@@ -54,7 +54,7 @@ export function CSC600() {
     const [state, setState] = useState(initState)
 
     return (
-        <>
+        <div>
             {state.isOpen && (
                 <Lightbox
                     mainSrc={ImageArray[state.id]}
@@ -82,7 +82,7 @@ export function CSC600() {
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
                 {ToolList.map((tool) => {
-                    return <ToolContent name={tool.name} description={tool.description} />
+                    return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={instrumentRef}>Instrument</div>
@@ -129,7 +129,7 @@ export function CSC600() {
             <video controls playsInline className="db ma mv3 w-50 h-50" >
                 <source src={CSC600emoVideo} type="video/mp4"></source>
             </video>
-        </>
+        </div>
         
     )
 }

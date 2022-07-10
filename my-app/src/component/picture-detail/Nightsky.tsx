@@ -22,7 +22,7 @@ export function Nightsky() {
     const [state, setState] = useState(initState);
 
     return (
-        <>
+        <div>
             <div className='tl f2 b ml1 mv1 pb2'>Night sky</div>
             <input 
                 className='input mv2 ph4 f3 br4'
@@ -47,7 +47,7 @@ export function Nightsky() {
                         return img
                     }
                 }).map((img) => 
-                    <div className='w-250px h-250px'>
+                    <div className='w-250px h-250px' key={img.src} >
                         <img 
                             className='w-250px h-250px pointer' 
                             src={img.src} 
@@ -72,7 +72,6 @@ export function Nightsky() {
                     </div>
                 )}
             </div>
-        </>
-        
+        </div>
     )
 }

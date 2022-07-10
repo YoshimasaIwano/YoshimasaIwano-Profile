@@ -53,7 +53,7 @@ const MainPicturesList: Array<MainPicturesProps> = [
 
 function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
     return (
-        <NavLink to={text} className='w-50 relative dim' >
+        <NavLink to={text} onClick={ScrollToTop} className='w-50 relative dim' >
             <img src={srcName} alt={srcName} className='w-100 h-100'></img>
             <div id='text-in-img'>{text}</div>
         </NavLink>
@@ -62,14 +62,14 @@ function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
 
 export function DefaultGalleryPage(): JSX.Element {
     return (
-        <>
+        <div>
             <div className='tl f2 b ml1 mv1 pb2'>Gallery</div>
             <div className='flex flex-wrap items-top justify-start bg-white'>
                 {MainPicturesList.map((main) => {
-                    return <MainPicture srcName={main.srcName} text={main.text} />
+                    return <MainPicture srcName={main.srcName} text={main.text} key={main.text}/>
                 })}
             </div>
             <button className='f3 pointer mv2' onClick={ScrollToTop}>Back to Top</button>
-        </>
+        </div>
     )
 }

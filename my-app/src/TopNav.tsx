@@ -14,7 +14,7 @@ export function TopNav(): JSX.Element {
         <div className='flex justify-center items-center aspect-ratio-object h3 bg-light-green'>
             {navList.map((nav) => {
                 return (
-                    <NavContent name={nav} />
+                    <NavContent name={nav} key={nav} />
                 )
             })}
         </div>
