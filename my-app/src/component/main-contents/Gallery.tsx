@@ -4,7 +4,6 @@ import nemophila from '../../assets/main-pictures/nemophila.png';
 import myBestFood from '../../assets/main-pictures/myBestFood.png';
 
 import { NavLink, Outlet } from 'react-router-dom';
-import ScrollToTop from '../../ScrollTop';
 
 /*
     Gallery Component  
@@ -53,7 +52,10 @@ const MainPicturesList: Array<MainPicturesProps> = [
 
 function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
     return (
-        <NavLink to={text} onClick={ScrollToTop} className='w-50 relative dim' >
+        <NavLink 
+            to={text} 
+            className='w-50 relative dim' 
+        >
             <img src={srcName} alt={srcName} className='w-100 h-100'></img>
             <div id='text-in-img'>{text}</div>
         </NavLink>
@@ -69,7 +71,6 @@ export function DefaultGalleryPage(): JSX.Element {
                     return <MainPicture srcName={main.srcName} text={main.text} key={main.text}/>
                 })}
             </div>
-            <button className='f3 pointer mv2' onClick={ScrollToTop}>Back to Top</button>
         </div>
     )
 }

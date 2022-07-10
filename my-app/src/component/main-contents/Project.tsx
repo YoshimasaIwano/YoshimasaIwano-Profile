@@ -1,5 +1,4 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import ScrollToTop from '../../ScrollTop';
 
 import graduationResearchImage from '../../assets/project-images/graduationResearch.png';
 import CSC317Image from '../../assets/project-images/CSC317.png';
@@ -72,7 +71,10 @@ const ProjectList: Array<ProjectProps> = [
 
 function ProjectContent({ name, srcName, title, overview, period, tools }: ProjectProps): JSX.Element {
     return (
-        <NavLink to={name} className='flex-column ma mv1 pv2 w-40 shadow-5 br4 ba b--washed-green bg-white-40 bg-animate hover-bg-light-blue link color-inherit' onClick={ScrollToTop}>
+        <NavLink 
+            to={name} 
+            className='flex-column ma mv1 pv2 w-40 shadow-5 br4 ba b--washed-green bg-white-40 bg-animate hover-bg-light-blue link color-inherit' 
+        >
             <div className='relative ma w-80 h-auto'>
                 <img src={srcName} alt={srcName} className='img'></img>
             </div>
@@ -99,7 +101,15 @@ export function DefaultProjectPage(): JSX.Element {
             <div className='tl f2 b ml1 mv1'>Project</div>
             <div className='ma pv2 w-90 flex flex-wrap items-top justify-start'>
                 {ProjectList.map((project) => {
-                    return <ProjectContent name={project.name} srcName={project.srcName} title={project.title} overview={project.overview} period={project.period} tools={project.tools} key={project.title} />
+                    return <ProjectContent 
+                                name={project.name} 
+                                srcName={project.srcName} 
+                                title={project.title} 
+                                overview={project.overview} 
+                                period={project.period} 
+                                tools={project.tools} 
+                                key={project.title} 
+                            />
                 })}
             </div>
         </div>

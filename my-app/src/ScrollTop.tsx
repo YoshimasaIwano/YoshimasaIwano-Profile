@@ -1,17 +1,31 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-export default function ScrollToTop() {
-    const { pathname } = useLocation();
+export function ScrollTop() {
+    const location = useLocation();
     useEffect(() => {
-        // console.log(pathname);
-        // document.documentElement.scrollTo(0,0);
-        // document.documentElement.scrollHeight
-        window.scrollTo(0,0);
-    }, [pathname]);
+        setTimeout(() => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"});
+        }, 100);
+    }, [location]);
     
     return null;
 }
+
+// export function ScrollToTopButton() {
+//     // const element = document.getElementById('top');
+//     // console.log(element);
+//     // element?.scrollIntoView({block: "start"});
+
+//     setTimeout(() => {
+//         window.scrollTo(0,0);
+//     }, 500);
+    
+// }
+
+
 
 // import { useEffect } from "react";
 // import { useLocation } from "react-router-dom";

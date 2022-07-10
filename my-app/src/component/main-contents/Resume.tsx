@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
+
 import resumePicture from '../../assets/resume[YoshimasaIwano].png';
 
 /*
