@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 
@@ -18,7 +19,14 @@ export function Resume() {
     const [state, setState] = useState(initState)
     
     return (
-        <div id="resume-container" className='pv2 tc'>
+        <motion.div 
+            id="resume-container" 
+            className='pv2 tc'
+            initial={{opacity: 0.5}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 1.5}}
+        >
             <div className='tl f2 b ml1 mv1'>Resume</div>
             <div className='f3'>
                 Here's my resume. (As of Jun/2022) <br />
@@ -47,6 +55,6 @@ export function Resume() {
                     />
                 )}
             </div>
-        </div>
+        </motion.div>
     )
 }

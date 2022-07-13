@@ -20,7 +20,7 @@ const Variant: Variants = {
         transition: { 
             type: "spring",
             bounce: 0.4,
-            duration: 1.0, 
+            duration: 1.5, 
         }, 
     },
     hidden: { 
@@ -44,7 +44,6 @@ function AboutMe(): JSX.Element{
 
   return (
     <motion.div
-      className="box"
       ref={ref}
       variants={Variant}
       initial="hidden"
@@ -167,7 +166,14 @@ function customInit(engine: Engine ): Promise<void> {
 
 export function Profile() {
     return (
-        <div id="profile-container" className='pv7 tc f1'>
+        <motion.div 
+            id="profile-container" 
+            className='pv7 tc f1'
+            initial={{opacity: 0.5}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 1.5}}
+        >
             <Particles params={params} init={customInit}/>
             <div className='mb7'>
                 <div className='washed-blue'>
@@ -187,6 +193,6 @@ export function Profile() {
                 </ul>
             </div>
             <AboutMe/>
-        </div>
+        </motion.div>
     )
 }

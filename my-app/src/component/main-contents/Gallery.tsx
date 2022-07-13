@@ -4,6 +4,7 @@ import nemophila from '../../assets/main-pictures/nemophila.png';
 import myBestFood from '../../assets/main-pictures/myBestFood.png';
 
 import { NavLink, Outlet } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 /*
     Gallery Component  
@@ -11,9 +12,16 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 export function Gallery() {
     return (
-        <div id="gallery-container" className='pv2 tc'>
+        <motion.div 
+            id="gallery-container" 
+            className='pv2 tc'
+            initial={{opacity: 0.5}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 1.5}}
+        >
             <Outlet />
-        </div>
+        </motion.div>
     )
 }
 

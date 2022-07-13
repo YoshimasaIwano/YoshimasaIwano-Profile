@@ -1,9 +1,11 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 import graduationResearchImage from '../../assets/project-images/graduationResearch.png';
 import CSC317Image from '../../assets/project-images/CSC317.png';
 import CSC600Image from '../../assets/project-images/CSC600.png';
 import portfolioImage from '../../assets/project-images/portfolio.png';
+
 
 /*
     Project Component  
@@ -11,9 +13,16 @@ import portfolioImage from '../../assets/project-images/portfolio.png';
 
 export function Project() {
     return (
-        <div id="project-container" className='pv2'>
+        <motion.div 
+            id="project-container" 
+            className='pv2'
+            initial={{opacity: 0.5}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 1.5}}
+        >
             <Outlet />
-        </div>
+        </motion.div>
     )
 };
 
