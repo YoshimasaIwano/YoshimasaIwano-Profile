@@ -58,7 +58,7 @@ const foodPic: MainPicturesProps = {
     text: "Food",
 }
 
-const MainPicturesList: Array<MainPicturesProps> = [
+const mainPicturesList: Array<MainPicturesProps> = [
     nightskyPic,
     landscapePic,
     flowerPic,
@@ -82,7 +82,7 @@ export function DefaultGalleryPage(): JSX.Element {
         <div>
             <div className='tl f2 b ml1 mv1 pb2'>Gallery</div>
             <div className='flex flex-wrap items-top justify-start bg-white'>
-                {MainPicturesList.map((main) => {
+                {mainPicturesList.map((main) => {
                     return <MainPicture srcName={main.srcName} text={main.text} key={main.text}/>
                 })}
             </div>

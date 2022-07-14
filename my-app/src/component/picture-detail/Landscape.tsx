@@ -34,7 +34,6 @@ export function Landscape() {
             }}
             transition={{
                 duration: 0.5,
-                // delay: 0.5,
             }}
         >
             <div className='tl f2 b ml1 mv1 pb2'>Landscape</div>

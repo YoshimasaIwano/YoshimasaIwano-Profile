@@ -12,7 +12,7 @@ import { motion, useAnimation, Variants } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-const Variant: Variants = {
+const aboutMeVariant: Variants = {
     visible: { 
         opacity: 1, 
         scale: 1, 
@@ -30,7 +30,7 @@ const Variant: Variants = {
     }
 };
 
-const HelloVariant: Variants = {
+const helloVariant: Variants = {
     visible: { 
         opacity: 1, 
         scale: 1, 
@@ -62,7 +62,7 @@ function AboutMe(): JSX.Element{
   return (
     <motion.div
       ref={ref}
-      variants={Variant}
+      variants={aboutMeVariant}
       initial="hidden"
       animate={control}
     >
@@ -103,7 +103,7 @@ function Hello(): JSX.Element{
     return (
       <motion.div
         ref={ref}
-        variants={HelloVariant}
+        variants={helloVariant}
         initial="hidden"
         animate={control}
       >
