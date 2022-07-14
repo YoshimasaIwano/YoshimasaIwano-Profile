@@ -1,8 +1,11 @@
-import { ImageData } from '../../assets/flower/Flower';
+/* import libraries */
 import { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import "react-image-lightbox/style.css";
 import { motion } from 'framer-motion';
+
+/* import images */
+import { ImageData } from '../../assets/flower/Flower';
 
 /*
     Flower Detail Component  
@@ -13,6 +16,9 @@ type ImageState = {
     isOpen: boolean,
 }
 
+/*
+    This function creates Flower detail page with a motion animation
+*/
 export function Flower() {
     const initState: ImageState = {
         id: 0,

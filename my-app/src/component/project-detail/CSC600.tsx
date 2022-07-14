@@ -1,12 +1,14 @@
-import metallophone from '../../assets/CSC600-img/metallophone.png';
-import searchSong from '../../assets/CSC600-img/searchSong.png';
-import csc600DemoVideo from '../../assets/CSC600-img/csc600Demo.mp4';
-
+/* import libraries */
 import { useRef } from 'react';
 import { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import "react-image-lightbox/style.css";
 import { motion } from 'framer-motion';
+
+/* import images */
+import metallophone from '../../assets/csc600-img/metallophone.png';
+import searchSong from '../../assets/csc600-img/searchSong.png';
+import csc600DemoVideo from '../../assets/csc600-img/csc600Demo.mp4';
 
 /*
     CSC600 Detail Component  
@@ -22,6 +24,55 @@ const imageArray: Array<string> = [
     searchSong,
 ]
 
+type ToolProps = {
+    name: string;
+    description: string;
+}
+
+const TypeScriptProps: ToolProps = {
+    name: "TypeScript",
+    description: "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+}
+
+const ReactProps: ToolProps = {
+    name: "React",
+    description: "React is a JavaScript library for building user interfaces.",
+}
+
+const ToneJSProps: ToolProps = {
+    name: "ToneJS",
+    description: "ToneJS is a Web Audio framework for creating interactive music in the browser.",
+}
+
+const SQLiteProps: ToolProps = {
+    name: "SQLite",
+    description: "SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.",
+}
+
+const ToolList: Array<ToolProps> = [
+    TypeScriptProps,
+    ReactProps,
+    ToneJSProps,
+    SQLiteProps,
+];
+  
+function ToolContent({ name, description }: ToolProps): JSX.Element {
+    return (
+        <div className='dt-row f4'>
+            <div className='dtc pv1 w-30 bb br b--white-50'>
+                {name}
+            </div>
+            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
+                {description}
+            </div>
+        </div>
+    )
+} 
+
+/*
+    This function creates CSC600 detail page with a motion animation
+    and has a scroll reference table
+*/
 export function CSC600() {
     const purposeRef = useRef<null | HTMLDivElement>(null);
     const toolsRef = useRef<null | HTMLDivElement>(null);
@@ -146,47 +197,3 @@ export function CSC600() {
     )
 }
 
-type ToolProps = {
-    name: string;
-    description: string;
-}
-
-const TypeScriptProps: ToolProps = {
-    name: "TypeScript",
-    description: "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
-}
-
-const ReactProps: ToolProps = {
-    name: "React",
-    description: "React is a JavaScript library for building user interfaces.",
-}
-
-const ToneJSProps: ToolProps = {
-    name: "ToneJS",
-    description: "ToneJS is a Web Audio framework for creating interactive music in the browser.",
-}
-
-const SQLiteProps: ToolProps = {
-    name: "SQLite",
-    description: "SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.",
-}
-
-const ToolList: Array<ToolProps> = [
-    TypeScriptProps,
-    ReactProps,
-    ToneJSProps,
-    SQLiteProps,
-];
-  
-function ToolContent({ name, description }: ToolProps): JSX.Element {
-    return (
-        <div className='dt-row f4'>
-            <div className='dtc pv1 w-30 bb br b--white-50'>
-                {name}
-            </div>
-            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
-                {description}
-            </div>
-        </div>
-    )
-} 

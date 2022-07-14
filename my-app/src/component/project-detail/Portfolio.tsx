@@ -1,14 +1,18 @@
+/* import libraries */
+import { useRef } from 'react';
+import { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
+import "react-image-lightbox/style.css";
+import { motion } from 'framer-motion';
+
+/* import images */
 import homeImage from '../../assets/portfolio-img/home.png';
 import projectImage from '../../assets/portfolio-img/project.png';
 import resumeImage from '../../assets/portfolio-img/resume.png';
 import galleryImage from '../../assets/portfolio-img/gallery.png';
 import categorySectionImage from '../../assets/portfolio-img/categorySection.png';
 
-import { useRef } from 'react';
-import { useState } from 'react';
-import Lightbox from 'react-image-lightbox';
-import "react-image-lightbox/style.css";
-import { motion } from 'framer-motion';
+
 
 /*
     Portfolio Detail Component  
@@ -27,9 +31,47 @@ const imageArray: Array<string> = [
     categorySectionImage,
 ]
 
+type ToolProps = {
+    name: string;
+    description: string;
+}
+
+const TypeScriptProps: ToolProps = {
+    name: "TypeScript",
+    description: "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+}
+
+const ReactProps: ToolProps = {
+    name: "React",
+    description: "React is a JavaScript library for building user interfaces.",
+}
+
+const toolList: Array<ToolProps> = [
+    TypeScriptProps,
+    ReactProps,
+];
+  
+function ToolContent({ name, description }: ToolProps): JSX.Element {
+    return (
+        <div className='dt-row f4'>
+            <div className='dtc pv1 w-30 bb br b--white-50'>
+                {name}
+            </div>
+            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
+                {description}
+            </div>
+        </div>
+    )
+} 
+
+/*
+    This function creates Portfolio detail page with a motion animation
+    and has a scroll reference table
+*/
 export function Portfolio() {
     const motivationRef = useRef<null | HTMLDivElement>(null);
     const toolsRef = useRef<null | HTMLDivElement>(null);
+    const pageTransitionRef = useRef<null | HTMLDivElement>(null);
     const homeRef = useRef<null | HTMLDivElement>(null);
     const projectRef = useRef<null | HTMLDivElement>(null);
     const resumeRef = useRef<null | HTMLDivElement>(null);
@@ -39,6 +81,9 @@ export function Portfolio() {
         behavior: 'smooth',
     });
     const scrollToTools = () => toolsRef.current?.scrollIntoView({
+        behavior: 'smooth',
+    });
+    const scrollToPageTransition = () => pageTransitionRef.current?.scrollIntoView({
         behavior: 'smooth',
     });
     const scrollToHome = () => homeRef.current?.scrollIntoView({
@@ -87,6 +132,7 @@ export function Portfolio() {
             <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-50'>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToMotivation}>・Motivation</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToTools}>・Tools</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPageTransition}>・Page Transition</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToHome}>・Home</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToProject}>・Project</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToResume}>・Resume</button>
@@ -103,6 +149,13 @@ export function Portfolio() {
                 {toolList.map((tool) => {
                     return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
+            </div>
+            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={pageTransitionRef}>Page Transition</div>
+            <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
+                <p className='tl mh2 mv2 f3'>
+                    Each page trainsition makes you go back to the top of the page with an animation even if you click the detail of a project and gallery. <br />
+                    You will also see the upper arrow that enables you to go back to the top when you scroll to the specific height.
+                </p>
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={homeRef}>Home</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
@@ -198,35 +251,3 @@ export function Portfolio() {
     )
 }
 
-type ToolProps = {
-    name: string;
-    description: string;
-}
-
-const TypeScriptProps: ToolProps = {
-    name: "TypeScript",
-    description: "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
-}
-
-const ReactProps: ToolProps = {
-    name: "React",
-    description: "React is a JavaScript library for building user interfaces.",
-}
-
-const toolList: Array<ToolProps> = [
-    TypeScriptProps,
-    ReactProps,
-];
-  
-function ToolContent({ name, description }: ToolProps): JSX.Element {
-    return (
-        <div className='dt-row f4'>
-            <div className='dtc pv1 w-30 bb br b--white-50'>
-                {name}
-            </div>
-            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
-                {description}
-            </div>
-        </div>
-    )
-} 

@@ -1,15 +1,80 @@
+/* import libraries */
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+
+/* import images */
 import backgroundPurpose from '../../assets/graduation-research-img/background-purpose.png';
 import dataDistribution from '../../assets/graduation-research-img/dataDistribution.png';
 import tumorSizeDistribution from '../../assets/graduation-research-img/tumorSizeDistribution.png';
 import HUDistribution from '../../assets/graduation-research-img/HUDistribution.png';
 import ensemble from '../../assets/graduation-research-img/ensemble.png';
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
+
 
 /*
     Graduation Research Detail Component  
 */
 
+type ToolProps = {
+    name: string;
+    description: string;
+}
+
+const PytorchProps: ToolProps = {
+    name: "Pytorch",
+    description: "Pytorch is an open source machine learning framework that accelerates the path from research prototyping to production deployment. It is used for model and dataload.",
+}
+
+const NumpyProps: ToolProps = {
+    name: "Numpy",
+    description: "Numpy is the fundamental package for scientific computing with Python. It is used for handling data.",
+}
+
+const PandasProps: ToolProps = {
+    name: "Pandas",
+    description: "Pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language. It is used for creating a data frame.",
+}
+
+const ScikitLearnProps: ToolProps = {
+    name: "Scikit-Learn",
+    description: "Scikit-Learn is an open source and commercialy usable built on Numpy, Scipy, and Matplotlib, and is simple and efficient tools for predictive data analysis. It is used for mainly SVM ",
+}
+
+const MatplotlibProps: ToolProps = {
+    name: "Matplotlib",
+    description: "Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Is is used for ploting a graph",
+}
+
+const GitProps: ToolProps = {
+    name: "Git",
+    description: "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficient. It is used for tracking changes in code.",
+}
+
+const toolList: Array<ToolProps> = [
+    PytorchProps,
+    NumpyProps,
+    PandasProps,
+    ScikitLearnProps,
+    MatplotlibProps,
+    GitProps,
+];
+  
+function ToolContent({ name, description }: ToolProps): JSX.Element {
+    return (
+        <div className='dt-row f4'>
+            <div className='dtc pv1 w-30 bb br b--white-50'>
+                {name}
+            </div>
+            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
+                {description}
+            </div>
+        </div>
+    )
+} 
+
+/*
+    This function creates Graduation Research detail page with a motion animation
+    and has a scroll reference table
+*/
 export function GraduationResearch() {
     const purposeRef = useRef<null | HTMLDivElement>(null);
     const dataRef = useRef<null | HTMLDivElement>(null);
@@ -136,61 +201,4 @@ export function GraduationResearch() {
         </motion.div>
     )
 }
-
-type ToolProps = {
-    name: string;
-    description: string;
-}
-
-const PytorchProps: ToolProps = {
-    name: "Pytorch",
-    description: "Pytorch is an open source machine learning framework that accelerates the path from research prototyping to production deployment. It is used for model and dataload.",
-}
-
-const NumpyProps: ToolProps = {
-    name: "Numpy",
-    description: "Numpy is the fundamental package for scientific computing with Python. It is used for handling data.",
-}
-
-const PandasProps: ToolProps = {
-    name: "Pandas",
-    description: "Pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language. It is used for creating a data frame.",
-}
-
-const ScikitLearnProps: ToolProps = {
-    name: "Scikit-Learn",
-    description: "Scikit-Learn is an open source and commercialy usable built on Numpy, Scipy, and Matplotlib, and is simple and efficient tools for predictive data analysis. It is used for mainly SVM ",
-}
-
-const MatplotlibProps: ToolProps = {
-    name: "Matplotlib",
-    description: "Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Is is used for ploting a graph",
-}
-
-const GitProps: ToolProps = {
-    name: "Git",
-    description: "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficient. It is used for tracking changes in code.",
-}
-
-const toolList: Array<ToolProps> = [
-    PytorchProps,
-    NumpyProps,
-    PandasProps,
-    ScikitLearnProps,
-    MatplotlibProps,
-    GitProps,
-];
-  
-function ToolContent({ name, description }: ToolProps): JSX.Element {
-    return (
-        <div className='dt-row f4'>
-            <div className='dtc pv1 w-30 bb br b--white-50'>
-                {name}
-            </div>
-            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
-                {description}
-            </div>
-        </div>
-    )
-} 
 

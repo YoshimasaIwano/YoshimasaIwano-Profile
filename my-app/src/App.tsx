@@ -1,9 +1,9 @@
+/* import libraries */
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from 'react-scroll-to-top';
-// import { CSSTransition, TransitionGroup } from 'react-transition-group';
-// import { AnimatePresence } from 'framer-motion';
 
+/* import functions */
 import { ScrollTop } from './ScrollTop';
 import { TopNav } from './TopNav';
 import { Footer } from './Footer';

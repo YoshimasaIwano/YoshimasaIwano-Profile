@@ -1,16 +1,17 @@
-import yoshi from '../../assets/yoshi30.png';
-
+/* import libraries */
 import Particles from 'react-tsparticles';
 import { Engine, IOptions, RecursivePartial } from 'tsparticles-engine';
 import { loadFull } from 'tsparticles';
+import { motion, useAnimation, Variants } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
+/* import image */
+import yoshi from '../../assets/yoshi30.png';
 
 /*
     Profile Component  
 */
-
-import { motion, useAnimation, Variants } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
 
 const aboutMeVariant: Variants = {
     visible: { 
@@ -47,57 +48,63 @@ const helloVariant: Variants = {
     }
 };
 
+/*
+    This function creates an element with a scroll animation
+*/
 function AboutMe(): JSX.Element{
-  const control = useAnimation();
-  const [ref, inView] = useInView();
+    const control = useAnimation();
+    const [ref, inView] = useInView();
 
-  useEffect(() => {
-    if (inView) {
-      control.start("visible");
-    } else {
-      control.start("hidden");
-    }
-  }, [control, inView]);
+    useEffect(() => {
+        if (inView) {
+            control.start("visible");
+        } else {
+            control.start("hidden");
+        }
+    }, [control, inView]);
 
-  return (
-    <motion.div
-      ref={ref}
-      variants={aboutMeVariant}
-      initial="hidden"
-      animate={control}
-    >
-        <div className='tl f3'>
-            <h3 className='ml1 mv1'>Yoshimasa Iwano (岩野　善允)</h3>
-            <p className='ml3 mv4'>
-                I was born in Japan and brought up in Fukuoka until high school. I had a lot of difficulities in my life.<br/>
-                Fortunately, I got a scholarship and completed my Bachelor's degree of Engineering from University of Tsukuba in 2021.<br/>
-                I'm currently pursuing a Master's degree in Computer Science from San Francisco State University.</p>
-            <p className='ml3 mv4'>
-                I am interested in Computer Vision and Software Development.<br/>
-                In my undergraduate, I was in Visual Media Laboratory at University of Tsukuba in Japan. I was doing researh on medical imaging. Here's a 
-                <a className='no-underline b white-70 hover-light-yellow' href='../graduate_research_final.pdf'> paper.</a><br/>
-                I also have some experience of Software Development at SFSU. The detail is in Project section.<br/>
-                I am familiar with technologies such as Pytorch, Tensorflow, Numpy, Pandas, Scikit-Learn, React, and Node.js
-            </p>
-            <p className='ml3 mv4'>
-                As a fast learner and a motivated person, I can adapt to any changes without problems.<br/>
-                I went through and overcame some difficult situations with a resolute and invincible sprit, so I am well-prepared to tackle challenges and maximize my ability.
-            </p>
-        </div>
-    </motion.div>
-  );
+    return (
+        <motion.div
+            ref={ref}
+            variants={aboutMeVariant}
+            initial="hidden"
+            animate={control}
+        >
+            <div className='tl f3'>
+                <h3 className='ml1 mv1'>Yoshimasa Iwano (岩野　善允)</h3>
+                <p className='ml3 mv4'>
+                    I was born in Japan and brought up in Fukuoka until high school. I had a lot of difficulities in my life.<br/>
+                    Fortunately, I got a scholarship and completed my Bachelor's degree of Engineering from University of Tsukuba in 2021.<br/>
+                    I'm currently pursuing a Master's degree in Computer Science from San Francisco State University.</p>
+                <p className='ml3 mv4'>
+                    I am interested in Computer Vision and Software Development.<br/>
+                    In my undergraduate, I was in Visual Media Laboratory at University of Tsukuba in Japan. I was doing researh on medical imaging. Here's a 
+                    <a className='no-underline b white-70 hover-light-yellow' href='../graduate_research_final.pdf'> paper.</a><br/>
+                    I also have some experience of Software Development at SFSU. The detail is in Project section.<br/>
+                    I am familiar with technologies such as Pytorch, Tensorflow, Numpy, Pandas, Scikit-Learn, React, and Node.js
+                </p>
+                <p className='ml3 mv4'>
+                    As a fast learner and a motivated person, I can adapt to any changes without problems.<br/>
+                    I went through and overcame some difficult situations with a resolute and invincible sprit, so I am well-prepared to tackle challenges and maximize my ability.
+                </p>
+            </div>
+        </motion.div>
+    );
 };
 
+/*
+    This function creates an element with a scroll animation
+*/
 function Hello(): JSX.Element{
     const control = useAnimation();
     const [ref, inView] = useInView();
   
     useEffect(() => {
-      if (inView) {
-        control.start("visible");
-      } else {
-        control.start("hidden");
-      }
+        if (inView) {
+            control.start("visible");
+        } else {
+            control.start("hidden");
+        }
     }, [control, inView]);
   
     return (
@@ -117,8 +124,11 @@ function Hello(): JSX.Element{
         </div>
       </motion.div>
     );
-  };
+};
 
+/*
+    This is parameters of tsParticles (moving background)
+*/
 const params: RecursivePartial<IOptions> = {
     fpsLimit: 150,
     particles: {
@@ -208,16 +218,42 @@ const params: RecursivePartial<IOptions> = {
     },
 }
 
+/*
+    delay for tsParticles
+*/
 function delay(sec: number) {
     return new Promise(f => setTimeout(f, sec));
 }
 
+/*
+    initialize function for tsParticles
+*/
 async function customInit(engine: Engine ): Promise<void> {
     await delay(1500);
     return loadFull(engine);
 }
 
+/*
+    This function creates the main content of Profile with a motion animation
+*/
 export function Profile() {
+    /*
+         --------------------------------------
+        |                                      |
+        |               Top Nav                |
+        |                                      |
+         --------------------------------------
+        |                                      |
+        |                                      |
+        |         *   Main Contents  *         |
+        |                                      |
+        |                                      |
+         --------------------------------------
+        |                                      |
+        |                Footer                |
+        |                                      |
+         --------------------------------------
+    */
     return (
         <motion.div 
             id="profile-container" 

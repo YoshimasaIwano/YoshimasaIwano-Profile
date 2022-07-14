@@ -1,8 +1,10 @@
+/* import libraries */
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 
-import resumePicture from '../../assets/resume[YoshimasaIwano].png';
+/* import image */
+import resumeImage from '../../assets/resume[YoshimasaIwano].png';
 
 /*
     Resume Component  
@@ -12,7 +14,27 @@ type ImageState = {
     isOpen: boolean,
 }
 
+/*
+    This function creates the main content of Resume with a motion animation
+*/
 export function Resume() {
+    /*
+         --------------------------------------
+        |                                      |
+        |               Top Nav                |
+        |                                      |
+         --------------------------------------
+        |                                      |
+        |                                      |
+        |         *   Main Contents  *         |
+        |                                      |
+        |                                      |
+         --------------------------------------
+        |                                      |
+        |                Footer                |
+        |                                      |
+         --------------------------------------
+    */
     const initState: ImageState = {
         isOpen: false,
     }
@@ -45,7 +67,7 @@ export function Resume() {
                 </a>
                 <img 
                     className='mv3 w-90 h-80 pointer' 
-                    src={resumePicture} 
+                    src={resumeImage} 
                     alt="resume [Yoshimasa Iwano]" 
                     onClick={() => setState({
                         isOpen: true
@@ -55,7 +77,7 @@ export function Resume() {
                 </img>
                 {state.isOpen && (
                     <Lightbox
-                        mainSrc={resumePicture}
+                        mainSrc={resumeImage}
                         onCloseRequest={() => setState({
                             isOpen: false
                         })}

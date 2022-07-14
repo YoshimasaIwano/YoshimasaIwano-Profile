@@ -1,16 +1,108 @@
-import shootingStar from '../../assets/main-pictures/shootingStar.png';
-import tsunoshima from '../../assets/main-pictures/tsunoshima.png';
-import nemophila from '../../assets/main-pictures/nemophila.png';
-import myBestFood from '../../assets/main-pictures/myBestFood.png';
-
+/* import libraries */
 import { NavLink, Outlet } from 'react-router-dom';
 import { motion } from 'framer-motion';
+
+/* import images */
+import nightskyImage from '../../assets/main-pictures/nightsky.png';
+import landscapeImage from '../../assets/main-pictures/landscape.png';
+import flowerImage from '../../assets/main-pictures/flower.png';
+import foodImage from '../../assets/main-pictures/food.png';
+
 
 /*
     Gallery Component  
 */
 
+type MainPicturesProps = {
+    srcName: string;
+    text: string;
+}
+
+const nightsky: MainPicturesProps = {
+    srcName: nightskyImage,
+    text: "Nightsky",
+}
+
+const landscape: MainPicturesProps = {
+    srcName: landscapeImage,
+    text: "Landscape",
+}
+
+const flower: MainPicturesProps = {
+    srcName: flowerImage,
+    text: "Flower",
+}
+
+const food: MainPicturesProps = {
+    srcName: foodImage,
+    text: "Food",
+}
+
+const mainPicturesList: Array<MainPicturesProps> = [
+    nightsky,
+    landscape,
+    flower,
+    food,
+];
+
+/*
+    This function creates the NavLink to each category page
+*/
+function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
+    return (
+        <NavLink 
+            to={text} 
+            className='w-50 relative dim' 
+        >
+            <img src={srcName} alt={srcName} className='w-100 h-100'></img>
+            <div id='text-in-img'>{text}</div>
+        </NavLink>
+    )
+}
+
+/*
+    This function returns a default gallery page 
+*/
+export function DefaultGalleryPage(): JSX.Element {
+    return (
+        <div>
+            <div className='tl f2 b ml1 mv1 pb2'>Gallery</div>
+            <div className='flex flex-wrap items-top justify-start bg-white'>
+                {mainPicturesList.map((main) => {
+                    return (
+                        <MainPicture 
+                            srcName={main.srcName} 
+                            text={main.text} 
+                            key={main.text}
+                        />
+                    )
+                })}
+            </div>
+        </div>
+    )
+}
+
+/*
+    This function creates the main content of Gallery with a motion animation
+*/
 export function Gallery() {
+        /*
+         --------------------------------------
+        |                                      |
+        |               Top Nav                |
+        |                                      |
+         --------------------------------------
+        |                                      |
+        |                                      |
+        |         *   Main Contents  *         |
+        |                                      |
+        |                                      |
+         --------------------------------------
+        |                                      |
+        |                Footer                |
+        |                                      |
+         --------------------------------------
+    */
     return (
         <motion.div 
             id="gallery-container" 
@@ -29,63 +121,5 @@ export function Gallery() {
         >
             <Outlet />
         </motion.div>
-    )
-}
-
-type MainPicturesProps = {
-    srcName: string;
-    text: string;
-}
-
-
-const nightskyPic: MainPicturesProps = {
-    srcName: shootingStar,
-    text: "Nightsky",
-}
-
-const landscapePic: MainPicturesProps = {
-    srcName: tsunoshima,
-    text: "Landscape",
-}
-
-const flowerPic: MainPicturesProps = {
-    srcName: nemophila,
-    text: "Flower",
-}
-
-const foodPic: MainPicturesProps = {
-    srcName: myBestFood,
-    text: "Food",
-}
-
-const mainPicturesList: Array<MainPicturesProps> = [
-    nightskyPic,
-    landscapePic,
-    flowerPic,
-    foodPic,
-];
-
-function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
-    return (
-        <NavLink 
-            to={text} 
-            className='w-50 relative dim' 
-        >
-            <img src={srcName} alt={srcName} className='w-100 h-100'></img>
-            <div id='text-in-img'>{text}</div>
-        </NavLink>
-    )
-}
-
-export function DefaultGalleryPage(): JSX.Element {
-    return (
-        <div>
-            <div className='tl f2 b ml1 mv1 pb2'>Gallery</div>
-            <div className='flex flex-wrap items-top justify-start bg-white'>
-                {mainPicturesList.map((main) => {
-                    return <MainPicture srcName={main.srcName} text={main.text} key={main.text}/>
-                })}
-            </div>
-        </div>
     )
 }

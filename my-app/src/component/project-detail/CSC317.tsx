@@ -1,15 +1,17 @@
+/* import libraries */
+import { useRef } from 'react';
+import { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
+import "react-image-lightbox/style.css";
+import { motion } from 'framer-motion';
+
+/* import images */
 import csc317DemoVideo from '../../assets/csc317-img/csc317DemoVideo.mp4';
 import registration from '../../assets/csc317-img/registration.png';
 import logIn from '../../assets/csc317-img/logIn.png';
 import postImage from '../../assets/csc317-img/postImage.png';
 import comment from '../../assets/csc317-img/comment.png';
 import search from '../../assets/csc317-img/search.png';
-
-import { useRef } from 'react';
-import { useState } from 'react';
-import Lightbox from 'react-image-lightbox';
-import "react-image-lightbox/style.css";
-import { motion } from 'framer-motion';
 
 /*
     CSC317 Detail Component  
@@ -27,7 +29,68 @@ const imageArray: Array<string> = [
     comment,
     search,
 ]
-    
+
+type ToolProps = {
+    name: string;
+    description: string;
+}
+
+const HTMLCSSProps: ToolProps = {
+    name: "HTML/CSS",
+    description: "HTML is the standard markup language for creating Web pages, and CSS is used to format the layout of a webpage.",
+}
+
+const JavaScriptProps: ToolProps = {
+    name: "JavaScript",
+    description: "JavaScript is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. It is most well-known as the scripting language for Web pages.",
+}
+
+const MySQLProps: ToolProps = {
+    name: "MySQL",
+    description: "MySQL is the world's most popular open source database.",
+}
+
+const NodeJSProps: ToolProps = {
+    name: "NodeJS",
+    description: "NodeJS is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+}
+
+const ExpressJSProps: ToolProps = {
+    name: "ExpressJS",
+    description: "ExpressJS is a fast, unopinionated, minimalist web framework for Node.js",
+}
+
+const HandlebarsProps: ToolProps = {
+    name: "Handlebars",
+    description: "Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.",
+}
+
+const toolList: Array<ToolProps> = [
+    HTMLCSSProps,
+    JavaScriptProps,
+    MySQLProps,
+    NodeJSProps,
+    ExpressJSProps,
+    HandlebarsProps,
+];
+
+function ToolContent({ name, description }: ToolProps): JSX.Element {
+    return (
+        <div className='dt-row f4'>
+            <div className='dtc pv1 w-30 bb br b--white-50'>
+                {name}
+            </div>
+            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
+                {description}
+            </div>
+        </div>
+    )
+}     
+
+/*
+    This function creates CSC317 detail page with a motion animation
+    and has a scroll reference table
+*/
 export function CSC317() {
     const purposeRef = useRef<null | HTMLDivElement>(null);
     const toolsRef = useRef<null | HTMLDivElement>(null);
@@ -192,7 +255,6 @@ export function CSC317() {
                 >
                 </img>
             </div>
-            
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={demoVideoRef}>Demo Video</div>
             <video controls playsInline className="db ma mv3 w-50 h-50" >
                 <source src={csc317DemoVideo} type="video/mp4"></source>
@@ -201,59 +263,3 @@ export function CSC317() {
     )
 }
 
-type ToolProps = {
-    name: string;
-    description: string;
-}
-
-const HTMLCSSProps: ToolProps = {
-    name: "HTML/CSS",
-    description: "HTML is the standard markup language for creating Web pages, and CSS is used to format the layout of a webpage.",
-}
-
-const JavaScriptProps: ToolProps = {
-    name: "JavaScript",
-    description: "JavaScript is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. It is most well-known as the scripting language for Web pages.",
-}
-
-const MySQLProps: ToolProps = {
-    name: "MySQL",
-    description: "MySQL is the world's most popular open source database.",
-}
-
-const NodeJSProps: ToolProps = {
-    name: "NodeJS",
-    description: "NodeJS is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
-}
-
-const ExpressJSProps: ToolProps = {
-    name: "ExpressJS",
-    description: "ExpressJS is a fast, unopinionated, minimalist web framework for Node.js",
-}
-
-const HandlebarsProps: ToolProps = {
-    name: "Handlebars",
-    description: "Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.",
-}
-
-const toolList: Array<ToolProps> = [
-    HTMLCSSProps,
-    JavaScriptProps,
-    MySQLProps,
-    NodeJSProps,
-    ExpressJSProps,
-    HandlebarsProps,
-];
-  
-function ToolContent({ name, description }: ToolProps): JSX.Element {
-    return (
-        <div className='dt-row f4'>
-            <div className='dtc pv1 w-30 bb br b--white-50'>
-                {name}
-            </div>
-            <div className='tl dtc pv1 ph2 w-70 bb b--white-50'>
-                {description}
-            </div>
-        </div>
-    )
-} 

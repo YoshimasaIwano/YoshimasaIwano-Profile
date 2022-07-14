@@ -1,6 +1,8 @@
+/* import libraries */
 import { NavLink, Outlet } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+/* import image */
 import graduationResearchImage from '../../assets/project-images/graduationResearch.png';
 import csc317Image from '../../assets/project-images/csc317.png';
 import csc600Image from '../../assets/project-images/csc600.png';
@@ -10,28 +12,6 @@ import portfolioImage from '../../assets/project-images/portfolio.png';
 /*
     Project Component  
 */
-
-export function Project() {
-    return (
-        <motion.div 
-            id="project-container" 
-            className='pv2'
-            initial={{
-                opacity: 0.5,
-                x: 200,
-            }}
-            animate={{
-                opacity: 1,
-                x: 0,
-            }}
-            transition={{
-                duration: 1.0,
-            }}
-        >
-            <Outlet />
-        </motion.div>
-    )
-};
 
 type ProjectProps = {
     name: string;
@@ -85,6 +65,9 @@ const projectList: Array<ProjectProps> = [
     portfolioProps,
 ];
 
+/*
+    This function creates the NavLink to each project page
+*/
 function ProjectContent({ name, srcName, title, overview, period, tools }: ProjectProps): JSX.Element {
     return (
         <NavLink 
@@ -111,23 +94,70 @@ function ProjectContent({ name, srcName, title, overview, period, tools }: Proje
     )
 };
 
+/*
+    This function returns a default project page 
+*/
 export function DefaultProjectPage(): JSX.Element {
     return (
         <div>
             <div className='tl f2 b ml1 mv1'>Project</div>
             <div className='ma pv2 w-90 flex flex-wrap items-top justify-start'>
                 {projectList.map((project) => {
-                    return <ProjectContent 
-                                name={project.name} 
-                                srcName={project.srcName} 
-                                title={project.title} 
-                                overview={project.overview} 
-                                period={project.period} 
-                                tools={project.tools} 
-                                key={project.title} 
-                            />
+                    return (
+                        <ProjectContent 
+                            name={project.name} 
+                            srcName={project.srcName} 
+                            title={project.title} 
+                            overview={project.overview} 
+                            period={project.period} 
+                            tools={project.tools} 
+                            key={project.title} 
+                    />
+                    )
                 })}
             </div>
         </div>
     ) 
 }
+
+/*
+    This function creates the main content of Project with a motion animation
+*/
+export function Project() {
+    /*
+         --------------------------------------
+        |                                      |
+        |               Top Nav                |
+        |                                      |
+         --------------------------------------
+        |                                      |
+        |                                      |
+        |         *   Main Contents  *         |
+        |                                      |
+        |                                      |
+         --------------------------------------
+        |                                      |
+        |                Footer                |
+        |                                      |
+         --------------------------------------
+    */
+    return (
+        <motion.div 
+            id="project-container" 
+            className='pv2'
+            initial={{
+                opacity: 0.5,
+                x: 200,
+            }}
+            animate={{
+                opacity: 1,
+                x: 0,
+            }}
+            transition={{
+                duration: 1.0,
+            }}
+        >
+            <Outlet />
+        </motion.div>
+    )
+};
