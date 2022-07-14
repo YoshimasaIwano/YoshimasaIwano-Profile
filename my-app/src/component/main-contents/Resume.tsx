@@ -57,7 +57,7 @@ export function Resume() {
                     <Lightbox
                         mainSrc={resumePicture}
                         onCloseRequest={() => setState({
-                            isOpen:false
+                            isOpen: false
                         })}
                     />
                 )}

@@ -1,8 +1,8 @@
-import HomeImage from '../../assets/portfolio-img/home.png';
-import ProjectImage from '../../assets/portfolio-img/project.png';
-import ResumeImage from '../../assets/portfolio-img/resume.png';
-import GalleryImage from '../../assets/portfolio-img/gallery.png';
-import CategorySectionImage from '../../assets/portfolio-img/categorySection.png';
+import homeImage from '../../assets/portfolio-img/home.png';
+import projectImage from '../../assets/portfolio-img/project.png';
+import resumeImage from '../../assets/portfolio-img/resume.png';
+import galleryImage from '../../assets/portfolio-img/gallery.png';
+import categorySectionImage from '../../assets/portfolio-img/categorySection.png';
 
 import { useRef } from 'react';
 import { useState } from 'react';
@@ -19,12 +19,12 @@ type ImageState = {
     isOpen: boolean,
 }
 
-const ImageArray: Array<string> = [
-    HomeImage,
-    ProjectImage,
-    ResumeImage,
-    GalleryImage,
-    CategorySectionImage,
+const imageArray: Array<string> = [
+    homeImage,
+    projectImage,
+    resumeImage,
+    galleryImage,
+    categorySectionImage,
 ]
 
 export function Portfolio() {
@@ -72,12 +72,11 @@ export function Portfolio() {
             }}
             transition={{
                 duration: 0.5,
-                // delay: 0.5,
             }}
         >
             {state.isOpen && (
                 <Lightbox
-                    mainSrc={ImageArray[state.id]}
+                    mainSrc={imageArray[state.id]}
                     onCloseRequest={() => setState({
                         id: state.id,
                         isOpen:false
@@ -101,7 +100,7 @@ export function Portfolio() {
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
-                {ToolList.map((tool) => {
+                {toolList.map((tool) => {
                     return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
@@ -114,8 +113,8 @@ export function Portfolio() {
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 pointer' 
-                    src={HomeImage} 
-                    alt="Home Image" 
+                    src={homeImage} 
+                    alt="Home" 
                     onClick={() => setState({
                         id: 0,
                         isOpen: true
@@ -132,8 +131,8 @@ export function Portfolio() {
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 pointer' 
-                    src={ProjectImage} 
-                    alt="Project Image" 
+                    src={projectImage} 
+                    alt="Project" 
                     onClick={() => setState({
                         id: 1,
                         isOpen: true
@@ -150,8 +149,8 @@ export function Portfolio() {
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 pointer' 
-                    src={ResumeImage} 
-                    alt="Resume Image" 
+                    src={resumeImage} 
+                    alt="Resume" 
                     onClick={() => setState({
                         id: 2,
                         isOpen: true
@@ -169,8 +168,8 @@ export function Portfolio() {
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 pointer' 
-                    src={GalleryImage} 
-                    alt="Gallery Image" 
+                    src={galleryImage} 
+                    alt="Gallery" 
                     onClick={() => setState({
                         id: 3,
                         isOpen: true
@@ -185,8 +184,8 @@ export function Portfolio() {
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 pointer' 
-                    src={CategorySectionImage} 
-                    alt="Category Section Image" 
+                    src={categorySectionImage} 
+                    alt="Category Section" 
                     onClick={() => setState({
                         id: 4,
                         isOpen: true
@@ -204,7 +203,7 @@ type ToolProps = {
     description: string;
 }
 
-const typeScriptProps: ToolProps = {
+const TypeScriptProps: ToolProps = {
     name: "TypeScript",
     description: "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
 }
@@ -214,8 +213,8 @@ const ReactProps: ToolProps = {
     description: "React is a JavaScript library for building user interfaces.",
 }
 
-const ToolList: Array<ToolProps> = [
-    typeScriptProps,
+const toolList: Array<ToolProps> = [
+    TypeScriptProps,
     ReactProps,
 ];
   

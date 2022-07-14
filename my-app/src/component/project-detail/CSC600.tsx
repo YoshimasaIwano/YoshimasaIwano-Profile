@@ -1,6 +1,6 @@
-import Metallophone from '../../assets/CSC600-img/metallophone.png';
+import metallophone from '../../assets/CSC600-img/metallophone.png';
 import searchSong from '../../assets/CSC600-img/searchSong.png';
-import CSC600emoVideo from '../../assets/CSC600-img/CSC600 Demo.mp4';
+import csc600DemoVideo from '../../assets/CSC600-img/csc600Demo.mp4';
 
 import { useRef } from 'react';
 import { useState } from 'react';
@@ -17,8 +17,8 @@ type ImageState = {
     isOpen: boolean,
 }
 
-const ImageArray: Array<string> = [
-    Metallophone,
+const imageArray: Array<string> = [
+    metallophone,
     searchSong,
 ]
 
@@ -66,12 +66,11 @@ export function CSC600() {
             }}
             transition={{
                 duration: 0.5,
-                // delay: 0.5,
             }}
         >
             {state.isOpen && (
                 <Lightbox
-                    mainSrc={ImageArray[state.id]}
+                    mainSrc={imageArray[state.id]}
                     onCloseRequest={() => setState({
                         id: state.id,
                         isOpen:false
@@ -113,7 +112,7 @@ export function CSC600() {
             </div>
             <img 
                 className='db ma mv3 w-50 h-50 pointer' 
-                src={Metallophone} 
+                src={metallophone} 
                 alt="Metallophone" 
                 onClick={() => setState({
                     id: 0,
@@ -141,7 +140,7 @@ export function CSC600() {
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={demoVideoRef}>Demo Video</div>
             <video controls playsInline className="db ma mv3 w-50 h-50" >
-                <source src={CSC600emoVideo} type="video/mp4"></source>
+                <source src={csc600DemoVideo} type="video/mp4"></source>
             </video>
         </motion.div>    
     )
@@ -152,7 +151,7 @@ type ToolProps = {
     description: string;
 }
 
-const typeScriptProps: ToolProps = {
+const TypeScriptProps: ToolProps = {
     name: "TypeScript",
     description: "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
 }
@@ -173,7 +172,7 @@ const SQLiteProps: ToolProps = {
 }
 
 const ToolList: Array<ToolProps> = [
-    typeScriptProps,
+    TypeScriptProps,
     ReactProps,
     ToneJSProps,
     SQLiteProps,

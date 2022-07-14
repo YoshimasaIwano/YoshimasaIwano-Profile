@@ -2,8 +2,8 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 import graduationResearchImage from '../../assets/project-images/graduationResearch.png';
-import CSC317Image from '../../assets/project-images/CSC317.png';
-import CSC600Image from '../../assets/project-images/CSC600.png';
+import csc317Image from '../../assets/project-images/csc317.png';
+import csc600Image from '../../assets/project-images/csc600.png';
 import portfolioImage from '../../assets/project-images/portfolio.png';
 
 
@@ -42,7 +42,7 @@ type ProjectProps = {
     tools: Array<string>;
 };
 
-const GraduationResearchProps: ProjectProps = {
+const graduationResearchProps: ProjectProps = {
     name: "GraduationResearch",
     srcName: graduationResearchImage,
     title: "Graduation Research on Image Recognition",
@@ -51,25 +51,25 @@ const GraduationResearchProps: ProjectProps = {
     tools: ["Pytorch","Numpy","Pandas","Scikit-Learn","Matplotlib","Git"],
 }
 
-const CSC317Props: ProjectProps = {
+const csc317Props: ProjectProps = {
     name: "CSC317",
-    srcName: CSC317Image,
+    srcName: csc317Image,
     title: "CSC317 Photo App",
     overview: "The purpose of this course is to create Photo App.",
     period: "(2021 Fall)",
     tools: ["HTML/CSS","JavaScript","MySQL","NodeJS","ExpressJS","Handlebars"],
 }
 
-const CSC600Props: ProjectProps = {
+const csc600Props: ProjectProps = {
     name: "CSC600",
-    srcName: CSC600Image,
+    srcName: csc600Image,
     title: "CSC600 Music Instrument",
     overview: "The purpose of this course is to create a music instrument and a visualizer.",
     period: "(2022 Spring)",
     tools: ["TypeScirpt","React","ToneJS","SQLite"],
 }
 
-const PortfolioProps: ProjectProps = {
+const portfolioProps: ProjectProps = {
     name: "Portfolio",
     srcName: portfolioImage,
     title: "My Portfolio Web site",
@@ -78,11 +78,11 @@ const PortfolioProps: ProjectProps = {
     tools: ["TypeScirpt","React"],
 }
 
-const ProjectList: Array<ProjectProps> = [
-    GraduationResearchProps,
-    CSC317Props,
-    CSC600Props,
-    PortfolioProps,
+const projectList: Array<ProjectProps> = [
+    graduationResearchProps,
+    csc317Props,
+    csc600Props,
+    portfolioProps,
 ];
 
 function ProjectContent({ name, srcName, title, overview, period, tools }: ProjectProps): JSX.Element {
@@ -116,7 +116,7 @@ export function DefaultProjectPage(): JSX.Element {
         <div>
             <div className='tl f2 b ml1 mv1'>Project</div>
             <div className='ma pv2 w-90 flex flex-wrap items-top justify-start'>
-                {ProjectList.map((project) => {
+                {projectList.map((project) => {
                     return <ProjectContent 
                                 name={project.name} 
                                 srcName={project.srcName} 

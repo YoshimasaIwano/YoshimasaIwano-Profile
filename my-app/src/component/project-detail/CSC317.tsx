@@ -1,9 +1,9 @@
-import CSC317DemoVideo from '../../assets/CSC317-img/CSC317DemoVideo.mp4';
-import Registration from '../../assets/CSC317-img/Registration.png';
-import LogIn from '../../assets/CSC317-img/LogIn.png';
-import PostImage from '../../assets/CSC317-img/PostImage.png';
-import Comment from '../../assets/CSC317-img/Comment.png';
-import Search from '../../assets/CSC317-img/Search.png';
+import csc317DemoVideo from '../../assets/csc317-img/csc317DemoVideo.mp4';
+import registration from '../../assets/csc317-img/registration.png';
+import logIn from '../../assets/csc317-img/logIn.png';
+import postImage from '../../assets/csc317-img/postImage.png';
+import comment from '../../assets/csc317-img/comment.png';
+import search from '../../assets/csc317-img/search.png';
 
 import { useRef } from 'react';
 import { useState } from 'react';
@@ -20,12 +20,12 @@ type ImageState = {
     isOpen: boolean,
 }
 
-const ImageArray: Array<string> = [
-    Registration,
-    LogIn,
-    PostImage,
-    Comment,
-    Search,
+const imageArray: Array<string> = [
+    registration,
+    logIn,
+    postImage,
+    comment,
+    search,
 ]
     
 export function CSC317() {
@@ -76,12 +76,11 @@ export function CSC317() {
             }}
             transition={{
                 duration: 0.5,
-                // delay: 0.5,
             }}
         >
             {state.isOpen && (
                 <Lightbox
-                    mainSrc={ImageArray[state.id]}
+                    mainSrc={imageArray[state.id]}
                     onCloseRequest={() => setState({
                         id: state.id,
                         isOpen:false
@@ -106,7 +105,7 @@ export function CSC317() {
             </div>
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
-                {ToolList.map((tool) => {
+                {toolList.map((tool) => {
                     return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
@@ -121,7 +120,7 @@ export function CSC317() {
                 <div className='flex'>
                     <img 
                         className='db ma mv3 w-50 h-50 pointer' 
-                        src={Registration} 
+                        src={registration} 
                         alt="Registration" 
                         onClick={() => setState({
                             id: 0,
@@ -132,7 +131,7 @@ export function CSC317() {
                     </img>
                     <img 
                         className='db ma mv3 w-50 h-50 pointer' 
-                        src={LogIn} 
+                        src={logIn} 
                         alt="LogIn" 
                         onClick={() => setState({
                             id: 1,
@@ -149,7 +148,7 @@ export function CSC317() {
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 pointer' 
-                    src={PostImage} 
+                    src={postImage} 
                     alt="PostImage" 
                     onClick={() => setState({
                         id: 2,
@@ -166,7 +165,7 @@ export function CSC317() {
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 pointer' 
-                    src={Comment} 
+                    src={comment} 
                     alt="Comment" 
                     onClick={() => setState({
                         id: 3,
@@ -183,7 +182,7 @@ export function CSC317() {
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 pointer' 
-                    src={Search} 
+                    src={search} 
                     alt="Search" 
                     onClick={() => setState({
                         id: 4,
@@ -196,7 +195,7 @@ export function CSC317() {
             
             <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={demoVideoRef}>Demo Video</div>
             <video controls playsInline className="db ma mv3 w-50 h-50" >
-                <source src={CSC317DemoVideo} type="video/mp4"></source>
+                <source src={csc317DemoVideo} type="video/mp4"></source>
             </video>
         </motion.div>
     )
@@ -237,7 +236,7 @@ const HandlebarsProps: ToolProps = {
     description: "Handlebars provides the power necessary to let you build semantic templates effectively with no frustration.",
 }
 
-const ToolList: Array<ToolProps> = [
+const toolList: Array<ToolProps> = [
     HTMLCSSProps,
     JavaScriptProps,
     MySQLProps,
