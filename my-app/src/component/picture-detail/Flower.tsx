@@ -2,6 +2,7 @@ import { ImageData } from '../../assets/flower/Flower';
 import { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import "react-image-lightbox/style.css";
+import { motion } from 'framer-motion';
 
 /*
     Flower Detail Component  
@@ -22,7 +23,20 @@ export function Flower() {
     const [state, setState] = useState(initState);
 
     return (
-        <div>
+        <motion.div
+            initial={{
+                opacity: 0.5,
+                scale: 0.8,
+            }}
+            animate={{
+                opacity: 1,
+                scale: 1,
+            }}
+            transition={{
+                duration: 0.5,
+                // delay: 0.5,
+            }}
+        >
             <div className='tl f2 b ml1 mv1 pb2'>Flower</div>
             <input 
                 className='input mv2 ph4 f3 br4'
@@ -74,6 +88,6 @@ export function Flower() {
                     </div>
                 )}
             </div>
-        </div>
+        </motion.div>
     )
 }

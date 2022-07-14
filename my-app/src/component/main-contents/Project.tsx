@@ -16,10 +16,17 @@ export function Project() {
         <motion.div 
             id="project-container" 
             className='pv2'
-            initial={{opacity: 0.5}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            transition={{duration: 1.5}}
+            initial={{
+                opacity: 0.5,
+                x: 200,
+            }}
+            animate={{
+                opacity: 1,
+                x: 0,
+            }}
+            transition={{
+                duration: 1.0,
+            }}
         >
             <Outlet />
         </motion.div>

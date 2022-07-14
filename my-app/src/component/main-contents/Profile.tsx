@@ -30,6 +30,23 @@ const Variant: Variants = {
     }
 };
 
+const HelloVariant: Variants = {
+    visible: { 
+        opacity: 1, 
+        scale: 1, 
+        transition: { 
+            type: "spring",
+            bounce: 0.4,
+            duration: 1.0,
+            delay: 0.7,
+        }, 
+    },
+    hidden: { 
+        opacity: 0, 
+        scale: 0.5, 
+    }
+};
+
 function AboutMe(): JSX.Element{
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -70,6 +87,37 @@ function AboutMe(): JSX.Element{
     </motion.div>
   );
 };
+
+function Hello(): JSX.Element{
+    const control = useAnimation();
+    const [ref, inView] = useInView();
+  
+    useEffect(() => {
+      if (inView) {
+        control.start("visible");
+      } else {
+        control.start("hidden");
+      }
+    }, [control, inView]);
+  
+    return (
+      <motion.div
+        ref={ref}
+        variants={HelloVariant}
+        initial="hidden"
+        animate={control}
+      >
+        <div className='washed-blue'>
+            Hello
+        </div>
+        <div className='dark-blue'>
+            I'm Yoshimasa Iwano 
+            <img id="yoshi-img" className='ml1' src={yoshi} alt='yoshi'></img><br />
+            Yoshindar
+        </div>
+      </motion.div>
+    );
+  };
 
 const params: RecursivePartial<IOptions> = {
     fpsLimit: 150,
@@ -160,7 +208,12 @@ const params: RecursivePartial<IOptions> = {
     },
 }
 
-function customInit(engine: Engine ): Promise<void> {
+function delay(sec: number) {
+    return new Promise(f => setTimeout(f, sec));
+}
+
+async function customInit(engine: Engine ): Promise<void> {
+    await delay(1500);
     return loadFull(engine);
 }
 
@@ -169,21 +222,21 @@ export function Profile() {
         <motion.div 
             id="profile-container" 
             className='pv7 tc f1'
-            initial={{opacity: 0.5}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            transition={{duration: 1.5}}
+            initial={{
+                opacity: 0.5,
+                x: 200,
+            }}
+            animate={{
+                opacity: 1,
+                x: 0,
+            }}
+            transition={{
+                duration: 1.0,
+            }}
         >
+            <Hello/>
             <Particles params={params} init={customInit}/>
             <div className='mb7'>
-                <div className='washed-blue'>
-                    Hello
-                </div>
-                <div className='dark-blue'>
-                    I'm Yoshimasa Iwano 
-                    <img id="yoshi-img" className='ml1' src={yoshi} alt='yoshi'></img><br />
-                    Yoshindar
-                </div>
                 <ul id="sns" className='ph0 flex justify-center items-center list mv2 overflow-hidden'>
                     <li className='mh1 dib br3'><a className='dib tc f3 h3 white' href="https://github.com/YoshimasaIwano"></a></li>
                     <li className='mh1 dib br3'><a className='dib tc f3 h3 white' href="https://www.linkedin.com/in/yoshi-fukuoka/"></a></li>

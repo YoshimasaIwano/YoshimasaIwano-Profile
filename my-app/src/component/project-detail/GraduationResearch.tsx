@@ -4,6 +4,7 @@ import TumorSizeDistribution from '../../assets/graduation-research-img/tumorSiz
 import HUDistribution from '../../assets/graduation-research-img/HUDistribution.png';
 import Ensemble from '../../assets/graduation-research-img/ensemble.png';
 import { useRef } from 'react';
+import { motion } from 'framer-motion';
 
 /*
     Graduation Research Detail Component  
@@ -36,7 +37,20 @@ export function GraduationResearch() {
     });
 
     return (
-        <div>
+        <motion.div
+            initial={{
+                opacity: 0.5,
+                scale: 0.8,
+            }}
+            animate={{
+                opacity: 1,
+                scale: 1,
+            }}
+            transition={{
+                duration: 0.5,
+                // delay: 0.5,
+            }}
+        >
             <div className='tl f2 b ml1 mv1'>Graduation Research</div>
             <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-50'>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPurpose}>・Purpose & Background</button>
@@ -120,7 +134,7 @@ export function GraduationResearch() {
                     There's stiil room for investing these two difficulities, so the next research topic is to find better algorithm for these two problems. 
                 </p>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

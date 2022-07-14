@@ -22,10 +22,17 @@ export function Resume() {
         <motion.div 
             id="resume-container" 
             className='pv2 tc'
-            initial={{opacity: 0.5}}
-            animate={{opacity: 1}}
-            exit={{opacity: 0}}
-            transition={{duration: 1.5}}
+            initial={{
+                opacity: 0.5,
+                x: 200,
+            }}
+            animate={{
+                opacity: 1,
+                x: 0,
+            }}
+            transition={{
+                duration: 1.0,
+            }}
         >
             <div className='tl f2 b ml1 mv1'>Resume</div>
             <div className='f3'>

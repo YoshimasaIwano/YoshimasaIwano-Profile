@@ -8,6 +8,7 @@ import { useRef } from 'react';
 import { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import "react-image-lightbox/style.css";
+import { motion } from 'framer-motion';
 
 /*
     Portfolio Detail Component  
@@ -60,7 +61,20 @@ export function Portfolio() {
     const [state, setState] = useState(initState)
 
     return (
-        <div>
+        <motion.div
+            initial={{
+                opacity: 0.5,
+                scale: 0.8,
+            }}
+            animate={{
+                opacity: 1,
+                scale: 1,
+            }}
+            transition={{
+                duration: 0.5,
+                // delay: 0.5,
+            }}
+        >
             {state.isOpen && (
                 <Lightbox
                     mainSrc={ImageArray[state.id]}
@@ -181,7 +195,7 @@ export function Portfolio() {
                 >
                 </img>
             </div>
-        </div>
+        </motion.div>
     )
 }
 

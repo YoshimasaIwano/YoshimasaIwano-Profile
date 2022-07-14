@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import { useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import "react-image-lightbox/style.css";
+import { motion } from 'framer-motion';
 
 /*
     CSC600 Detail Component  
@@ -54,7 +55,20 @@ export function CSC600() {
     const [state, setState] = useState(initState)
 
     return (
-        <div>
+        <motion.div
+            initial={{
+                opacity: 0.5,
+                scale: 0.8,
+            }}
+            animate={{
+                opacity: 1,
+                scale: 1,
+            }}
+            transition={{
+                duration: 0.5,
+                // delay: 0.5,
+            }}
+        >
             {state.isOpen && (
                 <Lightbox
                     mainSrc={ImageArray[state.id]}
@@ -129,8 +143,7 @@ export function CSC600() {
             <video controls playsInline className="db ma mv3 w-50 h-50" >
                 <source src={CSC600emoVideo} type="video/mp4"></source>
             </video>
-        </div>
-        
+        </motion.div>    
     )
 }
 

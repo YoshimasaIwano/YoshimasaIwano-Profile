@@ -4,11 +4,10 @@ import { useLocation } from "react-router-dom";
 export function ScrollTop() {
     const location = useLocation();
     useEffect(() => {
-        setTimeout(() => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"});
-        }, 100);
+        window.scrollTo({
+            top: 0,
+            // behavior: "smooth",
+        });
     }, [location]);
     
     return null;
