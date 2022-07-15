@@ -68,9 +68,9 @@ export function Flower() {
                         return img
                     }
                 }).map((img) => 
-                    <div className='w-250px h-250px' key={img.src}>
+                    <div className='w-150px h-150px' key={img.src}>
                         <img 
-                            className='w-250px h-250px pointer' 
+                            className='w-150px h-150px pointer' 
                             src={img.src} 
                             alt={img.color} 
                             onClick={() => setState({

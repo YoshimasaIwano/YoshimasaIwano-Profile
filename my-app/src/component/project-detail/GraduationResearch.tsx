@@ -116,7 +116,7 @@ export function GraduationResearch() {
             }}
         >
             <div className='tl f2 b ml1 mv1'>Graduation Research</div>
-            <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-50'>
+            <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70'>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPurpose}>・Purpose & Background</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToData}>・Data & Preprocessing</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToMethod}>・Method</button>

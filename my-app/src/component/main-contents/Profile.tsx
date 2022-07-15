@@ -130,18 +130,18 @@ function Hello(): JSX.Element{
     This is parameters of tsParticles (moving background)
 */
 const params: RecursivePartial<IOptions> = {
-    fpsLimit: 150,
+    fpsLimit: 320,
     particles: {
         bounce: {
             vertical: {
                 value: {
-                    min: 0.85,
+                    min: 0.25,
                     max: 0.95,
                 },
             },
             horizontal: {
                 value: {
-                    min: 0.75,
+                    min: 0.65,
                     max: 0.95,
                 }
             }
@@ -165,7 +165,7 @@ const params: RecursivePartial<IOptions> = {
                 rate: {
                     value: {
                         min: 1,
-                        max: 4,
+                        max: 2,
                     },
                 },
             },
@@ -183,19 +183,19 @@ const params: RecursivePartial<IOptions> = {
             enable: true,
             gravity: {
                 enable: true,
-                maxSpeed: 100,
+                maxSpeed: 20,
             },
             speed: {
-                min: 20,
-                max: 50,
+                min: 5,
+                max: 20,
             },
             direction: "none",
             random: true,
             straight: false,
             outModes: {
                 bottom: "split",
-                default: "bounce",
-                top: "bounce",
+                default: "split",
+                top: "split",
             },
         },
     },
@@ -204,17 +204,21 @@ const params: RecursivePartial<IOptions> = {
         direction: "top",
         life: {
             count: 0,
-            duration: 2,
-            delay: 0.2,
+            duration: 0.2,
+            // delay: 1.1,
         },
         rate: {
-            delay: 0.1,
-            quantity: 5,
+            delay: 1.2,
+            quantity: 10,
         },
         size: {
             width: 0,
             height: 0,
         },
+        speed: {
+            min: 10,
+            max: 20,
+        }
     },
 }
 

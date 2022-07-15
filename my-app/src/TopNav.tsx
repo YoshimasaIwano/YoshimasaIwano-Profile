@@ -10,7 +10,7 @@ type NavProps = {
 }
 
 function NavContent( { name }: NavProps ): JSX.Element {
-    const classAttribute: string = 'f3 ph2 mh2 b--solid br1 b--green link color-inherit '
+    const classAttribute: string = 'f4 ph1 mh2 mv3 pv1 b--solid br1 b--green link color-inherit '
     return (
         <NavLink 
             to={name} 
@@ -43,7 +43,7 @@ export function TopNav(): JSX.Element {
     */
     const navList: Array<string> = ["Home", "Project", "Resume", "Gallery"]
     return (
-        <div className='flex justify-center items-center aspect-ratio-object h3 bg-light-green'>
+        <div className='w-100 flex justify-center bg-light-green'>
             {navList.map((nav) => {
                 return (
                     <NavContent name={nav} key={nav} />

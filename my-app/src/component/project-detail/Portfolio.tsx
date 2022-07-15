@@ -129,7 +129,7 @@ export function Portfolio() {
                 />
             )}
             <div className='tl f2 b ml1 mv1'>My Portfolio Website</div>
-            <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-50'>
+            <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70'>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToMotivation}>・Motivation</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToTools}>・Tools</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPageTransition}>・Page Transition</button>

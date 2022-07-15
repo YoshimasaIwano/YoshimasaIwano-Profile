@@ -74,8 +74,8 @@ function ProjectContent({ name, srcName, title, overview, period, tools }: Proje
             to={name} 
             className='flex-column ma mv1 pv2 w-40 shadow-5 br4 ba b--washed-green bg-white-40 bg-animate hover-bg-light-blue link color-inherit' 
         >
-            <div className='relative ma w-80 h-auto'>
-                <img src={srcName} alt={srcName} className='img'></img>
+            <div className='relative ma w-90 h-auto'>
+                <img src={srcName} alt={srcName} className='img '></img>
             </div>
             
             <div className='w-auto tc word-wrap f4 b dark-pink mh1 mv1'>{title}</div>
