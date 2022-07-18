@@ -58,7 +58,7 @@ const ToolList: Array<ToolProps> = [
   
 function ToolContent({ name, description }: ToolProps): JSX.Element {
     return (
-        <div className='dt-row f4'>
+        <div className='dt-row f4 f6-ns'>
             <div className='dtc pv1 w-30 bb br b--white-50'>
                 {name}
             </div>
@@ -128,41 +128,41 @@ export function CSC600() {
                     })}
                 />
             )}
-            <div className='tl f2 b ml1 mv1'>CSC600</div>
-            <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70'>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPurpose}>・Purpose</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToTools}>・Tools</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToInstrument}>・Instrument</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToVisualizer}>・Visualizer</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPlaylist}>・Playlist Database</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToDemoVideo}>・Demo Video</button>
+            <div className='tl f2 f4-ns b ml1 mv1'>CSC600</div>
+            <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70 w-100-ns'>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToPurpose}>・Purpose</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToTools}>・Tools</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToInstrument}>・Instrument</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToVisualizer}>・Visualizer</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToPlaylist}>・Playlist Database</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToDemoVideo}>・Demo Video</button>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={purposeRef}>Purpose</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={purposeRef}>Purpose</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     The purpose of this project is to create a music instrument and visualizer, then work on plylist database as a team.
                 </p>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
                 {ToolList.map((tool) => {
                     return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={instrumentRef}>Instrument</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={instrumentRef}>Instrument</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     I created a metallophone, which produces different sounds according to keys. 
                 </p>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={visualizerRef}>Visualizer</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={visualizerRef}>Visualizer</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     I created a visualizer, which shows 2D waveform. X axis expresses the length of sounds, while gray scale indicates pitch of sound. In other words, high pitch sound is white and low pitch sound is black.    
                 </p>
             </div>
             <img 
-                className='db ma mv3 w-50 h-50 pointer' 
+                className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                 src={metallophone} 
                 alt="Metallophone" 
                 onClick={() => setState({
@@ -172,13 +172,13 @@ export function CSC600() {
                 }
             >
             </img>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={playlistRef}>Playlist DataBase</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={playlistRef}>Playlist DataBase</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     I worked on creating playlist database, which has a song name and artist name. I added the searching function that uses both song names and artist names.
                 </p>
                 <img 
-                    className='db ma mv3 w-50 h-50 pointer' 
+                    className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                     src={searchSong} 
                     alt="searchSong" 
                     onClick={() => setState({
@@ -189,8 +189,8 @@ export function CSC600() {
                 >
                 </img>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={demoVideoRef}>Demo Video</div>
-            <video controls playsInline className="db ma mv3 w-50 h-50" >
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={demoVideoRef}>Demo Video</div>
+            <video controls playsInline className="db ma mv3 w-50 h-50 w-80-ns h-80-ns" >
                 <source src={csc600DemoVideo} type="video/mp4"></source>
             </video>
         </motion.div>    

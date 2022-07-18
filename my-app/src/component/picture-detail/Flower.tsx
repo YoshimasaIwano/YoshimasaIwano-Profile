@@ -42,18 +42,18 @@ export function Flower() {
                 duration: 0.5,
             }}
         >
-            <div className='tl f2 b ml1 mv1 pb2'>Flower</div>
+            <div className='tl f2 f4-ns b ml1 mv1 pb2'>Flower</div>
             <input 
-                className='input mv2 ph4 f3 br4'
+                className='input mv2 ph4 f3 f5-ns br4'
                 placeholder='e.g.) nemophila, sakura, plum' 
                 onChange={event => setQuery(event.target.value)}
             />
-            <div className='mv2 f3'>
-                <button className='mh3 mt2 pv2 ph4 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("all")}>All</button>
-                <button className='mh3 mt2 pv2 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("yellow")}>Yellow</button>
-                <button className='mh3 mt2 pv2 ph3 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("blue")}>Blue</button>
-                <button className='mh3 mt2 pv2 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("white")}>White</button>
-                <button className='mh3 mt2 pv2 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("other")}>Other</button>
+            <div className='mv2 f3 f5-ns'>
+                <button className='mh3 mt2 pv2 ph4 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("all")}>All</button>
+                <button className='mh3 mt2 pv2 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("yellow")}>Yellow</button>
+                <button className='mh3 mt2 pv2 ph3 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("blue")}>Blue</button>
+                <button className='mh3 mt2 pv2 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("white")}>White</button>
+                <button className='mh3 mt2 pv2 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("other")}>Other</button>
             </div>
             <div className='mv3 ma w-90 flex flex-wrap items-top justify-center'>
                 {ImageData.filter((img) => {

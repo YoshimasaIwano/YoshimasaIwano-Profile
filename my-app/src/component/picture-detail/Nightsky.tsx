@@ -42,16 +42,16 @@ export function Nightsky() {
                 duration: 0.5,
             }}
         >
-            <div className='tl f2 b ml1 mv1 pb2'>Night sky</div>
+            <div className='tl f2 f4-ns b ml1 mv1 pb2'>Night sky</div>
             <input 
-                className='input mv2 ph4 f3 br4'
+                className='input mv2 ph4 f3 f5-ns br4'
                 placeholder='e.g.) summer, 2021, etc' 
                 onChange={event => setQuery(event.target.value)}
             />
-            <div className='mv2 f3'>
-                <button className='mh3 mt2 pv2 ph4 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("all")}>All</button>
-                <button className='mh3 mt2 pv2 ph3 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("nikko")}>Nikko</button>
-                <button className='mh3 mt2 pv2 w-auto f3 bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("fukushima")}>Fukushima</button>
+            <div className='mv2 f3 f5-ns'>
+                <button className='mh3 mt2 pv2 ph4 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("all")}>All</button>
+                <button className='mh3 mt2 pv2 ph3 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("nikko")}>Nikko</button>
+                <button className='mh3 mt2 pv2 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setPlace("fukushima")}>Fukushima</button>
             </div>
             <div className='mv3 ma w-90 flex flex-wrap items-top justify-center'>
                 {ImageData.filter((img) => {

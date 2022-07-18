@@ -72,18 +72,18 @@ function ProjectContent({ name, srcName, title, overview, period, tools }: Proje
     return (
         <NavLink 
             to={name} 
-            className='flex-column ma mv1 pv2 w-40 shadow-5 br4 ba b--washed-green bg-white-40 bg-animate hover-bg-light-blue link color-inherit' 
+            className='flex-column ma mv1 pv2 w-40 w-50-ns shadow-5 br4 ba b--washed-green bg-white-40 bg-animate hover-bg-light-blue link color-inherit' 
         >
-            <div className='relative ma w-90 h-auto'>
-                <img src={srcName} alt={srcName} className='img '></img>
+            <div className='relative tc ma w-90 h-auto'>
+                <img src={srcName} alt={srcName} className='img w-150px h-150px'></img>
             </div>
             
-            <div className='w-auto tc word-wrap f4 b dark-pink mh1 mv1'>{title}</div>
-            <div className='tl mh2 mv1 f4 purple'>Overview</div>
-            <p className='mh2 mv1 f5'>{overview}</p>
-            <p className='mh2 mv1 f5'>{period}</p>
-            <div className='tl mh2 mv1 f4 blue'>Tools</div>
-            <div className='f5 mh2 mv1 flex flex-wrap items-center justify-start'>
+            <div className='w-auto tc word-wrap f4 f6-ns b dark-pink mh1 mv1'>{title}</div>
+            <div className='tl mh2 mv1 f4 f6-ns purple'>Overview</div>
+            <p className='mh2 mv1 f5 f7-ns'>{overview}</p>
+            <p className='mh2 mv1 f5 f7-ns'>{period}</p>
+            <div className='tl mh2 mv1 f4 f6-ns blue'>Tools</div>
+            <div className='mh2 mv1 f5 f7-ns flex flex-wrap items-center justify-start'>
                 {tools.map((tool) => {
                     return (
                         <div className='tc mv1 mh2 w-auto mh0 br2 hover-bg-blue' key={tool} >{tool}</div>
@@ -100,8 +100,8 @@ function ProjectContent({ name, srcName, title, overview, period, tools }: Proje
 export function DefaultProjectPage(): JSX.Element {
     return (
         <div>
-            <div className='tl f2 b ml1 mv1'>Project</div>
-            <div className='ma pv2 w-90 flex flex-wrap items-top justify-start'>
+            <div className='tl f2 f4-ns b ml1 mv1'>Project</div>
+            <div className='ma pv2 w-90 w-100-ns flex flex-wrap items-top justify-start'>
                 {projectList.map((project) => {
                     return (
                         <ProjectContent 

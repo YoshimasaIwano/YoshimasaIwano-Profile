@@ -53,7 +53,7 @@ const toolList: Array<ToolProps> = [
   
 function ToolContent({ name, description }: ToolProps): JSX.Element {
     return (
-        <div className='dt-row f4'>
+        <div className='dt-row f4 f6-ns'>
             <div className='dtc pv1 w-30 bb br b--white-50'>
                 {name}
             </div>
@@ -128,44 +128,44 @@ export function Portfolio() {
                     })}
                 />
             )}
-            <div className='tl f2 b ml1 mv1'>My Portfolio Website</div>
-            <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70'>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToMotivation}>・Motivation</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToTools}>・Tools</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToPageTransition}>・Page Transition</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToHome}>・Home</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToProject}>・Project</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToResume}>・Resume</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 w-80 pointer' onClick={scrollToGallery}>・Gallery</button>
+            <div className='tl f2 f4-ns b ml1 mv1'>My Portfolio Website</div>
+            <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70 w-100-ns'>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToMotivation}>・Motivation</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToTools}>・Tools</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToPageTransition}>・Page Transition</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToHome}>・Home</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToProject}>・Project</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToResume}>・Resume</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToGallery}>・Gallery</button>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={motivationRef}>Motivation</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={motivationRef}>Motivation</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     The motivation is I want to apply my knowledge learned from CSC317 and CSC600 to creating a Website.
                 </p>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={toolsRef}>Tools</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>
                 {toolList.map((tool) => {
                     return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={pageTransitionRef}>Page Transition</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={pageTransitionRef}>Page Transition</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     Each page trainsition makes you go back to the top of the page with an animation even if you click the detail of a project and gallery. <br />
                     You will also see the upper arrow that enables you to go back to the top when you scroll to the specific height.
                 </p>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={homeRef}>Home</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={homeRef}>Home</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     One of the outstanding point in my Home page is a moving balloon background. Tbis is implemeted by tsParticles. I wrote parameters from scratch.<br />
                     I also implemeted navagation bars on the top by using NavLink and Router in React. you can easily go to Home, Project, Resume, and Gallery page.<br />
                     In addition, you can jump to my social media accounts when you click the icons. 
                 </p>
                 <img 
-                    className='db ma mv3 w-50 h-50 pointer' 
+                    className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                     src={homeImage} 
                     alt="Home" 
                     onClick={() => setState({
@@ -176,14 +176,14 @@ export function Portfolio() {
                 >
                 </img>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={projectRef}>Project</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={projectRef}>Project</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     You can see all of my projects I have ever done and you can see the detail of each project when you click each project block.<br />
                     This is also implemeted by NavLink and Router. The difficulity is this navigation is nested router inside the main navigation.
                 </p>
                 <img 
-                    className='db ma mv3 w-50 h-50 pointer' 
+                    className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                     src={projectImage} 
                     alt="Project" 
                     onClick={() => setState({
@@ -194,14 +194,14 @@ export function Portfolio() {
                 >
                 </img>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={resumeRef}>Resume</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={resumeRef}>Resume</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     The Resume page is simple. There are just a download button and my resume image.<br />
                     If you want to download my resume, you can click the download button. If you want to watch my resume carefully, you can click my resume image.   
                 </p>
                 <img 
-                    className='db ma mv3 w-50 h-50 pointer' 
+                    className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                     src={resumeImage} 
                     alt="Resume" 
                     onClick={() => setState({
@@ -212,15 +212,15 @@ export function Portfolio() {
                 >
                 </img>
             </div>
-            <div className='db ma mh1 mv3 f3 b dark-gray w-80' ref={galleryRef}>Gallery</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={galleryRef}>Gallery</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     I like to take pictures and all pictues in this gallery are mine.<br />
                     The initial Gallery page shows 4 categories of images; nightsky, landscape, flower, and food. you can go to each category page.<br />
                     This is also implemted by Navlink and Router.
                 </p>
                 <img 
-                    className='db ma mv3 w-50 h-50 pointer' 
+                    className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                     src={galleryImage} 
                     alt="Gallery" 
                     onClick={() => setState({
@@ -230,13 +230,13 @@ export function Portfolio() {
                     }
                 >
                 </img>
-                <p className='tl mh2 mv2 f3'>
+                <p className='tl mh2 mv2 f3 f5-ns'>
                     In each category section, you can see a lot of pictures. You can also filter images using fileter buttons. Moreover, you can search a image using keywords.<br />
                     This function is implemented by React and TypeScript.<br />
                     When you click each image, you will see the detail of the image. This is implemented by Lightbox in React.
                 </p>
                 <img 
-                    className='db ma mv3 w-50 h-50 pointer' 
+                    className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                     src={categorySectionImage} 
                     alt="Category Section" 
                     onClick={() => setState({

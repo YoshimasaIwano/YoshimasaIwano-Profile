@@ -56,13 +56,13 @@ export function Resume() {
                 duration: 1.0,
             }}
         >
-            <div className='tl f2 b ml1 mv1'>Resume</div>
-            <div className='f3'>
+            <div className='tl f2 f4-ns b ml1 mv1'>Resume</div>
+            <div className='f3 f5-ns'>
                 Here's my resume. (As of Jun/2022) <br />
                 You can download my resume clicking the button below.
             </div>
             <div className='mv3'>
-                <a className='no-underline b mv3 mh3 ph2 f3 dark-green bg-navy hover-yellow hover-bg-green br2 ' href='./resume[YoshimasaIwano].pdf' download='./resume[YoshimasaIwano].pdf'>
+                <a className='no-underline b mv3 mh3 ph2 f3 f5-ns dark-green bg-navy hover-yellow hover-bg-green br2 ' href='./resume[YoshimasaIwano].pdf' download='./resume[YoshimasaIwano].pdf'>
                     Download My Resume
                 </a>
                 <img 

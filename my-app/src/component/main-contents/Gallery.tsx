@@ -55,7 +55,7 @@ function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
             className='w-50 relative dim' 
         >
             <img src={srcName} alt={srcName} className='w-100 h-100'></img>
-            <div id='text-in-img'>{text}</div>
+            <div id='text-in-img' className='f4-ns'>{text}</div>
         </NavLink>
     )
 }
@@ -66,7 +66,7 @@ function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
 export function DefaultGalleryPage(): JSX.Element {
     return (
         <div>
-            <div className='tl f2 b ml1 mv1 pb2'>Gallery</div>
+            <div className='tl f2 f4-ns b ml1 mv1 pb2'>Gallery</div>
             <div className='flex flex-wrap items-top justify-start bg-white'>
                 {mainPicturesList.map((main) => {
                     return (
