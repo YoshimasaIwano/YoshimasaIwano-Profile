@@ -55,7 +55,7 @@ function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
             className='w-50 relative dim' 
         >
             <img src={srcName} alt={srcName} className='w-100 h-100'></img>
-            <div id='text-in-img' className='f4-ns'>{text}</div>
+            <div id='text-in-img' className='f2 f4-ns'>{text}</div>
         </NavLink>
     )
 }

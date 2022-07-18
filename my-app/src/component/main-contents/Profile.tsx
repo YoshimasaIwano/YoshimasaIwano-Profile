@@ -278,11 +278,11 @@ export function Profile() {
             <Particles params={params} init={customInit}/>
             <div className='mb7'>
                 <ul id="sns" className='ph0 flex justify-center items-center list mv2 overflow-hidden'>
-                    <li className='mh1 dib br3'><a className='dib tc f3 h3 white' href="https://github.com/YoshimasaIwano"></a></li>
-                    <li className='mh1 dib br3'><a className='dib tc f3 h3 white' href="https://www.linkedin.com/in/yoshi-fukuoka/"></a></li>
-                    <li className='mh1 dib br3'><a className='dib tc f3 h3 white' href="https://www.facebook.com/profile.php?id=100028308006480"></a></li>
-                    <li className='mh1 dib br3'><a className='dib tc f3 h3 white' href="https://www.instagram.com/yoshimasa_iwano/"></a></li>
-                    <li className='mh1 dib br3'><a className='dib tc f3 h3 white' href="https://note.com/yoshimasa_iwano/"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://github.com/YoshimasaIwano"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://www.linkedin.com/in/yoshi-fukuoka/"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://www.facebook.com/profile.php?id=100028308006480"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://www.instagram.com/yoshimasa_iwano/"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://note.com/yoshimasa_iwano/"></a></li>
                 </ul>
             </div>
             <AboutMe/>
