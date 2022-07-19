@@ -20,14 +20,14 @@ const aboutMeVariant: Variants = {
         y: 0,
         transition: { 
             type: "spring",
-            bounce: 0.4,
-            duration: 1.5, 
+            bounce: 0.6,
+            duration: 2.0, 
         }, 
     },
     hidden: { 
         opacity: 0, 
         scale: 1, 
-        y: 300,
+        y: 200,
     }
 };
 

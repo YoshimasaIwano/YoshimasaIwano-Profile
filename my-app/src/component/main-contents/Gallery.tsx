@@ -65,7 +65,7 @@ function MainPicture({ srcName, text }: MainPicturesProps): JSX.Element {
 */
 export function DefaultGalleryPage(): JSX.Element {
     return (
-        <div className='mb4-ns'>
+        <div className='mb6-ns'>
             <div className='tl f2 f4-ns b ml1 mv1 pb2'>Gallery</div>
             <div className='flex flex-wrap items-top justify-start bg-white'>
                 {mainPicturesList.map((main) => {

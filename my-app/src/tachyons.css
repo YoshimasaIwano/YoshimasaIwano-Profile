@@ -2213,6 +2213,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .h-50-ns { height: 50%; }
  .h-75-ns { height: 75%; }
  .h-100-ns { height: 100%; }
+ .h-150px-ns { height: 150px; }
  .min-h-100-ns { min-height: 100%; }
  .vh-25-ns { height: 25vh; }
  .vh-50-ns { height: 50vh; }
@@ -2260,6 +2261,7 @@ code, .code { font-family: Consolas, monaco, monospace; }
  .w-third-ns { width: 33.33333%; }
  .w-two-thirds-ns { width: 66.66667%; }
  .w-auto-ns { width: auto; }
+ .w-150px-ns { width: 150px; }
  .overflow-visible-ns { overflow: visible; }
  .overflow-hidden-ns { overflow: hidden; }
  .overflow-scroll-ns { overflow: scroll; }

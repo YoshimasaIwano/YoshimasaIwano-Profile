@@ -55,7 +55,7 @@ export function Flower() {
                 <button className='mh3 mt2 pv2 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("white")}>White</button>
                 <button className='mh3 mt2 pv2 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("other")}>Other</button>
             </div>
-            <div className='mv3 ma w-90 flex flex-wrap items-top justify-center'>
+            <div className='mv3 ma mb5-l w-90 flex flex-wrap items-top justify-center'>
                 {ImageData.filter((img) => {
                     if (color !== "all" && color.toLowerCase() !== img.color.toLowerCase()) {
                         return
@@ -68,9 +68,9 @@ export function Flower() {
                         return img
                     }
                 }).map((img) => 
-                    <div className='w-150px h-150px' key={img.src}>
+                    <div className='w-250px h-250px w-150px-ns h-150px-ns' key={img.src}>
                         <img 
-                            className='w-150px h-150px pointer' 
+                            className='w-250px h-250px w-150px-ns h-150px-ns pointer' 
                             src={img.src} 
                             alt={img.color} 
                             onClick={() => setState({
