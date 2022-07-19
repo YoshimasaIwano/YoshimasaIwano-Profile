@@ -27,7 +27,7 @@ const aboutMeVariant: Variants = {
     hidden: { 
         opacity: 0, 
         scale: 1, 
-        y: 200,
+        y: 300,
     }
 };
 
@@ -70,20 +70,20 @@ function AboutMe(): JSX.Element{
             initial="hidden"
             animate={control}
         >
-            <div className='tl f3'>
+            <div className='tl f3 f5-ns'>
                 <h3 className='ml1 mv1'>Yoshimasa Iwano (岩野　善允)</h3>
-                <p className='ml3 mv4'>
+                <p className='mh3 mh1-ns mv4 mv2-ns'>
                     I was born in Japan and brought up in Fukuoka until high school. I had a lot of difficulities in my life.<br/>
                     Fortunately, I got a scholarship and completed my Bachelor's degree of Engineering from University of Tsukuba in 2021.<br/>
                     I'm currently pursuing a Master's degree in Computer Science from San Francisco State University.</p>
-                <p className='ml3 mv4'>
+                <p className='mh3 mh1-ns mv4 mv2-ns'>
                     I am interested in Computer Vision and Software Development.<br/>
                     In my undergraduate, I was in Visual Media Laboratory at University of Tsukuba in Japan. I was doing researh on medical imaging. Here's a 
                     <a className='no-underline b white-70 hover-light-yellow' href='../graduate_research_final.pdf'> paper.</a><br/>
                     I also have some experience of Software Development at SFSU. The detail is in Project section.<br/>
                     I am familiar with technologies such as Pytorch, Tensorflow, Numpy, Pandas, Scikit-Learn, React, and Node.js
                 </p>
-                <p className='ml3 mv4'>
+                <p className='mh3 mh1-ns mv4 mv2-ns'>
                     As a fast learner and a motivated person, I can adapt to any changes without problems.<br/>
                     I went through and overcame some difficult situations with a resolute and invincible sprit, so I am well-prepared to tackle challenges and maximize my ability.
                 </p>
@@ -130,7 +130,7 @@ function Hello(): JSX.Element{
     This is parameters of tsParticles (moving background)
 */
 const params: RecursivePartial<IOptions> = {
-    fpsLimit: 320,
+    fpsLimit: 120,
     particles: {
         bounce: {
             vertical: {
@@ -261,7 +261,7 @@ export function Profile() {
     return (
         <motion.div 
             id="profile-container" 
-            className='pv7 tc f1'
+            className='pv7 pv6-ns tc f1 f3-ns'
             initial={{
                 opacity: 0.5,
                 x: 200,
@@ -278,11 +278,11 @@ export function Profile() {
             <Particles params={params} init={customInit}/>
             <div className='mb7'>
                 <ul id="sns" className='ph0 flex justify-center items-center list mv2 overflow-hidden'>
-                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://github.com/YoshimasaIwano"></a></li>
-                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://www.linkedin.com/in/yoshi-fukuoka/"></a></li>
-                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://www.facebook.com/profile.php?id=100028308006480"></a></li>
-                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://www.instagram.com/yoshimasa_iwano/"></a></li>
-                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 h3 white' href="https://note.com/yoshimasa_iwano/"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 f5-ns h3 white' href="https://github.com/YoshimasaIwano"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 f5-ns h3 white' href="https://www.linkedin.com/in/yoshi-fukuoka/"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 f5-ns h3 white' href="https://www.facebook.com/profile.php?id=100028308006480"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 f5-ns h3 white' href="https://www.instagram.com/yoshimasa_iwano/"></a></li>
+                    <li className='mh1 dib br3'><a className='dib w-100 h-100 tc f3 f5-ns h3 white' href="https://note.com/yoshimasa_iwano/"></a></li>
                 </ul>
             </div>
             <AboutMe/>

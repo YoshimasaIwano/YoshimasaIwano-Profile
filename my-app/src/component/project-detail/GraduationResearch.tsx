@@ -132,7 +132,7 @@ export function GraduationResearch() {
                     In addition, The conventional biomarker can not identify the teratoma before a surgery.
                     Therefore, we aimed to predict the pathology of postchemotherapy residual tumors using CNN and SVM.
                 </p>
-                <img src={backgroundPurpose} alt="bacground and purpose" className="db ma mv3 w-50 h-50"></img>
+                <img src={backgroundPurpose} alt="bacground and purpose" className="db ma mv3 w-50 h-50 w-80-ns h-80-ns"></img>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     I found two previous studies on the exact same topic.
                     <a className='no-underline b black hover-light-yellow' href='https://ascopubs.org/doi/full/10.1200/CCI.18.00004'> The one </a>
@@ -148,17 +148,17 @@ export function GraduationResearch() {
                     We collected CT images of 66 patients from 2005 to 2019.<br />
                     The total number of ROI (Region of Interst) is 155 and the proportion of necrosis and teratoma is shown in the following image. 
                 </p>
-                <img src={dataDistribution} alt="data distribution" className="db ma mv3 w-30 h-30"></img>
+                <img src={dataDistribution} alt="data distribution" className="db ma mv3 w-30 h-30 w-50-ns h-50-ns"></img>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     Firstly, the size of images is not constant, so we need to resize or clip images to apply them to Resnet.
                     We decided to clip an image with 100 × 100 by the analysis of tunor size.
                 </p>
-                <img src={tumorSizeDistribution} alt="tumor size distribution" className="db ma mv3 w-50 h-50"></img>
+                <img src={tumorSizeDistribution} alt="tumor size distribution" className="db ma mv3 w-50 h-50 w-80-ns h-80-ns"></img>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     Secondly, the range of intensity in images is so wide that images are unclear.<br />
                     Therefore, we transformed images in the range of [-150, 150] to cover the impoertant information in images. 
                 </p>
-                <img src={HUDistribution} alt="HU distribution" className="db ma mv3 w-50 h-50"></img>
+                <img src={HUDistribution} alt="HU distribution" className="db ma mv3 w-50 h-50 w-80-ns h-80-ns"></img>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={methodRef}>Method</div>
             <div className='db ma flex-row tc w-80'>
@@ -167,7 +167,7 @@ export function GraduationResearch() {
                     First of all, we extract 4608 features from Resnets and get 478 featrues after PCA. After that, we pour them into SVMs.
                     Finally, we ensemble the predictions from 5 models using majority decision. 
                 </p>
-                <img src={ensemble} alt="ensemble" className="db ma mv3 w-50 h-50"></img>
+                <img src={ensemble} alt="ensemble" className="db ma mv3 w-50 h-50 w-80-ns h-80-ns"></img>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={toolsRef}>Tools</div>
             <div className='dt ma flex-row tc w-80'>

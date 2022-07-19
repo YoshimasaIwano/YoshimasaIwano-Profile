@@ -55,6 +55,18 @@ code {
   width: 44px; 
 }
 
+@media screen and (max-width: 600px) {
+  #sns li a::before {
+    -webkit-border-radius: 0.5rem;
+    display: inline-block;
+    font-family: FontAwesome;
+    line-height: 32px; 
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    width: 32px; 
+  }
+}
+
 #sns li a:hover::before {
   opacity: 0.7;
 }
