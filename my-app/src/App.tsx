@@ -16,6 +16,7 @@ import { GraduationResearch } from './component/project-detail/GraduationResearc
 import { CSC317 } from './component/project-detail/CSC317';
 import { CSC600 } from './component/project-detail/CSC600';
 import { Portfolio } from './component/project-detail/Portfolio';
+import { RacePrediction } from './component/project-detail/RacePrediction';
 import { DefaultGalleryPage } from './component/main-contents/Gallery';
 import { Nightsky } from './component/picture-detail/Nightsky';
 import { Landscape } from './component/picture-detail/Landscape';
@@ -38,6 +39,7 @@ function App(): JSX.Element {
             <Route path="CSC317" element={<CSC317 />}/>
             <Route path="CSC600" element={<CSC600 />}/>
             <Route path="Portfolio" element={<Portfolio />}/>
+            <Route path="RacePrediction" element={<RacePrediction />}/>
             <Route path="*" element={<div>404</div>}/>
           </Route>
           <Route path="/Resume" element={<Resume />}/>

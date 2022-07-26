@@ -58,11 +58,21 @@ const portfolioProps: ProjectProps = {
     tools: ["TypeScirpt","React"],
 }
 
+const racePredictionProps: ProjectProps = {
+    name: "RacePrediction",
+    srcName: portfolioImage,
+    title: "Race Prediction",
+    overview: "The purpose is to predict results of horse race.",
+    period: "(2020 July - 2022 July)",
+    tools: ["Tensorflow","Numpy","Pandas","Scikit-Learn","Matplotlib","Selenium","Requests","Beautiful Soup"],
+}
+
 const projectList: Array<ProjectProps> = [
     graduationResearchProps,
     csc317Props,
     csc600Props,
     portfolioProps,
+    racePredictionProps,
 ];
 
 /*

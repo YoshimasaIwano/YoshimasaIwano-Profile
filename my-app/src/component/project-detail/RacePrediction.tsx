@@ -15,7 +15,7 @@ import categorySectionImage from '../../assets/portfolio-img/categorySection.png
 
 
 /*
-    Portfolio Detail Component  
+    RacePrediction Detail Component  
 */
 
 type ImageState = {
@@ -36,19 +36,55 @@ type ToolProps = {
     description: string;
 }
 
-const TypeScriptProps: ToolProps = {
-    name: "TypeScript",
-    description: "TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+const TensorflowProps: ToolProps = {
+    name: "Tesnsorflow",
+    description: "Tensorflow is an end-to-end open source platform for machine learning. It has a comprehensive, flexible ecosystem of tools, libraries and community resources that lets researchers push the state-of-the-art in ML and developers easily build and deploy ML powered applications.",
 }
 
-const ReactProps: ToolProps = {
-    name: "React",
-    description: "React is a JavaScript library for building user interfaces.",
+const NumpyProps: ToolProps = {
+    name: "Numpy",
+    description: "Numpy is the fundamental package for scientific computing with Python. It is used for handling data.",
+}
+
+const PandasProps: ToolProps = {
+    name: "Pandas",
+    description: "Pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language. It is used for creating a data frame.",
+}
+
+const ScikitLearnProps: ToolProps = {
+    name: "Scikit-Learn",
+    description: "Scikit-Learn is an open source and commercialy usable built on Numpy, Scipy, and Matplotlib, and is simple and efficient tools for predictive data analysis. It is used for mainly SVM ",
+}
+
+const MatplotlibProps: ToolProps = {
+    name: "Matplotlib",
+    description: "Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Is is used for ploting a graph",
+}
+
+const SeleniumProps: ToolProps = {
+    name: "Selenium",
+    description: "Selenium automates browsers. That's it!",
+}
+
+const RequestsProps: ToolProps = {
+    name: "Requests",
+    description: "Requests is an elegant and simple HTTP library for Python, built for human beings.",
+}
+
+const BeautifulSoupProps: ToolProps = {
+    name: "Beautiful Soup",
+    description: "Beautiful Soup is a Python library for pulling data out of HTML and XML files.",
 }
 
 const toolList: Array<ToolProps> = [
-    TypeScriptProps,
-    ReactProps,
+    TensorflowProps,
+    NumpyProps,
+    PandasProps,
+    ScikitLearnProps,
+    MatplotlibProps,
+    SeleniumProps,
+    RequestsProps,
+    BeautifulSoupProps,
 ];
   
 function ToolContent({ name, description }: ToolProps): JSX.Element {
@@ -65,17 +101,17 @@ function ToolContent({ name, description }: ToolProps): JSX.Element {
 } 
 
 /*
-    This function creates Portfolio detail page with a motion animation
+    This function creates RacePrediction detail page with a motion animation
     and has a scroll reference table
 */
-export function Portfolio() {
+export function RacePrediction() {
     const motivationRef = useRef<null | HTMLDivElement>(null);
     const toolsRef = useRef<null | HTMLDivElement>(null);
-    const pageTransitionRef = useRef<null | HTMLDivElement>(null);
-    const homeRef = useRef<null | HTMLDivElement>(null);
-    const projectRef = useRef<null | HTMLDivElement>(null);
-    const resumeRef = useRef<null | HTMLDivElement>(null);
-    const galleryRef = useRef<null | HTMLDivElement>(null);
+    const dataRef = useRef<null | HTMLDivElement>(null);
+    const webScrapingRef = useRef<null | HTMLDivElement>(null);
+    const dataCleaningRef = useRef<null | HTMLDivElement>(null);
+    const modelRef = useRef<null | HTMLDivElement>(null);
+    const resultsRef = useRef<null | HTMLDivElement>(null);
     
     const scrollToMotivation = () => motivationRef.current?.scrollIntoView({
         behavior: 'smooth',
@@ -83,19 +119,19 @@ export function Portfolio() {
     const scrollToTools = () => toolsRef.current?.scrollIntoView({
         behavior: 'smooth',
     });
-    const scrollToPageTransition = () => pageTransitionRef.current?.scrollIntoView({
+    const scrollToData = () => dataRef.current?.scrollIntoView({
         behavior: 'smooth',
     });
-    const scrollToHome = () => homeRef.current?.scrollIntoView({
+    const scrollToWebScraping = () => webScrapingRef.current?.scrollIntoView({
         behavior: 'smooth',
     });
-    const scrollToProject = () => projectRef.current?.scrollIntoView({
+    const scrollToDataCleaning = () => dataCleaningRef.current?.scrollIntoView({
         behavior: 'smooth',
     });
-    const scrollToResume = () => resumeRef.current?.scrollIntoView({
+    const scrollToModel = () => modelRef.current?.scrollIntoView({
         behavior: 'smooth',
     });
-    const scrollToGallery = () => galleryRef.current?.scrollIntoView({
+    const scrollToResults = () => resultsRef.current?.scrollIntoView({
         behavior: 'smooth',
     });
 
@@ -128,24 +164,24 @@ export function Portfolio() {
                     })}
                 />
             )}
-            <div className='tl f2 f4-ns b ml1 mv1'>My Portfolio Website</div>
+            <div className='tl f2 f4-ns b ml1 mv1'>Race Prediction</div>
             <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70 w-100-ns'>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToMotivation}>・Motivation</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToTools}>・Tools</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToPageTransition}>・Page Transition</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToHome}>・Home</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToProject}>・Project</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToResume}>・Resume</button>
-                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToGallery}>・Gallery</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToData}>・Data</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToWebScraping}>・Web Scraping</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToDataCleaning}>・Data Cleaning</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToModel}>・Model</button>
+                <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToResults}>・Results</button>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={motivationRef}>Motivation</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    The motivation is I want to apply my knowledge learned from CSC317 and CSC600 to creating a Website.
+                    The motivation is I want to apply my knowledge of machine learning to real world problems.
                 </p>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     Here is 
-                    <a className='no-underline b white hover-light-yellow' href='https://github.com/YoshimasaIwano/YoshimasaIwano-Profile'> Github Repository</a>
+                    <a className='no-underline b white hover-light-yellow' href='https://github.com/YoshimasaIwano/Race-Prediction'> Github Repository</a>
                 </p>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={toolsRef}>Tools</div>
@@ -154,51 +190,53 @@ export function Portfolio() {
                     return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
-            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={pageTransitionRef}>Page Transition</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={dataRef}>Data</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    Each page trainsition makes you go back to the top of the page with an animation even if you click the detail of a project and gallery. <br />
-                    You will also see the upper arrow that enables you to go back to the top when you scroll to the specific height.
+                    I used <a className='no-underline b white hover-light-yellow' href='https://www.netkeiba.com/'> netkeiba </a>
+                    to collect race and horse data.<br />
+                    I collected around 20000 race data from 1986 to 2022 and around 63000 horse data, who raced in JRA. 
                 </p>
             </div>
-            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={homeRef}>Home</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={webScrapingRef}>Web Scraping</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    One of the outstanding point in my Home page is a moving balloon background. Tbis is implemeted by tsParticles. I wrote parameters from scratch.<br />
-                    I also implemeted navagation bars on the top by using NavLink and Router in React. you can easily go to Home, Project, Resume, and Gallery page.<br />
-                    In addition, you can jump to my social media accounts when you click the icons. 
+                    ・Get URL<br />
+                      Using webdriver of Selenium, I can access netkeiba.com and collect the urls of race and horse data pages, and save them in each folder. <br />
+                    ・Get HTML<br />
+                      Using Requests and urls I got from the previous step, I got HTML files and save them in a folder.<br />
+                    ・Create data csv<br />
+                      Using BeautifulSoup and htmls, I created raw race and horse data csv files. 
                 </p>
-                <img 
+                {/* <img 
                     className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                     src={homeImage} 
                     alt="Home" 
                     onClick={() => setState({
                         id: 0,
                         isOpen: true
-                        })
-                    }
+                    })}
                 >
-                </img>
+                </img> */}
             </div>
-            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={projectRef}>Project</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={dataCleaningRef}>Data Cleaning</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    You can see all of my projects I have ever done and you can see the detail of each project when you click each project block.<br />
-                    This is also implemeted by NavLink and Router. The difficulity is this navigation is nested router inside the main navigation.
+                    Initially, there's a lot of columns of which value is a string, so I have to convert them into numbers. <br />
+                    I added other features such as the resutls of the last 3 races and pedigree information. 
                 </p>
-                <img 
+                {/* <img 
                     className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                     src={projectImage} 
                     alt="Project" 
                     onClick={() => setState({
                         id: 1,
                         isOpen: true
-                        })
-                    }
+                    })}
                 >
-                </img>
+                </img> */}
             </div>
-            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={resumeRef}>Resume</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={modelRef}>Model</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     The Resume page is simple. There are just a download button and my resume image.<br />
@@ -211,12 +249,11 @@ export function Portfolio() {
                     onClick={() => setState({
                         id: 2,
                         isOpen: true
-                        })
-                    }
+                    })}
                 >
                 </img>
             </div>
-            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={galleryRef}>Gallery</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={resultsRef}>Results</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     I like to take pictures and all pictues in this gallery are mine.<br />
@@ -230,8 +267,7 @@ export function Portfolio() {
                     onClick={() => setState({
                         id: 3,
                         isOpen: true
-                        })
-                    }
+                    })}
                 >
                 </img>
                 <p className='tl mh2 mv2 f3 f5-ns'>
@@ -246,8 +282,7 @@ export function Portfolio() {
                     onClick={() => setState({
                         id: 4,
                         isOpen: true
-                        })
-                    }
+                    })}
                 >
                 </img>
             </div>

@@ -190,9 +190,9 @@ export function GraduationResearch() {
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     ・Lack of CT images: <br/>
-                    Testicular cancer is so rare cancer that we can not collect enough data to train a huge CNN model, so we utilize the technique called fine-tunig that uses pre-trained parameters from the model trained with ImageNet.<br/>
+                      Testicular cancer is so rare cancer that we can not collect enough data to train a huge CNN model, so we utilize the technique called fine-tunig that uses pre-trained parameters from the model trained with ImageNet.<br/>
                     ・Variety of tumor size: <br/>
-                    There are small tumors and big tumors. It is difficult to make tumor images consistent. To deal with this problem, I clipeed all images with 150×150 to cover almost all tumor images.
+                      There are small tumors and big tumors. It is difficult to make tumor images consistent. To deal with this problem, I clipeed all images with 150×150 to cover almost all tumor images.
                 </p>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     There's stiil room for investing these two difficulities, so the next research topic is to find better algorithm for these two problems. 

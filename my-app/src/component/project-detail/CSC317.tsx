@@ -146,7 +146,7 @@ export function CSC317() {
                     mainSrc={imageArray[state.id]}
                     onCloseRequest={() => setState({
                         id: state.id,
-                        isOpen:false
+                        isOpen: false,
                     })}
                 />
             )}
