@@ -6,13 +6,8 @@ import "react-image-lightbox/style.css";
 import { motion } from 'framer-motion';
 
 /* import images */
-import homeImage from '../../assets/portfolio-img/home.png';
-import projectImage from '../../assets/portfolio-img/project.png';
-import resumeImage from '../../assets/portfolio-img/resume.png';
-import galleryImage from '../../assets/portfolio-img/gallery.png';
-import categorySectionImage from '../../assets/portfolio-img/categorySection.png';
-
-
+import resultsImage from '../../assets/race-prediction-img/results.png';
+import heatmapImage from '../../assets/race-prediction-img/heatmap.png';
 
 /*
     RacePrediction Detail Component  
@@ -24,11 +19,8 @@ type ImageState = {
 }
 
 const imageArray: Array<string> = [
-    homeImage,
-    projectImage,
-    resumeImage,
-    galleryImage,
-    categorySectionImage,
+    resultsImage,
+    heatmapImage,
 ]
 
 type ToolProps = {
@@ -202,11 +194,11 @@ export function RacePrediction() {
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     ・Get URL<br />
-                      Using webdriver of Selenium, I can access netkeiba.com and collect the urls of race and horse data pages, and save them in each folder. <br />
+                    &ensp; Using webdriver of Selenium, I can access netkeiba.com and collect the urls of race and horse data pages, and save them in each folder. <br />
                     ・Get HTML<br />
-                      Using Requests and urls I got from the previous step, I got HTML files and save them in a folder.<br />
+                    &ensp; Using Requests and urls I got from the previous step, I got HTML files and save them in a folder.<br />
                     ・Create data csv<br />
-                      Using BeautifulSoup and htmls, I created raw race and horse data csv files. 
+                    &ensp; Using BeautifulSoup and htmls, I created raw race and horse data csv files. 
                 </p>
                 {/* <img 
                     className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
@@ -239,10 +231,14 @@ export function RacePrediction() {
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={modelRef}>Model</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    The Resume page is simple. There are just a download button and my resume image.<br />
-                    If you want to download my resume, you can click the download button. If you want to watch my resume carefully, you can click my resume image.   
+                    ・ResRace<br />
+                    &ensp; ResRace is based on Resnet, which has skipping connections to make layers deeper.<br />
+                     ResRace predicts the order of each horse in a race, so it might predict multiple horses in a race are the first. (Winner) <br />
+                    ・TransRace<br />
+                    &ensp; TransRace is based on Transformer, which has self-attention architechture to pay attention to the relation between horses. <br/>
+                     By making use of the advantage of time-sequential data structure, TransRace predicts identical orders in a race.
                 </p>
-                <img 
+                {/* <img 
                     className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
                     src={resumeImage} 
                     alt="Resume" 
@@ -251,36 +247,31 @@ export function RacePrediction() {
                         isOpen: true
                     })}
                 >
-                </img>
+                </img> */}
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={resultsRef}>Results</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    I like to take pictures and all pictues in this gallery are mine.<br />
-                    The initial Gallery page shows 4 categories of images; nightsky, landscape, flower, and food. you can go to each category page.<br />
-                    This is also implemted by Navlink and Router.
+                    Before evaluating the models, I split the data into train and validation with 99:1, so I used 202 race data, which contain 4848 predictions. <br />
+                    Here is the summary of the results. Speaking to winner, Precision is 0.188, Recall is 0.22, and F-1 score is 0.203.<br/>
+                    In my opinion, this prediction is better than human prediction.
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
-                    src={galleryImage} 
-                    alt="Gallery" 
+                    src={resultsImage} 
+                    alt="Results" 
                     onClick={() => setState({
-                        id: 3,
+                        id: 0,
                         isOpen: true
                     })}
                 >
                 </img>
-                <p className='tl mh2 mv2 f3 f5-ns'>
-                    In each category section, you can see a lot of pictures. You can also filter images using fileter buttons. Moreover, you can search a image using keywords.<br />
-                    This function is implemented by React and TypeScript.<br />
-                    When you click each image, you will see the detail of the image. This is implemented by Lightbox in React.
-                </p>
                 <img 
                     className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
-                    src={categorySectionImage} 
-                    alt="Category Section" 
+                    src={heatmapImage} 
+                    alt="Heatmap" 
                     onClick={() => setState({
-                        id: 4,
+                        id: 1,
                         isOpen: true
                     })}
                 >
