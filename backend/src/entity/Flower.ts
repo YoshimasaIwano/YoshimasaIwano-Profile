@@ -1,4 +1,4 @@
-import {  Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 @Entity()
 export class Flower {
@@ -16,4 +16,5 @@ export class Flower {
 
     @Column("varchar", {length: 255})
     description: string;
+
 }
