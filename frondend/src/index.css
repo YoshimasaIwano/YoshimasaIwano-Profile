@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Kdam Thmor Pro', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.footer {
+  background-color: #1eebb1;
+  border-color: #6efbd3;
+}
+
+#profile-container {
+  background: -moz-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: -webkit-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+}
+
+#project-container {
+  background: -moz-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: -webkit-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+}
+
+#resume-container {
+  background: -moz-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: -webkit-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+}
+
+#gallery-container {
+  background: -moz-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: -webkit-linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+  background: linear-gradient(to bottom, #9eebcf, #4eebb1 50%, #1eebb1);
+}
+
+#yoshi-img {
+  border-radius: 50%;
+}
+
+#sns li a::before {
+  -webkit-border-radius: 0.5rem;
+  display: inline-block;
+  font-family: FontAwesome;
+  line-height: 44px; 
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  width: 44px; 
+}
+
+@media screen and (max-width: 600px) {
+  #sns li a::before {
+    -webkit-border-radius: 0.5rem;
+    display: inline-block;
+    font-family: FontAwesome;
+    line-height: 32px; 
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    width: 32px; 
+  }
+}
+
+#sns li a:hover::before {
+  opacity: 0.7;
+}
+
+#sns li a[href*="facebook.com"]::before       { background-color: #3b5998; content: "\f09a"; }
+#sns li a[href*="github.com"]::before         { background-color: #181717; content: "\f09b"; }
+#sns li a[href*="linkedin.com"]::before       { background-color: #0077b5; content: "\f0e1"; }
+#sns li a[href*="twitter.com"]::before        { background-color: #55acee; content: "\f099"; }
+#sns li a[href*="instagram.com"]::before      { background-color: #c800ff; content: "\f16d"; }
+#sns li a[href*="note.com"]::before           { background-color: #41c9b4; content: "\f249"; } 
+/* f02d */
+
+#text-in-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  padding: 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9);
+  text-stroke: 1px rgba(0, 0, 0, .9);
+  /* font-size: 2.5rem; */
+}
