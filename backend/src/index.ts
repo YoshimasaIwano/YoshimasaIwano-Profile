@@ -1,8 +1,8 @@
-import exp = require("constants");
+// import exp = require("constants");
 import { MyDataSource } from "./data-source";
 import { FlowerData } from "./entity/FlowerData";
 
-import { Request, Response } from "express";
+// import { Request, Response } from "express";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { AppRoutes } from "./routes";
@@ -33,14 +33,10 @@ MyDataSource.initialize().then(async () => {
 
     // register all application routes
     AppRoutes.forEach(route => {
-        app[route.method](route.path, (request: Request, response: Response, next: Function) => {
-            route.action(request, response)
-                .then(
-                    () => next
-                )
-                .catch(
-                    err => next(err)
-                );
+        app[route.method](route.path, (req, res, next) => {
+            route.action(req, res)
+                .then(() => next)
+                .catch(err => next(err));
         });
     });
 
@@ -48,7 +44,7 @@ MyDataSource.initialize().then(async () => {
     //     res.send();
     // })
 
-    app.listen(port);
+    app.listen(process.env.port || port);
     console.log(`express application is up an running on port: ${port}`);
 
 }).catch(error => console.log(error))

@@ -14,12 +14,13 @@ export async function flowerGet(req: Request, res: Response) {
     // load posts
     const flowers = await flowerRepository.manager.find(FlowerData);
 
-    // update img src path
-    flowers.map((flower) => {
-        console.log(require(flower.src));
-        flower.src = require(flower.src);
-    })
-
     // return loaded posts
     res.json(flowers);
 }
+
+// "scripts": {
+//     "build": "tsc --build",
+//     "start": "ts-node src/index.ts",
+//     "start:dev": "nest start --watch",
+//     "start:debug": "nest start --debug --watch"
+//  }
