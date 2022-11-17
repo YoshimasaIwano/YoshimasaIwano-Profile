@@ -2,7 +2,7 @@
 import { MyDataSource } from "./data-source";
 import { FlowerData } from "./entity/FlowerData";
 
-// import { Request, Response } from "express";
+import { Request, Response } from "express";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { AppRoutes } from "./routes";
@@ -33,8 +33,8 @@ MyDataSource.initialize().then(async () => {
 
     // register all application routes
     AppRoutes.forEach(route => {
-        app[route.method](route.path, (req, res, next) => {
-            route.action(req, res)
+        app[route.method](route.path, (request: Request, response: Response, next: Function) => {
+            route.action(request, response)
                 .then(() => next)
                 .catch(err => next(err));
         });
