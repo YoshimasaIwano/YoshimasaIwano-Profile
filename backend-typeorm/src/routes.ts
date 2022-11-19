@@ -6,7 +6,7 @@ import { defaultGet } from "./controller/defaultGet";
  */
 export const AppRoutes = [
     {
-        path: "/Gallery/flower",
+        path: "/Gallery/Flower",
         method: "get",
         action: flowerGet
     },

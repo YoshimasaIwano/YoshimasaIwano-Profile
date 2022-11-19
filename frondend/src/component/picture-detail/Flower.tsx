@@ -32,22 +32,24 @@ export function Flower() {
     const [query, setQuery] = useState("");
     const [color, setColor] = useState("all"); 
     const [state, setState] = useState(initState);
-    // const [flowers, setFlower] = useState(Array<ImageDataProps>);
-    // useEffect(() => {
-    //     fetch('/Gallery/flower')
-    //     .then((res) => res.json())
-    //     .then((data) => setFlower(data));
-    // }, [])
-    // console.log(flowers)
+    const [flowers, setFlower] = useState(Array<ImageDataProps>);
+    useEffect(() => {
+        fetch('/Gallery/Flower',
+        {
+            mode: 'no-cors'
+        })
+        .then((res) => res.json())
+        .then((data) => setFlower(data.flowers));
+    }, [])
+    console.log(flowers)
 
     // update img src path
     // let i = 0;
-    // ImageData.map((data) => {
-    //     console.log(data.src);
-
-    // })
+    flowers.map((data) => {
+        console.log(data.src);
+    })
         
-    // console.log(require('../../assets/flower/img1.png'))
+    // console.log(require('../../assets/flower/img2.png'))
 
     return (
         <motion.div
@@ -77,7 +79,7 @@ export function Flower() {
                 <button className='mh3 mt2 pv2 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("other")}>Other</button>
             </div>
             <div className='mv3 ma mb5-l w-90 flex flex-wrap items-top justify-center'>
-                {ImageData.filter((img) => {
+                {flowers.filter((img) => {
                     if (color !== "all" && color.toLowerCase() !== img.color.toLowerCase()) {
                         return null
                     }
@@ -103,8 +105,8 @@ export function Flower() {
                         </img>
                         {state.isOpen && (
                             <Lightbox
-                                mainSrc={ImageData[state.id-1].src}
-                                imageCaption={ImageData[state.id-1].description}
+                                mainSrc={flowers[state.id-1].src}
+                                imageCaption={flowers[state.id-1].description}
                                 onCloseRequest={() => setState({
                                     id: state.id,
                                     isOpen: false

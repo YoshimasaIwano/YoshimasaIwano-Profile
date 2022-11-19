@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+// import { ServeStaticModule } from '@nestjs/serve-static';
+// import { join } from 'path';
 
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FlowerData } from './flowers/flowers.entity';
@@ -13,17 +15,25 @@ import { FlowersController } from './flowers/flowers.controller';
   imports: [
     TypeOrmModule.forRoot({
       type: "mysql",
-      host: "localhost",
+      // host: "localhost",
+      // port: 3306,
+      // username: "root",
+      // password: "passyoshi",
+      // database: "myportofolio",
+      // synchronize: false,
+      // entities: [FlowerData],
+
+      // host: "localhost",
       port: 3306,
-      username: "root",
-      password: "passyoshi",
-      database: "myportofolio",
+      username: "xs078424_yoshi",
+      password: "PK5wb2T.biLCk74",
+      database: "xs078424_myportofolio",
       synchronize: false,
-      // logging: false,
       entities: [FlowerData],
-      // migrations: [],
-      // subscribers: [],
     }),
+    // ServeStaticModule.forRoot({
+    //   rootPath: join(__dirname, '..', 'public'),   // <-- path to the static files
+    // }),
     FlowersModule,
   ],
   controllers: [AppController, FlowersController],
@@ -37,3 +47,13 @@ export class AppModule {}
 //   providers: [AppService],
 // })
 // export class AppModule {}
+
+// @Module({
+//   imports: [
+//     ServeStaticModule.forRoot({
+//       rootPath: join(__dirname, '..', 'client'),   // <-- path to the static files
+//     }),
+//   ],
+//   controllers: [AppController],
+//   providers: [AppService],
+// })
