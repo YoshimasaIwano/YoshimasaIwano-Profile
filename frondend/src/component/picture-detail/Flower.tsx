@@ -7,11 +7,8 @@ import { motion } from 'framer-motion';
 /* import images */
 import { ImageData } from '../../assets/flower/Flower';
 import { ImageDataProps } from '../../assets/flower/Flower';
-// import { MyDataSource } from '../../../../backend/src/data-source';
-// import { FlowerData } from "../../../../backend/src/entity/FlowerData";
 // const path = require("../../assets/flower");
 
-// const flowers = await MyDataSource.manager.find(FlowerData);
 
 /*
     Flower Detail Component  
@@ -33,23 +30,21 @@ export function Flower() {
     const [query, setQuery] = useState("");
     const [color, setColor] = useState("all"); 
     const [state, setState] = useState(initState);
-    const [flowers, setFlower] = useState(Array<ImageDataProps>);
-    useEffect(() => {
-        fetch('/Gallery/Flower')
-        .then((res) => res.json())
-        .then((data) => setFlower(data.flowers));
-    }, [])
-    console.log(flowers)
-
-    // update img src path
-    // let i = 0;
-    flowers.map((data) => {
-        console.log(data.src);
-    })
+    // const [flowers, setFlower] = useState(Array<ImageDataProps>);
+    // useEffect(() => {
+    //     fetch('/Gallery/Flower')
+    //     .then((res) => res.json())
+    //     .then((data) => setFlower(data.flowers));
+    // }, [])
+    // console.log(flowers)
         
-    for (let i=1; i < 21; i++) {
-        console.log(require(`../../assets/flower/img${i}.png`));
-    }
+    // for (let i=1; i < 21; i++) {
+    //     console.log(require(`../../assets/flower/img${i}.png`));
+    // }
+
+    // ImageData.map((data) => {
+    //     console.log(data.src)
+    // })
     
 
     return (
@@ -80,7 +75,7 @@ export function Flower() {
                 <button className='mh3 mt2 pv2 w-auto f3 f5-ns bn br3 shadow-5 pointer hover-bg-white-90' onClick={() => setColor("other")}>Other</button>
             </div>
             <div className='mv3 ma mb5-l w-90 flex flex-wrap items-top justify-center'>
-                {flowers.filter((img) => {
+                {ImageData.filter((img) => {
                     if (color !== "all" && color.toLowerCase() !== img.color.toLowerCase()) {
                         return null
                     }
@@ -106,8 +101,8 @@ export function Flower() {
                         </img>
                         {state.isOpen && (
                             <Lightbox
-                                mainSrc={flowers[state.id-1].src}
-                                imageCaption={flowers[state.id-1].description}
+                                mainSrc={ImageData[state.id-1].src}
+                                imageCaption={ImageData[state.id-1].description}
                                 onCloseRequest={() => setState({
                                     id: state.id,
                                     isOpen: false

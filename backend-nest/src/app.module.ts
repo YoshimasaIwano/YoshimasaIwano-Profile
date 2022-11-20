@@ -15,24 +15,25 @@ import { FlowersController } from './flowers/flowers.controller';
   imports: [
     TypeOrmModule.forRoot({
       type: "mysql",
-      host: "localhost",
-      port: 3306,
-      username: "root",
-      password: "passyoshi",
-      database: "myportofolio",
-      synchronize: false,
-      entities: [FlowerData],
-
       // host: "localhost",
       // port: 3306,
-      // username: "xs078424_yoshi",
-      // password: "PK5wb2T.biLCk74",
-      // database: "xs078424_myportofolio",
+      // username: "root",
+      // password: "passyoshi",
+      // database: "myportofolio",
       // synchronize: false,
       // entities: [FlowerData],
+
+      // host: "localhost",
+      port: 3306,
+      username: "xs078424_yoshi",
+      password: "PK5wb2T.biLCk74",
+      database: "xs078424_myportofolio",
+      synchronize: false,
+      entities: [FlowerData],
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '../', 'build'),   // <-- path to the static files
+      exclude: ['Gallary/*'],
     }),
     FlowersModule,
   ],
