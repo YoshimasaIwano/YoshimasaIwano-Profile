@@ -30,4 +30,9 @@ yarn-error.log*
 *.mp4
 
 # json file
-*.json
+# *.json
+
+# has a password
+data-source.ts
+
+*/*/.DS_Store

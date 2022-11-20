@@ -1,11 +1,14 @@
 /* import libraries */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Lightbox from 'react-image-lightbox';
 import "react-image-lightbox/style.css";
 import { motion } from 'framer-motion';
 
 /* import images */
 import { ImageData } from '../../assets/flower/Flower';
+import { ImageDataProps } from '../../assets/flower/Flower';
+// const path = require("../../assets/flower");
+
 
 /*
     Flower Detail Component  
@@ -27,6 +30,22 @@ export function Flower() {
     const [query, setQuery] = useState("");
     const [color, setColor] = useState("all"); 
     const [state, setState] = useState(initState);
+    // const [flowers, setFlower] = useState(Array<ImageDataProps>);
+    // useEffect(() => {
+    //     fetch('/Gallery/Flower')
+    //     .then((res) => res.json())
+    //     .then((data) => setFlower(data.flowers));
+    // }, [])
+    // console.log(flowers)
+        
+    // for (let i=1; i < 21; i++) {
+    //     console.log(require(`../../assets/flower/img${i}.png`));
+    // }
+
+    // ImageData.map((data) => {
+    //     console.log(data.src)
+    // })
+    
 
     return (
         <motion.div
@@ -58,7 +77,7 @@ export function Flower() {
             <div className='mv3 ma mb5-l w-90 flex flex-wrap items-top justify-center'>
                 {ImageData.filter((img) => {
                     if (color !== "all" && color.toLowerCase() !== img.color.toLowerCase()) {
-                        return
+                        return null
                     }
                     if (query === '') {
                         return img

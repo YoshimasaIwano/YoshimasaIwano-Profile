@@ -1,5 +1,5 @@
 /* import libraries */
-import React from 'react';
+// import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ScrollToTop from 'react-scroll-to-top';
 
@@ -24,12 +24,19 @@ import { Flower } from './component/picture-detail/Flower';
 import { Food } from './component/picture-detail/Food';
 
 function App(): JSX.Element {
+  // const [fault, setDefault] = useState('');
+  // useEffect(() => {
+  //   fetch('/api')
+  //     .then((res) => res.json())
+  //     .then((data) => setDefault(data.message));
+  // }, [])
   return (
     <div className="top-0 left-0 h-100 w-100 overflow-y-scroll" id='top'>
       <ScrollToTop smooth/>
       <Router>
         <ScrollTop/>
         <TopNav/>
+        {/* <div>{fault}hehehehe</div> */}
         <Routes>
           <Route path="/" element={<Profile />}/>
           <Route path="/Home" element={<Profile />}/>

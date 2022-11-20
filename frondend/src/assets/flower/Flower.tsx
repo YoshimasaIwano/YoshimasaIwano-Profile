@@ -19,7 +19,7 @@ import Img18 from './img18.png';
 import Img19 from './img19.png';
 import Img20 from './img20.png';
 
-type ImageDataProps = {
+export type ImageDataProps = {
     id: number,
     src: string,
     color: string,
