@@ -5,7 +5,6 @@
   "author": "",
   "private": true,
   "license": "UNLICENSED",
-  "proxy": "http://yoshimasaiwano.com/",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build --tsc",

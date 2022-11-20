@@ -9,6 +9,7 @@ import { ImageData } from '../../assets/flower/Flower';
 import { ImageDataProps } from '../../assets/flower/Flower';
 // import { MyDataSource } from '../../../../backend/src/data-source';
 // import { FlowerData } from "../../../../backend/src/entity/FlowerData";
+// const path = require("../../assets/flower");
 
 // const flowers = await MyDataSource.manager.find(FlowerData);
 
@@ -34,10 +35,7 @@ export function Flower() {
     const [state, setState] = useState(initState);
     const [flowers, setFlower] = useState(Array<ImageDataProps>);
     useEffect(() => {
-        fetch('/Gallery/Flower',
-        {
-            mode: 'no-cors'
-        })
+        fetch('/Gallery/Flower')
         .then((res) => res.json())
         .then((data) => setFlower(data.flowers));
     }, [])
@@ -49,7 +47,10 @@ export function Flower() {
         console.log(data.src);
     })
         
-    // console.log(require('../../assets/flower/img2.png'))
+    for (let i=1; i < 21; i++) {
+        console.log(require(`../../assets/flower/img${i}.png`));
+    }
+    
 
     return (
         <motion.div

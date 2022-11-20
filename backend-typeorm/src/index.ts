@@ -6,6 +6,7 @@ import { Request, Response } from "express";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { AppRoutes } from "./routes";
+const path = require("path");
 
 MyDataSource.initialize().then(async () => {
 
@@ -28,7 +29,7 @@ MyDataSource.initialize().then(async () => {
     console.log("Here you can setup and run express / fastify / any other framework.")
 
     const app = express();
-    const port = 3001;
+    const PORT = process.env.port || 3001;
     app.use(bodyParser.json());
 
     // register all application routes
@@ -44,7 +45,15 @@ MyDataSource.initialize().then(async () => {
     //     res.send();
     // })
 
-    app.listen(process.env.port || port);
-    console.log(`express application is up an running on port: ${port}`);
+    if (process.env.NODE_ENV === "production") {
+        app.use(express.static("./"));
+      
+        app.get("*", (req, res) => {
+          res.sendFile(path.join(__dirname, "index.html"));
+        });
+      }
+
+    app.listen(process.env.port || PORT);
+    console.log(`express application is up an running on port: ${PORT}`);
 
 }).catch(error => console.log(error))
