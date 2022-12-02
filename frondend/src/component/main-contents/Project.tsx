@@ -7,7 +7,7 @@ import graduationResearchImage from '../../assets/project-images/graduationResea
 import csc317Image from '../../assets/project-images/csc317.png';
 import csc600Image from '../../assets/project-images/csc600.png';
 import portfolioImage from '../../assets/project-images/portfolio.png';
-
+import racePresictionImage from '../../assets/project-images/racePrediction.png';
 
 /*
     Project Component  
@@ -60,7 +60,7 @@ const portfolioProps: ProjectProps = {
 
 const racePredictionProps: ProjectProps = {
     name: "RacePrediction",
-    srcName: portfolioImage,
+    srcName: racePresictionImage,
     title: "Race Prediction",
     overview: "The purpose is to predict results of horse race.",
     period: "(2020 July - 2022 July)",
