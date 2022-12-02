@@ -37,8 +37,8 @@ const hiraganaClassifierProps: ProjectProps = {
     srcName: hiraganaClassifierImage,
     title: "Hiragana Classifier",
     overview: "The purpose of this team project is to create an image classifier web app.",
-    period: "(2020.4-2021.7)",
-    tools: ["Pytorch","Numpy","Pandas","Scikit-Learn","Matplotlib","Git"],
+    period: "(2022 Thanksgiving)",
+    tools: ["Tensorflow","Flask","JavaScript","AWS"],
 }
 
 const csc317Props: ProjectProps = {

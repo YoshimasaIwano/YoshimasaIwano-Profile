@@ -66,9 +66,9 @@ export function Nightsky() {
                         return img
                     }
                 }).map((img) => 
-                    <div className='w-250px h-250px w-150px-ns h-150px-ns' key={img.src} >
+                    <div className='w-250px h-250px w-150px-ns h-150px-ns bg-white' key={img.src} >
                         <img 
-                            className='w-250px h-250px w-150px-ns h-150px-ns pointer' 
+                            className='w-250px h-250px w-150px-ns h-150px-ns pointer dim shadow-5' 
                             src={img.src} 
                             alt={img.place} 
                             onClick={() => setState({

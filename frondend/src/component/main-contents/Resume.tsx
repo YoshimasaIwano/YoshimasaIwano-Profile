@@ -65,16 +65,19 @@ export function Resume() {
                 <a className='no-underline b mv3 mh3 ph2 f3 f5-ns dark-green bg-navy hover-yellow hover-bg-green br2 ' href='./resume[YoshimasaIwano].pdf' download='./resume[YoshimasaIwano].pdf'>
                     Download My Resume
                 </a>
-                <img 
-                    className='mv3 w-90 h-80 pointer' 
-                    src={resumeImage} 
-                    alt="resume [Yoshimasa Iwano]" 
-                    onClick={() => setState({
-                        isOpen: true
-                        })
-                    }
-                >
-                </img>
+                <div className='ma'>
+                    <img 
+                        className='mv3 w-50 h-40 w-90-ns h-70-ns pointer' 
+                        src={resumeImage} 
+                        alt="resume [Yoshimasa Iwano]" 
+                        onClick={() => setState({
+                            isOpen: true
+                            })
+                        }
+                    >
+                    </img>
+                </div>
+                
                 {state.isOpen && (
                     <Lightbox
                         mainSrc={resumeImage}

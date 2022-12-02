@@ -170,7 +170,7 @@ export function HiraganaClassifier() {
                         src={yoImage} 
                         alt="yo" 
                         onClick={() => setState({
-                            id: 0,
+                            id: 1,
                             isOpen: true
                         })}
                     >
@@ -180,7 +180,7 @@ export function HiraganaClassifier() {
                         src={shiImage} 
                         alt="shi" 
                         onClick={() => setState({
-                            id: 1,
+                            id: 2,
                             isOpen: true
                         })}
                     >
@@ -190,7 +190,7 @@ export function HiraganaClassifier() {
                         src={maImage} 
                         alt="ma" 
                         onClick={() => setState({
-                            id: 2,
+                            id: 3,
                             isOpen: true
                         })}
                     >
@@ -200,7 +200,7 @@ export function HiraganaClassifier() {
                         src={saImage} 
                         alt="sa" 
                         onClick={() => setState({
-                            id: 3,
+                            id: 4,
                             isOpen: true
                         })}
                     >
