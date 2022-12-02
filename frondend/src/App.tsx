@@ -13,6 +13,7 @@ import { Resume } from './component/main-contents/Resume';
 import { Gallery } from './component/main-contents/Gallery';
 import { DefaultProjectPage } from './component/main-contents/Project';
 import { GraduationResearch } from './component/project-detail/GraduationResearch';
+import { HiraganaClassifier } from './component/project-detail/HiraganaClassifier';
 import { CSC317 } from './component/project-detail/CSC317';
 import { CSC600 } from './component/project-detail/CSC600';
 import { Portfolio } from './component/project-detail/Portfolio';
@@ -24,25 +25,19 @@ import { Flower } from './component/picture-detail/Flower';
 import { Food } from './component/picture-detail/Food';
 
 function App(): JSX.Element {
-  // const [fault, setDefault] = useState('');
-  // useEffect(() => {
-  //   fetch('/api')
-  //     .then((res) => res.json())
-  //     .then((data) => setDefault(data.message));
-  // }, [])
   return (
     <div className="top-0 left-0 h-100 w-100 overflow-y-scroll" id='top'>
       <ScrollToTop smooth/>
       <Router>
         <ScrollTop/>
         <TopNav/>
-        {/* <div>{fault}hehehehe</div> */}
         <Routes>
           <Route path="/" element={<Profile />}/>
           <Route path="/Home" element={<Profile />}/>
           <Route path="/Project" element={<Project />}>
             <Route index element={<DefaultProjectPage />}/>
             <Route path="GraduationResearch" element={<GraduationResearch />}/>
+            <Route path="HiraganaClassifier" element={<HiraganaClassifier />}/>
             <Route path="CSC317" element={<CSC317 />}/>
             <Route path="CSC600" element={<CSC600 />}/>
             <Route path="Portfolio" element={<Portfolio />}/>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 /* import image */
 import graduationResearchImage from '../../assets/project-images/graduationResearch.png';
+import hiraganaClassifierImage from '../../assets/project-images/hiragana.png';
 import csc317Image from '../../assets/project-images/csc317.png';
 import csc600Image from '../../assets/project-images/csc600.png';
 import portfolioImage from '../../assets/project-images/portfolio.png';
@@ -27,6 +28,15 @@ const graduationResearchProps: ProjectProps = {
     srcName: graduationResearchImage,
     title: "Graduation Research on Image Recognition",
     overview: "The purpose of this research is to identify if a tumor is malignant or benign.",
+    period: "(2020.4-2021.7)",
+    tools: ["Pytorch","Numpy","Pandas","Scikit-Learn","Matplotlib","Git"],
+}
+
+const hiraganaClassifierProps: ProjectProps = {
+    name: "HiraganaClassifier",
+    srcName: hiraganaClassifierImage,
+    title: "Hiragana Classifier",
+    overview: "The purpose of this team project is to create an image classifier web app.",
     period: "(2020.4-2021.7)",
     tools: ["Pytorch","Numpy","Pandas","Scikit-Learn","Matplotlib","Git"],
 }
@@ -69,6 +79,7 @@ const racePredictionProps: ProjectProps = {
 
 const projectList: Array<ProjectProps> = [
     graduationResearchProps,
+    hiraganaClassifierProps,
     csc317Props,
     csc600Props,
     portfolioProps,

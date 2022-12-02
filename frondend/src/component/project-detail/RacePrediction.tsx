@@ -200,16 +200,6 @@ export function RacePrediction() {
                     ・Create data csv<br />
                     &ensp; Using BeautifulSoup and htmls, I created raw race and horse data csv files. 
                 </p>
-                {/* <img 
-                    className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
-                    src={homeImage} 
-                    alt="Home" 
-                    onClick={() => setState({
-                        id: 0,
-                        isOpen: true
-                    })}
-                >
-                </img> */}
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={dataCleaningRef}>Data Cleaning</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
@@ -217,16 +207,6 @@ export function RacePrediction() {
                     Initially, there's a lot of columns of which value is a string, so I have to convert them into numbers. <br />
                     I added other features such as the resutls of the last 3 races and pedigree information. 
                 </p>
-                {/* <img 
-                    className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
-                    src={projectImage} 
-                    alt="Project" 
-                    onClick={() => setState({
-                        id: 1,
-                        isOpen: true
-                    })}
-                >
-                </img> */}
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={modelRef}>Model</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
@@ -238,16 +218,6 @@ export function RacePrediction() {
                     &ensp; TransRace is based on Transformer, which has self-attention architechture to pay attention to the relation between horses. <br/>
                      By making use of the advantage of time-sequential data structure, TransRace predicts identical orders in a race.
                 </p>
-                {/* <img 
-                    className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
-                    src={resumeImage} 
-                    alt="Resume" 
-                    onClick={() => setState({
-                        id: 2,
-                        isOpen: true
-                    })}
-                >
-                </img> */}
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={resultsRef}>Results</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
