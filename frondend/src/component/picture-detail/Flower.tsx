@@ -90,7 +90,7 @@ export function Flower() {
                     <div className='w-250px h-250px w-150px-ns h-150px-ns bg-white' key={img.thumbnail}>
                         <img 
                             className='w-250px h-250px w-150px-ns h-150px-ns pointer dim shadow-5' 
-                            src={img.src} 
+                            src={img.thumbnail} 
                             alt={img.color} 
                             onClick={() => setState({
                                 id: img.id,
