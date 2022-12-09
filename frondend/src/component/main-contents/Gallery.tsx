@@ -3,10 +3,10 @@ import { NavLink, Outlet } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 /* import images */
-import nightskyImage from '../../assets/main-pictures/nightsky.png';
-import landscapeImage from '../../assets/main-pictures/landscape.png';
-import flowerImage from '../../assets/main-pictures/flower.png';
-import foodImage from '../../assets/main-pictures/food.png';
+import nightskyImage from '../../assets/main-pictures/nightsky_thumbnail.png';
+import landscapeImage from '../../assets/main-pictures/landscape_thumbnail.png';
+import flowerImage from '../../assets/main-pictures/flower_thumbnail.png';
+import foodImage from '../../assets/main-pictures/food_thumbnail.png';
 
 
 /*

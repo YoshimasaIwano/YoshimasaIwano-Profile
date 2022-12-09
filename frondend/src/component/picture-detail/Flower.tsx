@@ -87,7 +87,7 @@ export function Flower() {
                         return img
                     }
                 }).map((img) => 
-                    <div className='w-250px h-250px w-150px-ns h-150px-ns bg-white' key={img.src}>
+                    <div className='w-250px h-250px w-150px-ns h-150px-ns bg-white' key={img.thumbnail}>
                         <img 
                             className='w-250px h-250px w-150px-ns h-150px-ns pointer dim shadow-5' 
                             src={img.src} 
