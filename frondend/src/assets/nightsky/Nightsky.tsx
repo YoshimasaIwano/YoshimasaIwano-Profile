@@ -33,10 +33,6 @@ import Img13_thumbnail from './img13_thumbnail.png';
 import Img14_thumbnail from './img14_thumbnail.png';
 import Img15_thumbnail from './img15_thumbnail.png';
 import Img16_thumbnail from './img16_thumbnail.png';
-import Img17_thumbnail from './img17_thumbnail.png';
-import Img18_thumbnail from './img18_thumbnail.png';
-import Img19_thumbnail from './img19_thumbnail.png';
-import Img20_thumbnail from './img20_thumbnail.png';
 
 type ImageDataProps = {
     id: number,
