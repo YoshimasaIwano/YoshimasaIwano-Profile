@@ -150,7 +150,7 @@ export function CSC317() {
                     })}
                 />
             )}
-            <div className='tl f2 f4-ns b ml1 mv1'>CSC317</div>
+            <div className='tl f2 f4-ns b ml1 mv1'>CSC317 Photo App</div>
             <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70 w-100-ns'>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToPurpose}>・Purpose</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToTools}>・Tools</button>

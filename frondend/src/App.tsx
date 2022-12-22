@@ -14,6 +14,7 @@ import { Gallery } from './component/main-contents/Gallery';
 import { DefaultProjectPage } from './component/main-contents/Project';
 import { GraduationResearch } from './component/project-detail/GraduationResearch';
 import { HiraganaClassifier } from './component/project-detail/HiraganaClassifier';
+import { CSC868 } from './component/project-detail/CSC868';
 import { CSC317 } from './component/project-detail/CSC317';
 import { CSC600 } from './component/project-detail/CSC600';
 import { Portfolio } from './component/project-detail/Portfolio';
@@ -38,6 +39,7 @@ function App(): JSX.Element {
             <Route index element={<DefaultProjectPage />}/>
             <Route path="GraduationResearch" element={<GraduationResearch />}/>
             <Route path="HiraganaClassifier" element={<HiraganaClassifier />}/>
+            <Route path="CSC868" element={<CSC868 />}/>
             <Route path="CSC317" element={<CSC317 />}/>
             <Route path="CSC600" element={<CSC600 />}/>
             <Route path="Portfolio" element={<Portfolio />}/>

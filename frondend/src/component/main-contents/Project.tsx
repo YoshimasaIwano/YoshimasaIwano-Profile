@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 /* import image */
 import graduationResearchImage from '../../assets/project-images/graduationResearch.png';
 import hiraganaClassifierImage from '../../assets/project-images/hiragana.png';
+import csc868Image from '../../assets/project-images/csc868.png';
 import csc317Image from '../../assets/project-images/csc317.png';
 import csc600Image from '../../assets/project-images/csc600.png';
 import portfolioImage from '../../assets/project-images/portfolio.png';
@@ -41,6 +42,15 @@ const hiraganaClassifierProps: ProjectProps = {
     tools: ["Tensorflow","Flask","JavaScript","AWS","Bootstrap"],
 }
 
+const csc868Props: ProjectProps = {
+    name: "CSC868",
+    srcName: csc868Image,
+    title: "CSC868 Trader App Team Project",
+    overview: "The purpose of this team project is to develop a trader app with agile devlopment in a team.",
+    period: "(2022 Fall)",
+    tools: ["JavaScript","MySQL","NodeJS","ExpressJS","Handlebars","AWS","Bootstrap"],
+}
+
 const csc317Props: ProjectProps = {
     name: "CSC317",
     srcName: csc317Image,
@@ -62,7 +72,7 @@ const csc600Props: ProjectProps = {
 const portfolioProps: ProjectProps = {
     name: "Portfolio",
     srcName: portfolioImage,
-    title: "My Portfolio Web site",
+    title: "My Portfolio Website",
     overview: "The purpose is to create my portfolio Web site and for a fun.",
     period: "(2022 July)",
     tools: ["TypeScirpt","React"],
@@ -74,12 +84,13 @@ const racePredictionProps: ProjectProps = {
     title: "Race Prediction",
     overview: "The purpose is to predict results of horse race.",
     period: "(2020 July - 2022 July)",
-    tools: ["Tensorflow","Numpy","Pandas","Scikit-Learn","Matplotlib","Selenium","Requests","Beautiful Soup"],
+    tools: ["Tensorflow","Numpy","Pandas","Scikit-Learn","Matplotlib","Selenium","Requests","BeautifulSoup"],
 }
 
 const projectList: Array<ProjectProps> = [
     graduationResearchProps,
     hiraganaClassifierProps,
+    csc868Props,
     csc317Props,
     csc600Props,
     portfolioProps,
