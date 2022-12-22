@@ -38,7 +38,7 @@ const hiraganaClassifierProps: ProjectProps = {
     title: "Hiragana Classifier",
     overview: "The purpose of this team project is to create an image classifier web app.",
     period: "(2022 Thanksgiving)",
-    tools: ["Tensorflow","Flask","JavaScript","AWS"],
+    tools: ["Tensorflow","Flask","JavaScript","AWS","Bootstrap"],
 }
 
 const csc317Props: ProjectProps = {

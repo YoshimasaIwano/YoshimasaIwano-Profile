@@ -54,11 +54,17 @@ const AWSProps: ToolProps = {
     description: "Amazom Web Services (AWS) provides a highly reliable, scalable, low-cost infrastracture platform in the cloud.",
 }
 
+const BootstrapProps: ToolProps = {
+    name: "Bootstrap",
+    description: "Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.",
+}
+
 const toolList: Array<ToolProps> = [
     TensorflowProps,
     JavaScriptProps,
     FlaskProps,
     AWSProps,
+    BootstrapProps,
 ];
   
 function ToolContent({ name, description }: ToolProps): JSX.Element {
@@ -141,7 +147,7 @@ export function HiraganaClassifier() {
                 </p>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     Here is 
-                    <a className='no-underline b white hover-light-yellow' href='http://ec2-54-213-124-146.us-west-2.compute.amazonaws.com:5000/'> the link for Hiragana Classifier</a>
+                    <a className='no-underline b white hover-light-yellow' href='https://hiraganaclassifier.net/'> the link for Hiragana Classifier</a>
                 </p>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={toolsRef}>Tools</div>
@@ -153,9 +159,12 @@ export function HiraganaClassifier() {
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={scrollToDetail}>Detail</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    I used Flask for backend, CSS/JS for frontend, and tensorflow for image classification model.<br/>
+                    I used Flask for backend, CSS/JS and Bootstrap for frontend, and tensorflow for image classification model.<br/>
                     Specifically, the drawing squre is implemented by CreateJS and popup image of all hiragana is implemented by luminousJS. 
                     The classification model is based on EfficientNetb0 by fine-tuning.
+                </p>
+                <p className='tl mh2 mv2 f3 f5-ns'>
+                    This Web application is deployed on EC2 of AWS. Finally, this Website is protedted with a https connection.
                 </p>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={scrollToExamples}>Examples</div>
