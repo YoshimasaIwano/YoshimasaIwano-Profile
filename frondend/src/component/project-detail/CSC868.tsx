@@ -296,7 +296,7 @@ export function CSC868() {
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={userDashboardRef}>User Dashboard</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    You can check pending posts and posted posts, and messages. You can also reply to the message.
+                    You can check pending posts and posted posts, and messages. You can also reply the message.
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
@@ -313,13 +313,18 @@ export function CSC868() {
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={myResponsibilityRef}>My Responsibility</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    I am a Github master and my role is to check code review and approve all pull requests. I told all team members to follow the constant code convention.
+                    I am a Github master and my role is to check code review and approve all pull requests. I told all team members to follow the constant code convention. I gained the experience of code and task management from this project.
                 </p>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={challengesRef}>Challenges</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    You can search an image using the searching bar. You can type in title, description, and comment. After clicking the search button, you will see the result on the main page.  
+                    1. All members are not at the same level of familiarity with tools we used in this project. <br />
+                    So, I shared some tutorial videos and documents. If a member struggled with the problem even after that, I helped them fix it giving how to find a solution. In other situations, team members helped me, too. That is how we learned from each other.
+                </p>
+                <p className='tl mh2 mv2 f3 f5-ns'>
+                    2. I learned the importance of communication in team project. <br />
+                    We need a weekly meeting, but it's hard for everyone to join it all the time, so elaborated comments in code are very helpful to supplement the lack of communication. I can see what they have done why they have done in that way.
                 </p>
             </div>
         </motion.div>
