@@ -207,7 +207,9 @@ export function CSC868() {
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={searchRef}>Search</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    
+                    When you enter a search word and hit the search button, you will see the matched results within the sepecified category. There are 6 categories, All, Videos, Images, Music, Ebooks, and Slides.
+                    If there are no results, you will see all posts.<br />
+                    There is also a validation for search words. If you enter non-alphanumeric characters, you will get an error message and cannot search.
                 </p>
                 <div className='flex'>
                     <img 
@@ -226,58 +228,58 @@ export function CSC868() {
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={messageFormRef}>Message Form</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    After logging in, you will see log out navigation bar on the top, and you can post a new image.<br />  
+                    If you like a post, you can contact the owner by clicking the contact seller button. You will transform to the page for the detail of the item. You can send a message to the owner at the bottom. <br />
                 </p>
                 <img 
-                        className='db ma mv3 w-50 h-50 pointer' 
-                        src={message} 
-                        alt="Message" 
-                        onClick={() => setState({
-                            id: 1,
-                            isOpen: true
-                            })
-                        }
-                    >
+                    className='db ma mv3 w-50 h-50 pointer' 
+                    src={message} 
+                    alt="Message" 
+                    onClick={() => setState({
+                        id: 1,
+                        isOpen: true
+                        })
+                    }
+                >
                 </img>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={registerFormRef}>Register Form</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    After creating a new image post, you will see a new post on the main page. when you click an image, you can see the detail of the image and comment on the post.
+                    In the register form, you should enter full name, SFSU email, and password. You need to follow the rules. For example, you can only use SFSU and a password shall be at least one lower case, one upper case and one degit.
                 </p>
                 <img 
-                        className='db ma mv3 w-50 h-50 pointer' 
-                        src={register} 
-                        alt="Register" 
-                        onClick={() => setState({
-                            id: 2,
-                            isOpen: true
-                            })
-                        }
-                    >
+                    className='db ma mv3 w-50 h-50 pointer' 
+                    src={register} 
+                    alt="Register" 
+                    onClick={() => setState({
+                        id: 2,
+                        isOpen: true
+                        })
+                    }
+                >
                 </img>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={loginFormRef}>Login Form</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    You can search an image using the searching bar. You can type in title, description, and comment. After clicking the search button, you will see the result on the main page.  
+                    In login form, you should enter your email and password. If you forget your password, you can reset your password.
                 </p>
                 <img 
-                        className='db ma mv3 w-50 h-50 pointer' 
-                        src={login} 
-                        alt="Login" 
-                        onClick={() => setState({
-                            id: 3,
-                            isOpen: true
-                            })
-                        }
-                    >
+                    className='db ma mv3 w-50 h-50 pointer' 
+                    src={login} 
+                    alt="Login" 
+                    onClick={() => setState({
+                        id: 3,
+                        isOpen: true
+                        })
+                    }
+                >
                 </img>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={postFormRef}>Post Form</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    You can search an image using the searching bar. You can type in title, description, and comment. After clicking the search button, you will see the result on the main page.  
+                    In post form, you need to enter title, category, price, and description and upload the file you want to sell. If you are not logged in or registered, the login page is poped up.
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
@@ -294,7 +296,7 @@ export function CSC868() {
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={userDashboardRef}>User Dashboard</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    You can search an image using the searching bar. You can type in title, description, and comment. After clicking the search button, you will see the result on the main page.  
+                    You can check pending posts and posted posts, and messages. You can also reply to the message.
                 </p>
                 <img 
                     className='db ma mv3 w-50 h-50 w-80-ns h-80-ns pointer' 
@@ -311,7 +313,7 @@ export function CSC868() {
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={myResponsibilityRef}>My Responsibility</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    You can search an image using the searching bar. You can type in title, description, and comment. After clicking the search button, you will see the result on the main page.  
+                    I am a Github master and my role is to check code review and approve all pull requests. I told all team members to follow the constant code convention.
                 </p>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={challengesRef}>Challenges</div>
