@@ -58,7 +58,7 @@ export function Resume() {
         >
             <div className='tl f2 f4-ns b ml1 mv1'>Resume</div>
             <div className='f3 f5-ns'>
-                Here's my resume. (As of Jun/2022) <br />
+                Here's my resume. (As of Dec/2022) <br />
                 You can download my resume clicking the button below.
             </div>
             <div className='mv3'>

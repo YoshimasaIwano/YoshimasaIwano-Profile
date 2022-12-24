@@ -49,11 +49,17 @@ const SQLiteProps: ToolProps = {
     description: "SQLite is a C-language library that implements a small, fast, self-contained, high-reliability, full-featured, SQL database engine.",
 }
 
+const TachyonsProps: ToolProps = {
+    name: "TachyonsCSS",
+    description: "Tachyons is built for designing to create fast loading, highly readable, and 100% responsive interfaces with as little css as possible",
+}
+
 const ToolList: Array<ToolProps> = [
     TypeScriptProps,
     ReactProps,
     ToneJSProps,
     SQLiteProps,
+    TachyonsProps,
 ];
   
 function ToolContent({ name, description }: ToolProps): JSX.Element {

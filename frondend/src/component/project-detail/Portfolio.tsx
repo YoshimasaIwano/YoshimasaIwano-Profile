@@ -46,9 +46,15 @@ const ReactProps: ToolProps = {
     description: "React is a JavaScript library for building user interfaces.",
 }
 
+const TachyonsProps: ToolProps = {
+    name: "TachyonsCSS",
+    description: "Tachyons is built for designing to create fast loading, highly readable, and 100% responsive interfaces with as little css as possible",
+}
+
 const toolList: Array<ToolProps> = [
     TypeScriptProps,
     ReactProps,
+    TachyonsProps,
 ];
   
 function ToolContent({ name, description }: ToolProps): JSX.Element {

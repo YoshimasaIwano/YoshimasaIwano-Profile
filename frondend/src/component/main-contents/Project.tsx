@@ -66,7 +66,7 @@ const csc600Props: ProjectProps = {
     title: "CSC600 Music Instrument",
     overview: "The purpose of this course is to create a music instrument and a visualizer.",
     period: "(2022 Spring)",
-    tools: ["TypeScirpt","React","ToneJS","SQLite"],
+    tools: ["TypeScirpt","React","ToneJS","SQLite","TachyonsCSS"],
 }
 
 const portfolioProps: ProjectProps = {
@@ -75,7 +75,7 @@ const portfolioProps: ProjectProps = {
     title: "My Portfolio Website",
     overview: "The purpose is to create my portfolio Web site and for a fun.",
     period: "(2022 July)",
-    tools: ["TypeScirpt","React"],
+    tools: ["TypeScirpt","React","TachyonsCSS"],
 }
 
 const racePredictionProps: ProjectProps = {
