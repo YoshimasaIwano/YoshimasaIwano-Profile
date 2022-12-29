@@ -156,7 +156,7 @@ export function HiraganaClassifier() {
                     return <ToolContent name={tool.name} description={tool.description} key={tool.name} />
                 })}
             </div>
-            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={scrollToDetail}>Detail</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={detailRef}>Detail</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     I used Flask for backend, CSS/JS and Bootstrap for frontend, and tensorflow for image classification model.<br/>
@@ -167,7 +167,7 @@ export function HiraganaClassifier() {
                     This Web application is deployed on EC2 of AWS. Finally, this Website is protedted with a https connection.
                 </p>
             </div>
-            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={scrollToExamples}>Examples</div>
+            <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={examplesRef}>Examples</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
                     When you draw a hiragana on the white square box, then click the predict button, the image will be sent to the server and the model will return the predicted label and the confidence. <br/>
