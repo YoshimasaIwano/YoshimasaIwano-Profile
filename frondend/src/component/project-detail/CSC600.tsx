@@ -134,7 +134,7 @@ export function CSC600() {
                     })}
                 />
             )}
-            <div className='tl f2 f4-ns b ml1 mv1'>CSC600 Music Instruments</div>
+            <div className='tl f2 f4-ns b ml1 mv1'>CSC600 Musical Instruments</div>
             <div className='db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70 w-100-ns'>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToPurpose}>・Purpose</button>
                 <button className='mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer' onClick={scrollToTools}>・Tools</button>
@@ -146,7 +146,7 @@ export function CSC600() {
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={purposeRef}>Purpose</div>
             <div className='db ma flex-row flex-nowrap justify-items-center tc w-80'>
                 <p className='tl mh2 mv2 f3 f5-ns'>
-                    The purpose of this project is to create a music instrument and visualizer, then work on plylist database as a team.
+                    The purpose of this project is to create a musical instrument and visualizer, then work on plylist database as a team.
                 </p>
             </div>
             <div className='db ma mh1 mv3 f3 f5-ns b dark-gray w-80' ref={toolsRef}>Tools</div>

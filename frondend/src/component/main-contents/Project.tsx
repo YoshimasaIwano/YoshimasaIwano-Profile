@@ -63,8 +63,8 @@ const csc317Props: ProjectProps = {
 const csc600Props: ProjectProps = {
     name: "CSC600",
     srcName: csc600Image,
-    title: "CSC600 Music Instrument",
-    overview: "The purpose of this course is to create a music instrument and a visualizer.",
+    title: "CSC600 Musical Instrument",
+    overview: "The purpose of this course is to create a musical instrument and a visualizer.",
     period: "(2022 Spring)",
     tools: ["TypeScirpt","React","ToneJS","SQLite","TachyonsCSS"],
 }
