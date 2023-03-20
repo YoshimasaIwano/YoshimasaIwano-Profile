@@ -27,35 +27,35 @@ import { Food } from './component/picture-detail/Food';
 
 function App(): JSX.Element {
   return (
-    <div className="top-0 left-0 h-100 w-100 overflow-y-scroll" id='top'>
-      <ScrollToTop smooth/>
+    <div className="top-0 left-0 h-100 w-100 overflow-y-scroll" id="top">
+      <ScrollToTop smooth />
       <Router>
-        <ScrollTop/>
-        <TopNav/>
+        <ScrollTop />
+        <TopNav />
         <Routes>
-          <Route path="/" element={<Profile />}/>
-          <Route path="/Home" element={<Profile />}/>
+          <Route path="/" element={<Profile />} />
+          <Route path="/Home" element={<Profile />} />
           <Route path="/Project" element={<Project />}>
-            <Route index element={<DefaultProjectPage />}/>
-            <Route path="GraduationResearch" element={<GraduationResearch />}/>
-            <Route path="HiraganaClassifier" element={<HiraganaClassifier />}/>
-            <Route path="CSC868" element={<CSC868 />}/>
-            <Route path="CSC317" element={<CSC317 />}/>
-            <Route path="CSC600" element={<CSC600 />}/>
-            <Route path="Portfolio" element={<Portfolio />}/>
-            <Route path="RacePrediction" element={<RacePrediction />}/>
-            <Route path="*" element={<div>404</div>}/>
+            <Route index element={<DefaultProjectPage />} />
+            <Route path="GraduationResearch" element={<GraduationResearch />} />
+            <Route path="HiraganaClassifier" element={<HiraganaClassifier />} />
+            <Route path="CSC868" element={<CSC868 />} />
+            <Route path="CSC317" element={<CSC317 />} />
+            <Route path="CSC600" element={<CSC600 />} />
+            <Route path="Portfolio" element={<Portfolio />} />
+            <Route path="RacePrediction" element={<RacePrediction />} />
+            <Route path="*" element={<div>404</div>} />
           </Route>
-          <Route path="/Resume" element={<Resume />}/>
+          <Route path="/Resume" element={<Resume />} />
           <Route path="/Gallery" element={<Gallery />}>
-            <Route index element={<DefaultGalleryPage />}/>
-            <Route path="Nightsky" element={<Nightsky />}/>
-            <Route path="Landscape" element={<Landscape />}/>
-            <Route path="Flower" element={<Flower />}/>
-            <Route path="Food" element={<Food />}/>
-            <Route path="*" element={<div>404</div>}/>
+            <Route index element={<DefaultGalleryPage />} />
+            <Route path="Nightsky" element={<Nightsky />} />
+            <Route path="Landscape" element={<Landscape />} />
+            <Route path="Flower" element={<Flower />} />
+            <Route path="Food" element={<Food />} />
+            <Route path="*" element={<div>404</div>} />
           </Route>
-          <Route path="*" element={<div>404</div>}/>
+          <Route path="*" element={<div>404</div>} />
         </Routes>
         <Footer />
       </Router>

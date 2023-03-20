@@ -1,6 +1,6 @@
 /* import libraries */
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 /*
     Scroll Top Component  
@@ -13,12 +13,12 @@ import { useLocation } from "react-router-dom";
           Project to CSC317 detail page
 */
 export function ScrollTop() {
-    const location = useLocation();
-    useEffect(() => {
-        window.scrollTo({
-            top: 0,
-        });
-    }, [location]);
-    
-    return null;
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo({
+      top: 0
+    });
+  }, [location]);
+
+  return null;
 }
