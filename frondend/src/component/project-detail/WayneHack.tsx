@@ -6,11 +6,9 @@ import 'react-image-lightbox/style.css';
 import { motion } from 'framer-motion';
 
 /* import images */
-import exampleImage from '../../assets/hiragana-img/hiraganaExamples.png';
-import yoImage from '../../assets/hiragana-img/yo.png';
-import shiImage from '../../assets/hiragana-img/shi.png';
-import maImage from '../../assets/hiragana-img/ma.png';
-import saImage from '../../assets/hiragana-img/sa.png';
+import mainPage from '../../assets/waynehack-img/mainPage.png';
+import example1 from '../../assets/waynehack-img/example1.png';
+import example2 from '../../assets/waynehack-img/example2.png';
 
 /*
     RacePrediction Detail Component  
@@ -21,13 +19,7 @@ type ImageState = {
   isOpen: boolean;
 };
 
-const imageArray: Array<string> = [
-  exampleImage,
-  yoImage,
-  shiImage,
-  maImage,
-  saImage
-];
+const imageArray: Array<string> = [mainPage, example1, example2];
 
 type ToolProps = {
   name: string;
@@ -130,7 +122,7 @@ export function WayneHack() {
           }
         />
       )}
-      <div className="tl f2 f4-ns b ml1 mv1">Wayne Hack</div>
+      <div className="tl f2 f4-ns b ml1 mv1">ChatBot Ordering System</div>
       <div className="db ma br4 flex-row flex-nowrap justify-items-center tc bg-white-50 w-70 w-100-ns">
         <button
           className="mh2 mv1 br3 bn tl bg-white-50 f4 f6-ns w-50 w-80-ns pointer"
@@ -184,6 +176,16 @@ export function WayneHack() {
             the link for Our ChatBot
           </a>
         </p>
+        <p className="tl mh2 mv2 f3 f5-ns">
+          Here is
+          <a
+            className="no-underline b white hover-light-yellow"
+            href="https://github.com/YoshimasaIwano/waynehack-sfsu"
+          >
+            {' '}
+            GitHub
+          </a>
+        </p>
       </div>
       <div className="db ma mh1 mv3 f3 f5-ns b dark-gray w-80" ref={toolsRef}>
         Tools
@@ -224,15 +226,15 @@ export function WayneHack() {
           You can start to order typing what you want, and the chatBot will tell
           you some options available. The Chatbot will confirm your order once
           it's done. Finally, the order confimation is poped up showing the home
-          button, which leads to menu page.
+          button, which leads to mainPage page.
           <br />
           there are some examples.
         </p>
         <div className="flex flex-wrap">
           <img
             className="ma mv3 w-40 h-40 w-80-ns h-80-ns pointer"
-            src={yoImage}
-            alt="yo"
+            src={mainPage}
+            alt="mainPage"
             onClick={() =>
               setState({
                 id: 1,
@@ -242,8 +244,8 @@ export function WayneHack() {
           ></img>
           <img
             className="ma mv3 w-40 h-40 w-80-ns h-80-ns pointer"
-            src={shiImage}
-            alt="shi"
+            src={example1}
+            alt="example1"
             onClick={() =>
               setState({
                 id: 2,
@@ -253,22 +255,11 @@ export function WayneHack() {
           ></img>
           <img
             className="ma mv3 w-40 h-40 w-80-ns h-80-ns pointer"
-            src={maImage}
-            alt="ma"
+            src={example2}
+            alt="example2"
             onClick={() =>
               setState({
                 id: 3,
-                isOpen: true
-              })
-            }
-          ></img>
-          <img
-            className="ma mv3 w-40 h-40 w-80-ns h-80-ns pointer"
-            src={saImage}
-            alt="sa"
-            onClick={() =>
-              setState({
-                id: 4,
                 isOpen: true
               })
             }

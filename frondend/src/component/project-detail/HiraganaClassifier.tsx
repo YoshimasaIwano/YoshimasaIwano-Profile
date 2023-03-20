@@ -189,6 +189,16 @@ export function HiraganaClassifier() {
             the link for Hiragana Classifier
           </a>
         </p>
+        <p className="tl mh2 mv2 f3 f5-ns">
+          Here is
+          <a
+            className="no-underline b white hover-light-yellow"
+            href="https://github.com/YoshimasaIwano/Hiragana"
+          >
+            {' '}
+            GitHub
+          </a>
+        </p>
       </div>
       <div className="db ma mh1 mv3 f3 f5-ns b dark-gray w-80" ref={toolsRef}>
         Tools

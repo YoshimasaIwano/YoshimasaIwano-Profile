@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 /* import image */
 import graduationResearchImage from '../../assets/project-images/graduationResearch.png';
 import hiraganaClassifierImage from '../../assets/project-images/hiragana.png';
+import waynehackImage from '../../assets/project-images/waynehack.png';
 import csc868Image from '../../assets/project-images/csc868.png';
 import csc317Image from '../../assets/project-images/csc317.png';
 import csc600Image from '../../assets/project-images/csc600.png';
@@ -46,8 +47,8 @@ const hiraganaClassifierProps: ProjectProps = {
 
 const wayneHackProps: ProjectProps = {
   name: 'WayneHack',
-  srcName: hiraganaClassifierImage,
-  title: 'Ordering ChatBot',
+  srcName: waynehackImage,
+  title: 'ChatBot Ordering System',
   overview:
     'We joined WayneHack 2023 in a team and created a Chatbot ordering system.',
   period: '(2022 March)',
