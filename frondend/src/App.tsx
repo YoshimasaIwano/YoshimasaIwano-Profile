@@ -24,6 +24,7 @@ import { Nightsky } from './component/picture-detail/Nightsky';
 import { Landscape } from './component/picture-detail/Landscape';
 import { Flower } from './component/picture-detail/Flower';
 import { Food } from './component/picture-detail/Food';
+import { WayneHack } from './component/project-detail/WayneHack';
 
 function App(): JSX.Element {
   return (
@@ -39,6 +40,7 @@ function App(): JSX.Element {
             <Route index element={<DefaultProjectPage />} />
             <Route path="GraduationResearch" element={<GraduationResearch />} />
             <Route path="HiraganaClassifier" element={<HiraganaClassifier />} />
+            <Route path="WayneHack" element={<WayneHack />} />
             <Route path="CSC868" element={<CSC868 />} />
             <Route path="CSC317" element={<CSC317 />} />
             <Route path="CSC600" element={<CSC600 />} />

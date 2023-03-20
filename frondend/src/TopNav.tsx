@@ -10,7 +10,7 @@ type NavProps = {
 };
 
 function NavContent({ name }: NavProps): JSX.Element {
-  const classAttribute: string =
+  const classAttribute =
     'f4 f6-ns ph1 mh2 mh1-ns mv3 pv1 b--solid br1 b--green link color-inherit ';
   return (
     <NavLink

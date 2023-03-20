@@ -71,7 +71,7 @@ function AboutMe(): JSX.Element {
       animate={control}
     >
       <div className="tl f3 f5-ns">
-        <h3 className="ml1 mv1">Yoshimasa Iwano (岩野　善允)</h3>
+        <h3 className="ml1 mv1">Yoshimasa Iwano (岩野 善允)</h3>
         <p className="mh3 mh1-ns mv4 mv2-ns">
           I was born in Japan and brought up in Fukuoka until high school. I had
           a lot of difficulities in my life.

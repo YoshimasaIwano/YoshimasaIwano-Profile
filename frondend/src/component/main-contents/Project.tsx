@@ -44,6 +44,16 @@ const hiraganaClassifierProps: ProjectProps = {
   tools: ['Tensorflow', 'Flask', 'JavaScript', 'AWS', 'Bootstrap']
 };
 
+const wayneHackProps: ProjectProps = {
+  name: 'WayneHack',
+  srcName: hiraganaClassifierImage,
+  title: 'Ordering ChatBot',
+  overview:
+    'We joined WayneHack 2023 in a team and created a Chatbot ordering system.',
+  period: '(2022 March)',
+  tools: ['TypeScript', 'React', 'AWS', 'Bootstrap']
+};
+
 const csc868Props: ProjectProps = {
   name: 'CSC868',
   srcName: csc868Image,
@@ -118,6 +128,7 @@ const racePredictionProps: ProjectProps = {
 const projectList: Array<ProjectProps> = [
   graduationResearchProps,
   hiraganaClassifierProps,
+  wayneHackProps,
   csc868Props,
   csc317Props,
   csc600Props,
